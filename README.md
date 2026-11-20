@@ -57,6 +57,8 @@ Every push to `main` deploys to Vercel (project `msheker-dev`). DNS is on Cloudf
 
 CI (GitHub Actions) runs lint, typecheck and `cv:check` on every push and pull request.
 
+Live GitHub numbers (the heatmap, CovertGift's commit and test counts: `src/lib/github.ts`, D-016) are fetched at build time and refreshed daily. They work without a token; an optional `GITHUB_TOKEN` env var in Vercel raises the API rate limit (60 → 5,000 requests an hour). Use a fine-grained token with **Public repositories (read-only)** access and no permissions, add it in Vercel → Settings → Environment Variables for Production and Preview, marked Sensitive, then redeploy. When it expires, the site falls back to unauthenticated requests; nothing breaks.
+
 ## Notes
 
 - Keyboard: `1`–`4` jump to sections, `s` opens settings, `t` cycles the theme, `p` pauses motion.

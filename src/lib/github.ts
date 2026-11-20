@@ -10,13 +10,17 @@ const user = site.links.github.replace(/\/$/, "").split("/").pop()!;
 
 async function gh(path: string) {
   const token = process.env.GITHUB_TOKEN;
-  return fetch(API + path, {
-    headers: {
-      Accept: "application/vnd.github+json",
-      "User-Agent": "portfolio-site",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    },
-  });
+  const get = (auth: boolean) =>
+    fetch(API + path, {
+      headers: {
+        Accept: "application/vnd.github+json",
+        "User-Agent": "portfolio-site",
+        ...(auth && token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    });
+  const res = await get(true);
+  // an expired or revoked token answers 401: carry on without it rather than lose the numbers
+  return token && res.status === 401 ? get(false) : res;
 }
 
 export type RepoStats = { commits: number; goTestFiles: number };
