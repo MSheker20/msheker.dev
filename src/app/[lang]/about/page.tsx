@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { AboutSection } from "@/components/sections";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/i18n/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
-  return { title: dict.nav.about };
+  return { title: dict.nav.about, alternates: alternates(await getLocale(), "/about") };
 }
 
 export default async function Page() {

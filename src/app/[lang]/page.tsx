@@ -11,6 +11,7 @@ import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { localePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { personJsonLd } from "@/i18n/seo";
 
 // design/hero/v4.html as the home page: screen 1 hero, screen 2 work.
 export default async function Home() {
@@ -20,8 +21,11 @@ export default async function Home() {
   const covertgift = projects.find((p) => p.slug === "covertgift")!;
   const alterf1 = projects.find((p) => p.slug === "alterf1")!;
 
+  const jsonLd = JSON.stringify(personJsonLd(dict.home.statementStrong.replace(/\.$/, ""))).replace(/</g, "\\u003c");
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       {/* screen 1: fills the viewport together with the nav grid */}
       <section className="grid min-h-[calc(100svh_-_var(--header-h))] grid-rows-[1fr_auto] overflow-hidden">
         <div className="wrap grid items-center gap-7 py-[2vh] md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:gap-12">

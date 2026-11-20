@@ -27,29 +27,23 @@ export function AboutSection({ dict, id, as = "h1" }: Props) {
 
 export function CvSection({ dict, locale, id, as = "h1" }: Props) {
   const t = dict.pages.cv;
-  const Sub = as === "h1" ? "h2" : "h3";
-  const Block = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <div>
-      <Sub className="m-0 mb-3 border-b border-line pb-2 text-label font-normal text-muted">{title}</Sub>
-      <div className="space-y-2">{children}</div>
-    </div>
-  );
+  const sub = as === "h1" ? "h2" : "h3";
   return (
     <section id={id} className={screen}>
       <div className="wrap">
         <SectionHead label={t.label} title={t.title} as={as} />
         <div className="grid gap-10 md:grid-cols-2">
-          <Block title={t.experience}>
+          <Block as={sub} title={t.experience}>
             <Entries items={experience} locale={locale} present={t.present} />
           </Block>
-          <Block title={t.education}>
+          <Block as={sub} title={t.education}>
             <Entries items={education} locale={locale} present={t.present} />
           </Block>
-          <Block title={t.skills}>
+          <Block as={sub} title={t.skills}>
             <p className="m-0">{skills.strong.join(" · ")}</p>
             <p className="m-0 text-muted">{skills.comfortable.join(" · ")}</p>
           </Block>
-          <Block title={t.languages}>
+          <Block as={sub} title={t.languages}>
             {languages.map((l) => (
               <p key={l.name.en} className="m-0">
                 {l.name[locale]} <span className="text-muted">· {l.level[locale]}</span>
@@ -59,6 +53,15 @@ export function CvSection({ dict, locale, id, as = "h1" }: Props) {
         </div>
       </div>
     </section>
+  );
+}
+
+function Block({ as: Tag, title, children }: { as: "h2" | "h3"; title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <Tag className="m-0 mb-3 border-b border-line pb-2 text-label font-normal text-muted">{title}</Tag>
+      <div className="space-y-2">{children}</div>
+    </div>
   );
 }
 

@@ -6,6 +6,7 @@ import { cases, getCase, type CaseStudy } from "@/content/cases";
 import { projects } from "@/content/projects";
 import { localePath, type Locale } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/i18n/seo";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/work/[slug
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   const locale = await getLocale();
-  return { title: project.name, description: project.summary[locale] };
+  return { title: project.name, description: project.summary[locale], alternates: alternates(locale, `/work/${slug}`) };
 }
 
 export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug]">) {

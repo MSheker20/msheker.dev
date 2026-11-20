@@ -4,10 +4,11 @@ import { SectionHead } from "@/components/section-head";
 import { projects } from "@/content/projects";
 import { localePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/i18n/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
-  return { title: dict.nav.work };
+  return { title: dict.nav.work, alternates: alternates(await getLocale(), "/work") };
 }
 
 export default async function WorkPage() {

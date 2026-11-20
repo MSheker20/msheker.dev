@@ -42,8 +42,8 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 ## Faz 4 · Sayfalar
 - [x] Ana sayfa: V4 birebir (hero + ASCII portre + kayan isim; Work ekranı + canlı API logu + AlterF1 terminali), `[p]` durdurma
 - [x] `/work` + `/work/[slug]`: CovertGift ve AlterF1 vaka sayfaları (TS veri, D-012); EN metin onayı bekliyor
-- [ ] `/cv` + yazdırma stili + PDF
-- [ ] `/about`, `/contact`, `404`
+- [x] `/cv` sayfası · [ ] yazdırma stili + PDF (kullanıcı kararı: en sona, Faz 7 öncesi)
+- [x] `/about`, `/contact`, `404`
 
 Çıkış kriteri: tüm içerik yerinde, mobil ve masaüstünde düzgün.
 
@@ -57,7 +57,7 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 - [ ] `web-design-guidelines` denetimi, bulguların kapatılması
 - [ ] `accessibility`: klavye, kontrast, ekran okuyucu
 - [ ] `core-web-vitals` + Lighthouse (chrome-devtools MCP) hedefleri
-- [ ] `seo`: meta, JSON-LD, sitemap, OG görselleri
+- [x] `seo`: canonical + hreflang, Person JSON-LD, sitemap, robots, dil başına OG görseli
 - [ ] Kod incelemesi (`ecc:react-reviewer`)
 
 Çıkış kriteri: PLAN.md'deki başarı ölçütleri karşılandı.

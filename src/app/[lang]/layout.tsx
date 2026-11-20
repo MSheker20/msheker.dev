@@ -9,6 +9,7 @@ import { themeScript } from "@/components/theme-toggle";
 import { site } from "@/content/site";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/i18n/seo";
 
 const mono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -22,8 +23,12 @@ export function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
+  const locale = await getLocale();
   return {
     metadataBase: new URL(site.url),
+    alternates: alternates(locale),
+    openGraph: { type: "website", siteName: site.name, locale: locale === "tr" ? "tr_TR" : "en_US" },
+    twitter: { card: "summary_large_image" },
     title: { default: dict.meta.title, template: `%s — ${site.name}` },
     description: dict.meta.description,
   };
