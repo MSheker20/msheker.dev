@@ -42,7 +42,7 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
         <span aria-hidden="true">←</span> {t.back}
       </Link>
 
-      <header className="mb-12">
+      <header className="enter mb-12">
         <div className="mb-3 flex items-center gap-2 text-label text-muted">
           <i aria-hidden="true" className="inline-block size-[7px] bg-ink" />
           {dict.pages.work.label}
