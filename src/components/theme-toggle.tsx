@@ -34,9 +34,12 @@ export function ThemeToggle({ labels }: { labels: { label: string } & Record<Mod
   };
 
   return (
-    <button type="button" onClick={next} className="navlink cursor-pointer text-muted hover:text-ink" aria-label={`${labels.label}: ${labels[mode]}`}>
-      <kbd>[t]</kbd>
-      <span>{labels[mode]}</span>
+    <button type="button" onClick={next} className="navlink cursor-pointer text-muted hover:text-ink" >
+      <kbd aria-hidden="true">[t]</kbd>
+      <span>
+        <span className="sr-only">{labels.label}: </span>
+        {labels[mode]}
+      </span>
     </button>
   );
 }

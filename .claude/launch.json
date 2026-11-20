@@ -4,13 +4,39 @@
     {
       "name": "web",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "--port", "3000"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "3000"
+      ],
       "port": 3000
+    },
+    {
+      "name": "web-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start",
+        "--",
+        "--port",
+        "3002"
+      ],
+      "port": 3002
     },
     {
       "name": "design-hero",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "5310", "--bind", "127.0.0.1", "--directory", "design/hero"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5310",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "design/hero"
+      ],
       "port": 5310
     }
   ]

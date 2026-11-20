@@ -82,7 +82,6 @@ export default async function Home() {
           <div className="grid gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <ProjectCard
               href={localePath(locale, "/work/covertgift")}
-              ariaLabel={dict.home.logLabel}
               bar="covertgift · api.log"
               name={covertgift.name}
               summary={covertgift.summary[locale]}
@@ -120,7 +119,6 @@ export default async function Home() {
 
 function ProjectCard(props: {
   href: string;
-  ariaLabel?: string;
   bar: string;
   name: string;
   badge?: string;
@@ -129,7 +127,7 @@ function ProjectCard(props: {
   children: React.ReactNode;
 }) {
   return (
-    <Link href={props.href} aria-label={props.ariaLabel} className="group block transition-transform duration-[250ms] ease-out-soft hover:-translate-y-0.5">
+    <Link href={props.href} className="group block transition-transform duration-[250ms] ease-out-soft hover:-translate-y-0.5">
       <div className="term h-[280px] transition-colors group-hover:border-[#3a3a40] md:h-[340px]">
         <div className="term-bar">
           <i />
