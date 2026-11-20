@@ -79,7 +79,7 @@
     "play": "Hareketi başlat"
   },
   "portrait": {
-    "label": "Mustafa Şeker'in ASCII karakterlerle çizilmiş portresi",
-    "title": "~/portrait.txt — cat · denizli, tr · uzaktan"
+    "label": "Mustafa Şeker'in portresi: bir yarısı fotoğraf, diğer yarısı kodla çizilmiş",
+    "title": "~/portrait.webp · denizli, tr · uzaktan"
   }
 }

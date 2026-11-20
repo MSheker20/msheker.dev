@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { ApiLog } from "@/components/api-log";
-import { AsciiPortrait } from "@/components/ascii-portrait";
+import Image from "next/image";
+import portrait from "@/assets/portrait.webp";
 import { NameMarquee } from "@/components/name-marquee";
 import { SectionHead } from "@/components/section-head";
 import { AboutSection, ContactSection, CvSection } from "@/components/sections";
@@ -44,7 +45,22 @@ export default async function Home() {
             </div>
           </div>
           <div className="w-full max-w-[480px] md:max-w-none">
-            <AsciiPortrait label={dict.portrait.label} title={dict.portrait.title} />
+            <div className="term">
+              <div className="term-bar">
+                <i />
+                <i />
+                <i />
+                <b className="ml-1.5 truncate font-normal">{dict.portrait.title}</b>
+              </div>
+              <Image
+                src={portrait}
+                alt={dict.portrait.label}
+                priority
+                placeholder="blur"
+                sizes="(min-width: 768px) 520px, 100vw"
+                className="block h-[min(52vh,520px)] w-full object-cover object-[center_30%] max-md:h-auto max-md:max-h-[60vh]"
+              />
+            </div>
           </div>
         </div>
         <NameMarquee name={site.name} />

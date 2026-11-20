@@ -79,7 +79,7 @@
     "play": "Play motion"
   },
   "portrait": {
-    "label": "Portrait of Mustafa Şeker drawn in ASCII characters",
-    "title": "~/portrait.txt — cat · denizli, tr · remote"
+    "label": "Portrait of Mustafa Şeker: one half photograph, the other half drawn in code",
+    "title": "~/portrait.webp · denizli, tr · remote"
   }
 }
