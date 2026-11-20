@@ -8,11 +8,14 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
-    <footer data-site-chrome className="wrap mt-auto flex flex-wrap items-start justify-between gap-x-6 gap-y-2 border-t border-line py-4 text-label text-muted">
-      <p className="m-0 flex min-h-11 items-center">
-        © {site.name} · {dict.status.location}
-      </p>
-      {/* GitHub and LinkedIn live in the Contact section; the footer keeps only settings */}
+    <>
+      {/* bottom padding on phones keeps the copyright clear of the floating settings button */}
+      <footer data-site-chrome className="wrap mt-auto flex items-center border-t border-line pt-4 pb-20 text-label text-muted md:pb-4">
+        <p className="m-0 flex min-h-11 items-center">
+          © {site.name} · {dict.status.location}
+        </p>
+      </footer>
+      {/* GitHub and LinkedIn live in the Contact section; settings float bottom-right */}
       <SettingsMenu label={dict.footer.settings}>
         <SettingsRow label={dict.language.label}>
           <LangSwitch locale={locale} label={dict.language.switchTo} />
@@ -24,6 +27,6 @@ export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale 
           <PauseButton labels={dict.motion} />
         </SettingsRow>
       </SettingsMenu>
-    </footer>
+    </>
   );
 }

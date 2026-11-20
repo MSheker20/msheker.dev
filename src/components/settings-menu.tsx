@@ -3,33 +3,45 @@
 import { useEffect, useId, useRef, useState } from "react";
 
 /**
- * Footer settings: one [s] button that opens a small labelled list (language, theme, motion).
- * The panel stays mounted while closed (only `hidden`), so the [t] and [p] shortcuts that live
- * in those controls keep working. [s] toggles it; Escape closes it and returns focus.
+ * Floating settings: a small [s] button pinned bottom-right that opens a card above it
+ * (language, theme, motion). The card stays mounted while closed (inert + invisible), so the
+ * [t] and [p] shortcuts living in its controls keep working. [s] toggles; Escape or a click
+ * outside closes and returns focus to the button.
  */
 export function SettingsMenu({ label, children }: { label: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const id = useId();
+  const root = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    const close = (refocus: boolean) =>
+      setOpen((o) => {
+        if (o && refocus) button.current?.focus();
+        return false;
+      });
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement;
       if (e.metaKey || e.ctrlKey || e.altKey || el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
       if (e.key === "s") setOpen((o) => !o);
-      else if (e.key === "Escape") {
-        setOpen((o) => {
-          if (o) button.current?.focus();
-          return false;
-        });
-      }
+      else if (e.key === "Escape") close(true);
+    };
+    const onPointer = (e: PointerEvent) => {
+      if (!root.current?.contains(e.target as Node)) close(false);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
   }, []);
 
   return (
-    <div className="flex flex-col items-start gap-3 md:items-end">
+    <div ref={root} data-site-chrome className="settings-float">
+      <div id={id} role="group" aria-label={label} inert={!open} data-open={open} className="settings-card">
+        {children}
+      </div>
       <button
         ref={button}
         type="button"
@@ -37,22 +49,16 @@ export function SettingsMenu({ label, children }: { label: string; children: Rea
         aria-expanded={open}
         aria-controls={id}
         aria-keyshortcuts="s"
-        className="navlink cursor-pointer text-muted hover:text-ink"
+        className="settings-trigger"
       >
         <kbd aria-hidden="true">[s]</kbd>
         <span>{label}</span>
-        <span aria-hidden="true" className={`inline-block transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
-          ↓
-        </span>
       </button>
-      <div id={id} hidden={!open} className="grid gap-1">
-        {children}
-      </div>
     </div>
   );
 }
 
-/** One row of the panel: a muted label and its control. */
+/** One row of the card: a muted label and its control. */
 export function SettingsRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     // a row whose control renders nothing (pause, under reduced motion) disappears

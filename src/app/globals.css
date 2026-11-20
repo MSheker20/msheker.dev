@@ -278,6 +278,64 @@
   }
 }
 
+/* ---- floating settings (site-footer.tsx): pinned bottom-right, card opens above */
+.settings-float {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+}
+.settings-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 1ch;
+  min-height: 44px;
+  padding-inline: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+  transition: color 0.2s, border-color 0.2s, transform 0.18s var(--ease-out-soft);
+}
+.settings-trigger:hover,
+.settings-trigger[aria-expanded="true"] {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+.settings-trigger:active {
+  transform: scale(0.98);
+}
+.settings-card {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  display: grid;
+  min-width: 264px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.16);
+  transform-origin: bottom right;
+  transition: opacity 0.18s var(--ease-out-soft), transform 0.18s var(--ease-out-soft), visibility 0s linear 0.18s;
+}
+.settings-card[data-open="false"] {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+}
+.settings-card[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
+}
+
 /* ---- PDF CV document (D-013, docs/DESIGN.md §8): ATS one-page, printed by scripts/cv-pdf.mjs */
 .cv-doc {
   box-sizing: border-box;
