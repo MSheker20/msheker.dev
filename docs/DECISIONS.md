@@ -94,3 +94,9 @@ Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı
 - Ana sayfa (Work): son 53 haftanın commit ısı haritası; açık, fork olmayan repolarda kullanıcının varsayılan dala commit'leri. Veri alınamazsa harita hiç görünmez (eksik bir yıl göstermek yerine).
 - Vaka sayfası: `outcome` içindeki `{commits}` ve `{tests}` canlı (commit sayısı, `_test.go` dosyası sayısı); alınamazsa `cases.ts` → `stats` içindeki elle yazılı sayılar.
 - PDF CV elle yazılı kalır (D-013: sabit dosya, `cv:check`).
+
+## D-017 ✅ Güvenlik başlıkları ve Dependabot (2026-11-20)
+`next.config.ts` → `headers()`, yalnızca production: CSP (her şey `'self'`; `frame-ancestors 'none'`, `object-src 'none'`), HSTS 2 yıl + `includeSubDomains` (preload listesine eklenmedi), `nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy`, `Permissions-Policy`; `X-Powered-By` kapalı.
+- `script-src` ve `style-src` `'unsafe-inline'` içerir: statik (SSG) sayfalar Next'in satır içi script'lerini taşır ve istek başına nonce alamaz. Nonce için sayfaların dinamik olması gerekir; bu site için değmez.
+- Siteye yeni bir dış kaynak (font, görsel, analitik, gömme) eklenirse CSP'ye o origin eklenmeli, yoksa tarayıcı engeller.
+- `.github/dependabot.yml`: npm ve GitHub Actions haftalık (pazartesi); minor/patch tek PR'da gruplu, major'lar tek tek. Her PR'da CI çalışır.

@@ -81,7 +81,7 @@ Sonra:
 - [x] Anti-Spoiler canlı demosu (2026-11-20: gerçek yanıtların tekrarı; kaynak group_access.go, response.go, seed): üye ↔ hediye alınan kişi anahtarı, 200 / 403
 - [x] CovertGift'ten gerçek kod parçası (2026-11-20: group_access.go 13–15 ve 46–52, commit 7a8d4f1'e kalıcı bağlantı) (403 middleware), vaka sayfasında
 - [x] GitHub aktivite ısı haritası + canlı repo verisi (2026-11-20, D-016) (elle yazılı commit/test sayılarının yerine)
-- [ ] Güvenlik başlıkları (HSTS, CSP…) ve Dependabot
+- [x] Güvenlik başlıkları (HSTS, CSP…) ve Dependabot (2026-11-20, D-017)
 
 ## Faz 8 · Bakım (sürekli)
 - Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
