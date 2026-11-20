@@ -63,7 +63,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 Çıkış kriteri: PLAN.md'deki başarı ölçütleri karşılandı.
 
 ## Faz 7 · Yayın
-- [ ] Vercel'e bağlama (GitHub: MSheker20/msheker.dev) ve ilk dağıtım
+- [x] Vercel'e bağlama ve ilk dağıtım: proje `msheker-dev` (Hobby), https://msheker-dev.vercel.app, `main`'e her push otomatik dağıtılır (2026-11-20)
 - [ ] msheker.dev alan adı → Vercel, HTTPS
 - [ ] Analitik
 - [ ] Son mobil ve tarayıcı testi (`ecc:browser-qa`)
