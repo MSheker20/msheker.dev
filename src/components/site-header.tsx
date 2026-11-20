@@ -11,8 +11,8 @@ export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale 
   return (
     <header className="wrap grid h-[var(--header-h)] grid-cols-[auto_1fr_1fr] pt-1.5 text-label md:grid-cols-4">
       <div className="crop px-2.5 py-2.5 md:px-4">
-        <Link href={localePath(locale)} aria-label={nav.home} className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-accent-ink">
-          <PixelWordmark className="h-auto w-[82px] md:w-auto" />
+        <Link href={localePath(locale)} aria-label={nav.home} className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-accent-ink md:flex md:h-full md:w-full">
+          <PixelWordmark className="h-auto w-[82px] md:max-h-full md:w-full" />
         </Link>
       </div>
       <nav aria-label={nav.label} className="contents">
