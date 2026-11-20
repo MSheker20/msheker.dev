@@ -49,7 +49,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="w-full max-w-[480px] md:max-w-none">
-            <div className="term">
+            <div className="term" translate="no">
               <div className="term-bar">
                 <i />
                 <i />
@@ -128,7 +128,7 @@ function ProjectCard(props: {
 }) {
   return (
     <Link href={props.href} className="group block transition-transform duration-[250ms] ease-out-soft hover:-translate-y-0.5">
-      <div className="term h-[280px] transition-colors group-hover:border-[#3a3a40] md:h-[340px]">
+      <div translate="no" className="term h-[280px] transition-colors group-hover:border-[#3a3a40] md:h-[340px]">
         <div className="term-bar">
           <i />
           <i />

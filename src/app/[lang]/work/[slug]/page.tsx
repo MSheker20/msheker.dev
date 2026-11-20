@@ -84,7 +84,7 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
 
       {lead && <Shot shot={lead} locale={locale} priority />}
       {study.terminal && (
-        <div className="term h-[280px] md:h-[360px]">
+        <div className="term h-[280px] md:h-[360px]" translate="no">
           <div className="term-bar">
             <i />
             <i />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useSyncExternalStore } from "react";
+import { useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 
 type Mode = "system" | "light" | "dark";
 const ORDER: Mode[] = ["system", "light", "dark"];
@@ -18,6 +18,19 @@ function subscribe(cb: () => void) {
 /** Runs before paint (inlined in <head>) so a stored theme never flashes. */
 export const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
+/** Cycles system → light → dark, stores the choice and tells subscribers. */
+function cycle() {
+  const m = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+  const root = document.documentElement;
+  try {
+    if (m === "system") localStorage.removeItem("theme");
+    else localStorage.setItem("theme", m);
+  } catch {}
+  if (m === "system") delete root.dataset.theme;
+  else root.dataset.theme = m;
+  window.dispatchEvent(new Event(EVENT));
+}
+
 export function ThemeToggle({ labels }: { labels: { label: string } & Record<Mode, string> }) {
   const mode = useSyncExternalStore(subscribe, read, () => "system" as Mode);
 
@@ -33,20 +46,20 @@ export function ThemeToggle({ labels }: { labels: { label: string } & Record<Mod
     } catch {}
   }, []);
 
-  const next = () => {
-    const m = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length];
-    const root = document.documentElement;
-    try {
-      if (m === "system") localStorage.removeItem("theme");
-      else localStorage.setItem("theme", m);
-    } catch {}
-    if (m === "system") delete root.dataset.theme;
-    else root.dataset.theme = m;
-    window.dispatchEvent(new Event(EVENT));
-  };
+  // [t] cycles the theme from anywhere, except while typing
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "t" || e.metaKey || e.ctrlKey || e.altKey) return;
+      const el = e.target as HTMLElement;
+      if (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      cycle();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
-    <button type="button" onClick={next} className="navlink cursor-pointer text-muted hover:text-ink">
+    <button type="button" onClick={cycle} aria-keyshortcuts="t" className="navlink cursor-pointer text-muted hover:text-ink">
       <kbd aria-hidden="true">[t]</kbd>
       <span>
         <span className="sr-only">{labels.label}: </span>
