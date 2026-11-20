@@ -58,7 +58,7 @@ export function ApiLog() {
         const [m, path, who, code] = EVENTS[n % EVENTS.length];
         const denied = code === "403";
         return (
-          <span key={n} className="block animate-[enter_.35s_var(--ease-out-soft)]">
+          <span key={n} className="block animate-[log-in_.35s_var(--ease-out-soft)]">
             <span className="text-term-muted">{m}</span> {path.padEnd(17)}
             <span className="text-term-muted">{who.padEnd(18)}</span>
             <span className={denied ? "text-err" : "text-ok"}>{code}</span>
