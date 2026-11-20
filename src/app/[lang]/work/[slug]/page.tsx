@@ -13,6 +13,7 @@ import { ArchitectureDiagram } from "@/components/architecture";
 import { SpoilerDemo } from "@/components/spoiler-demo";
 import { CodeExcerpt } from "@/components/code-excerpt";
 import { getRepoStats } from "@/lib/github";
+import { ViewTransition } from "react";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -56,7 +57,9 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
           {dict.pages.work.label}
           {project.status === "in-progress" && <span className="text-accent-ink">· {t.wip}</span>}
         </div>
-        <h1 className="m-0 text-section font-normal">{project.name}</h1>
+        <ViewTransition name={`project-${project.name.toLowerCase()}`}>
+          <h1 className="m-0 w-fit text-section font-normal">{project.name}</h1>
+        </ViewTransition>
         <p className="mt-5 mb-0 max-w-[36ch] text-statement">{project.summary[locale]}</p>
 
         <dl className="mt-10 grid gap-x-6 gap-y-4 border-t border-line pt-5 text-card md:grid-cols-[1fr_1fr_2fr]">

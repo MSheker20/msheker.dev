@@ -122,6 +122,7 @@ export function FloatingNav({ locale, nav, status, motion, labels }: Props) {
       ref={root}
       data-site-chrome
       className="fnav text-label"
+      style={{ viewTransitionName: "floating-nav" }}
       data-show={show}
       data-open={open}
       inert={!show}

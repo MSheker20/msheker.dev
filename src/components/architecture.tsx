@@ -13,7 +13,7 @@ export function ArchitectureDiagram({ arch, locale }: { arch: Architecture; loca
   return (
     <div className="arch text-card" translate="no">
       <Node node={arch.client} locale={locale} />
-      <Edge label={arch.edgeIn[locale]} />
+      <Edge label={arch.edgeIn[locale]} step={0} />
       <div className="arch-env">
         <p className="arch-env-label brand">
           {envIcon && <BrandIcon icon={envIcon} />}
@@ -21,11 +21,11 @@ export function ArchitectureDiagram({ arch, locale }: { arch: Architecture; loca
         </p>
         <div className="arch-env-row">
           <Node node={arch.env.front} locale={locale} />
-          <Edge label={arch.env.link[locale]} />
+          <Edge label={arch.env.link[locale]} step={1} />
           <Node node={arch.env.back} locale={locale} />
         </div>
       </div>
-      <Edge label={arch.edgeOut[locale]} down />
+      <Edge label={arch.edgeOut[locale]} step={2} down />
       <ul className="arch-ext">
         {arch.external.map((n) => (
           <li key={n.name} className="flex">
@@ -57,11 +57,18 @@ function Node({ node, locale }: { node: ArchNode; locale: Locale }) {
   );
 }
 
-/** Arrow with its protocol: → beside (lg), ↓ below; a `down` edge points down at every width. */
-function Edge({ label, down }: { label: string; down?: boolean }) {
+/**
+ * Arrow with its protocol: → beside (lg), ↓ below; a `down` edge points down at every width.
+ * A request dot runs out along the arrows one after another, then the response dot runs back:
+ * `step` is the arrow's place in that path (globals.css, "request pulse").
+ */
+function Edge({ label, down, step }: { label: string; down?: boolean; step: number }) {
   return (
     <div className={`arch-edge text-label text-muted ${down ? "arch-edge-down" : ""}`}>
-      <span aria-hidden="true" className="arch-arrow" />
+      <span aria-hidden="true" className="arch-arrow" style={{ "--step": step } as React.CSSProperties}>
+        <i className="arch-req" />
+        <i className="arch-res" />
+      </span>
       <span>{label}</span>
     </div>
   );

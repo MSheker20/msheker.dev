@@ -103,6 +103,12 @@ Kurallar:
 - Kaydırmayla açılıp kapanan bölüm yok, paralaks yok.
 - Preloader yok.
 
+Faz 10 hareketleri (2026-11-20):
+- **Mimari diyagramı:** 3 sn döngü, `linear`. İstek noktası (accent) oklardan sırayla gider, yanıt noktası (`ok`) geri döner; her ok 0,5 sn. `[p]` CSS'te `html[data-motion="paused"]` ile durdurur.
+- **Isı haritası:** yalnızca ilk görünüşte, haftalar 8 ms arayla dolar (opacity + `scale(0.6)`, 0,25 sn `--ease-out-soft`). Zaten ekrandaysa ya da JS yoksa animasyon yok.
+- **Anti-Spoiler demosu:** üye görünümünde fikirler 60 ms arayla 6 px yukarıdan düşer; 403 satırı bir kez kırmızı parlar (0,7 sn).
+- **Sayfa geçişi:** React `<ViewTransition>`; proje adı karttan vaka başlığına kayar (0,32 sn), gerisi 0,2 sn çapraz geçiş. Yüzen navbar sabit kalır.
+
 ## 6. Erişilebilirlik
 
 - Odak halkası: 2px `--accent`, 3px boşluk; atlama bağlantısı ilk Tab'da görünür.

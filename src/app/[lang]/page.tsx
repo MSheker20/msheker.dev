@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, ViewTransition } from "react";
 import { ApiLog } from "@/components/api-log";
 import Image from "next/image";
 import portrait from "@/assets/portrait.webp";
@@ -146,7 +146,10 @@ function ProjectCard(props: {
       </div>
       <h3 className="mt-4 mb-1 flex justify-between gap-3 text-body font-medium">
         <span>
-          {props.name}
+          {/* morphs into the case page title (view transition) */}
+          <ViewTransition name={`project-${props.name.toLowerCase()}`}>
+            <span>{props.name}</span>
+          </ViewTransition>
           {props.badge && <span className="font-normal text-accent-ink"> · {props.badge}</span>}
         </span>
         <span aria-hidden="true" className="text-muted transition-[transform,color] duration-[250ms] group-hover:translate-x-[3px] group-hover:text-accent-ink">

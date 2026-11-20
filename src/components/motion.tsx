@@ -22,6 +22,11 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [toggle]);
 
+  // CSS loops (the architecture pulse) read the same switch: html[data-motion="paused"]
+  useEffect(() => {
+    document.documentElement.dataset.motion = paused ? "paused" : "on";
+  }, [paused]);
+
   return <MotionContext.Provider value={{ paused, toggle }}>{children}</MotionContext.Provider>;
 }
 

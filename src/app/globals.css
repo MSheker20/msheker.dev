@@ -310,6 +310,40 @@
   color: var(--brand-shown);
 }
 
+/* ---- page transitions (React <ViewTransition>): the project title morphs from its card into the
+   case page heading; the rest crossfades. Short, so clicks are never held hostage. */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.2s;
+  animation-timing-function: var(--ease-out-soft);
+}
+::view-transition-group(*) {
+  animation-duration: 0.32s;
+  animation-timing-function: var(--ease-out-soft);
+}
+/* the floating nav is the fixed point: it never moves with the page */
+::view-transition-group(floating-nav) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(floating-nav) {
+  display: none;
+}
+::view-transition-new(floating-nav) {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 /* ---- organisation logos (sections.tsx → Entries): a one-colour mask that takes the text colour */
 .org-logo {
   flex-shrink: 0;
@@ -345,10 +379,41 @@
 .heatmap i[data-l="2"] { background: color-mix(in srgb, var(--accent) 55%, var(--line)); }
 .heatmap i[data-l="3"] { background: color-mix(in srgb, var(--accent) 78%, var(--line)); }
 .heatmap i[data-l="4"] { background: var(--accent); }
+/* first view (reveal-once.tsx): weeks fill left to right, 8ms apart, ~0.7s in all */
+[data-reveal="wait"] .heatmap i {
+  opacity: 0;
+  transform: scale(0.6);
+}
+[data-reveal="in"] .heatmap i {
+  transition: opacity 0.25s var(--ease-out-soft), transform 0.25s var(--ease-out-soft);
+  transition-delay: calc(var(--w) * 8ms);
+}
 
 /* ---- Anti-Spoiler demo (spoiler-demo.tsx): each response line wipes in, top to bottom */
 .spoiler-line {
   animation: log-in 0.32s var(--ease-out-soft) both;
+}
+/* member: each idea lands from just above, 60ms apart (state indication: the data arrives) */
+.spoiler-drop {
+  animation: spoiler-drop 0.28s var(--ease-out-soft) both;
+}
+@keyframes spoiler-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+/* recipient: the 403 line flashes red once and settles (forwards, so the wait before it stays clear) */
+.spoiler-lock {
+  animation: log-in 0.32s var(--ease-out-soft) both, spoiler-lock 0.7s var(--ease-out-soft) forwards;
+}
+@keyframes spoiler-lock {
+  from {
+    background-color: color-mix(in srgb, var(--color-err) 32%, transparent);
+  }
+  to {
+    background-color: transparent;
+  }
 }
 
 /* ---- architecture diagram (architecture.tsx): top to bottom, left to right from lg */
@@ -406,7 +471,66 @@
   border-top: 5px solid var(--muted);
   border-bottom: 0;
 }
+/* request pulse: a 3s loop. The request dot crosses arrow 0, 1, 2 (0.5s each), the response dot
+   comes back 2, 1, 0. Linear, because it is constant travel. Paused by [p] and reduced motion. */
+.arch-req,
+.arch-res {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: 3s linear infinite;
+}
+.arch-req {
+  background: var(--accent);
+  animation-name: arch-down;
+  animation-delay: calc(var(--step) * 0.5s);
+}
+.arch-res {
+  background: var(--color-ok);
+  animation-name: arch-up;
+  animation-delay: calc(1.5s + (2 - var(--step)) * 0.5s);
+}
+[data-motion="paused"] .arch-req,
+[data-motion="paused"] .arch-res {
+  animation-play-state: paused;
+}
+@keyframes arch-down {
+  0% { opacity: 1; transform: translateY(0); }
+  16% { opacity: 1; transform: translateY(17px); }
+  17%, 100% { opacity: 0; transform: translateY(17px); }
+}
+@keyframes arch-up {
+  0% { opacity: 1; transform: translateY(17px); }
+  16% { opacity: 1; transform: translateY(0); }
+  17%, 100% { opacity: 0; transform: translateY(0); }
+}
+@keyframes arch-right {
+  0% { opacity: 1; transform: translateX(0); }
+  16% { opacity: 1; transform: translateX(31px); }
+  17%, 100% { opacity: 0; transform: translateX(31px); }
+}
+@keyframes arch-left {
+  0% { opacity: 1; transform: translateX(31px); }
+  16% { opacity: 1; transform: translateX(0); }
+  17%, 100% { opacity: 0; transform: translateX(0); }
+}
+
 @media (min-width: 1024px) {
+  .arch-edge:not(.arch-edge-down) .arch-req,
+  .arch-edge:not(.arch-edge-down) .arch-res {
+    left: 0;
+    top: -2px;
+  }
+  .arch-edge:not(.arch-edge-down) .arch-req {
+    animation-name: arch-right;
+  }
+  .arch-edge:not(.arch-edge-down) .arch-res {
+    animation-name: arch-left;
+  }
   .arch {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 3fr);

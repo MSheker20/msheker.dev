@@ -7,7 +7,8 @@ import { useId, useState } from "react";
 // (the JSON envelope), cmd/seed/main.go (the three ideas a member sees).
 type Labels = { as: string; member: string; recipient: string; translation: string };
 type Role = "member" | "recipient";
-type Line = { text: string; tone?: "muted" | "ok" | "err" | "prompt" };
+/** fx: "drop" lands an idea from above (member); "lock" flashes the 403 once (recipient). */
+type Line = { text: string; tone?: "muted" | "ok" | "err" | "prompt"; fx?: "drop" | "lock" };
 
 const ROUTE = "/api/v1/groups/:id/ideas";
 
@@ -17,15 +18,15 @@ const script: Record<Role, Line[]> = {
     { text: "  GroupAccess: member ✓ → GetIdeas", tone: "muted" },
     { text: "HTTP/1.1 200 OK", tone: "ok" },
     { text: '{ "success": true, "data": [' },
-    { text: '    { "title": "Stanley Klasik Vakumlu Termos 1 L", "estimated_price": "1450" },' },
-    { text: '    { "title": "Hario V60 Demleme Seti", "estimated_price": "1100" },' },
-    { text: '    { "title": "Katlanır Trekking Batonu (çift)", "estimated_price": "850" }' },
+    { text: '    { "title": "Stanley Klasik Vakumlu Termos 1 L", "estimated_price": "1450" },', fx: "drop" },
+    { text: '    { "title": "Hario V60 Demleme Seti", "estimated_price": "1100" },', fx: "drop" },
+    { text: '    { "title": "Katlanır Trekking Batonu (çift)", "estimated_price": "850" }', fx: "drop" },
     { text: "] }" },
   ],
   recipient: [
     { text: "$ curl -H 'Authorization: Bearer $RECIPIENT' " + ROUTE, tone: "prompt" },
     { text: "  GroupAccess: group.target_user_id == user_id → abort", tone: "muted" },
-    { text: "HTTP/1.1 403 Forbidden", tone: "err" },
+    { text: "HTTP/1.1 403 Forbidden", tone: "err", fx: "lock" },
     { text: '{ "success": false,' },
     { text: '  "error": "Erişim engellendi: Bu hediye grubu senin için oluşturulmuş bir sürprizdir." }' },
   ],
@@ -69,7 +70,12 @@ export function SpoilerDemo({ labels }: { labels: Labels }) {
         {/* key: the response wipes in again on every switch */}
         <pre key={role} aria-live="polite" className="m-0 overflow-x-auto px-4 py-3.5 font-mono text-[12.5px] leading-[1.7]">
           {lines.map((l, i) => (
-            <span key={i} className={`spoiler-line block ${l.tone ? toneClass[l.tone] : ""}`} style={{ animationDelay: `${i * 60}ms` }}>
+            <span
+              key={i}
+              className={`${l.fx === "drop" ? "spoiler-drop" : "spoiler-line"} ${l.fx === "lock" ? "spoiler-lock" : ""} block ${l.tone ? toneClass[l.tone] : ""}`}
+              // the lock flash starts once its line has wiped in
+              style={{ animationDelay: l.fx === "lock" ? `${i * 60}ms, ${i * 60 + 320}ms` : `${i * 60}ms` }}
+            >
               {l.text}
             </span>
           ))}
