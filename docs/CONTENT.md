@@ -34,7 +34,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - Rol: ✅ tek geliştirici (tasarım, backend, frontend, dağıtım)
 - Problem: Ortak hediye planlarken sürpriz kolayca bozuluyor. Fikirler, bütçe ve oylar WhatsApp gruplarında kayboluyor.
 - Yaklaşım: Grup bütçesi ve kişi başı tutar; Trendyol, Amazon TR ve Hepsiburada linklerinden otomatik ürün önizlemesi; Gemini ile öneri; canlı oylama (SSE); bildirimler. Anti-Spoiler: hedef kişi sunucu tarafında her uçta 403 alıyor.
-- Sonuç ve rakamlar: canlıda (covertgift.msheker.dev) · 123 commit · 40 Go test dosyası (gerçek PostgreSQL ile entegrasyon testleri) · TR/EN · açık/koyu tema · mobil uyumlu
+- Sonuç ve rakamlar: canlıda (covertgift.msheker.dev) · 127 commit (2026-11-20, GitHub) · 40 Go test dosyası (gerçek PostgreSQL ile entegrasyon testleri) · TR/EN · açık/koyu tema · mobil uyumlu
 - Teknolojiler: Go 1.27, Gin, PostgreSQL 17, React 19, TypeScript, SSE, Gemini API, Docker, nginx, Azure Container Apps
 - Bağlantılar: https://covertgift.msheker.dev · https://github.com/MSheker20/CovertGift
 - Görseller: repoda hazır (home-dark, home-light, group-dark, mobile-dark, login-dark)

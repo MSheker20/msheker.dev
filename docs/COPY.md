@@ -67,7 +67,7 @@ just coding.
 3. **Canlı ama sızdırmayan güncellemeler.** SSE olayı veri taşımaz, sadece "değişti" der; istemci veriyi zaten korunan uçlardan yeniden çeker. Böylece canlılık, yetki kurallarını delmiyor.
 4. **Maliyet bilinci.** Azure Container Apps; kullanılmadığında ortamı kapatıp açtım, soğuk başlangıç için "sunucu uyanıyor" ekranı ekledim.
 
-**Sonuç (gerçek rakamlar):** canlıda · 123 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.
+**Sonuç (gerçek rakamlar):** canlıda · 127 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.
 **Yığın:** Go 1.27 · Gin · GORM · PostgreSQL 17 · React 19 · TypeScript · TanStack Query · Tailwind 4 · SSE · Gemini · Docker · nginx · Azure Container Apps
 **Görseller:** CovertGift reposundaki `docs/screenshots/` (5 adet)
 
@@ -83,3 +83,27 @@ just coding.
 ## 7. İletişim CTA 🟡
 > EN: `$ mail hello@msheker.dev` — Have something to build? Write to me.
 > TR: Birlikte bir şey mi yapalım? Yaz bana.
+
+## 8. Faz 9 arayüz metinleri 🟡 onay bekliyor (2026-11-20)
+Kaynak: `src/i18n/dictionaries/{en,tr}.json` ve `src/content/cases.ts`. Değişiklik istenirse oradan düzeltilir.
+
+| Yer | EN | TR |
+|---|---|---|
+| Yüzen navbar, ekran okuyucu adı | Quick navigation | Hızlı gezinti |
+| Yüzen navbar, mobil buton | Menu / Close menu | Menü / Menüyü kapat |
+| Ana sayfa, ısı haritası | {n} commits in the last year, public repositories | Son bir yılda {n} commit, açık repolar |
+| Vaka sayfası, bölüm adları | Anti-Spoiler · Architecture | Anti-Spoiler · Mimari |
+| Demo, anahtar | Request as: Group member / The recipient | İsteği atan: Grup üyesi / Hediye alınan kişi |
+| Demo, 403 çevirisi (yalnız EN) | Access blocked: this gift group is a surprise made for you. | (gösterilmez; asıl mesaj zaten Türkçe) |
+| Kod parçası bağlantısı | View on GitHub | GitHub'da gör |
+
+Mimari diyagramındaki kutu metinleri (CovertGift reposundan çıkarıldı, `cases.ts` → `architecture`):
+
+| Kutu | EN | TR |
+|---|---|---|
+| Browser | React 19 single-page app | React 19 tek sayfa uygulama |
+| covertgift-web | nginx · the only public door; Serves the built app, proxies /api; Dev routes answer 403 here; Invite tokens kept out of the logs | nginx · dışa açık tek kapı; Derlenmiş uygulamayı sunar, /api'yi iletir; Geliştirme uçları burada 403 döner; Davet token'ları loga yazılmaz |
+| covertgift-server | Go + Gin API · internal only; Anti-Spoiler: 403 for the recipient; Live updates over SSE, one replica; Hourly reminder job | Go + Gin API · yalnızca iç ağ; Anti-Spoiler: hedef kişiye 403; SSE ile canlı güncelleme, tek kopya; Saatlik hatırlatma görevi |
+| PostgreSQL | Azure managed server; Schema migrated at start-up | Azure yönetilen sunucu; Şema açılışta güncellenir |
+| Gemini API | Gift suggestions; Falls back to a lighter model on 503 | Hediye önerileri; 503'te daha hafif modele geçer |
+| Store pages | Link previews; Trendyol, Amazon TR, Hepsiburada | Link önizlemeleri; Trendyol, Amazon TR, Hepsiburada |

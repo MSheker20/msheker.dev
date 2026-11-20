@@ -83,7 +83,7 @@ export const cases: CaseStudy[] = [
       tr: "Canlıda · {commits} commit · {tests} Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
     },
     // {commits} and {tests} above: live from GitHub (src/lib/github.ts), these when it can't be reached
-    stats: { repo: "CovertGift", commits: 123, goTestFiles: 40 },
+    stats: { repo: "CovertGift", commits: 127, goTestFiles: 40 },
     demo: "anti-spoiler",
     // Verbatim from the CovertGift repo at the commit in the url; refresh both together.
     code: {

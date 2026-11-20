@@ -80,8 +80,8 @@ export const cvProjects: CvProject[] = [
     stack: ["Go", "Gin", "PostgreSQL", "React", "TypeScript", "SSE", "Docker", "Azure Container Apps"],
     bullets: [
       {
-        en: "Group gift planner, live in production: 123 commits, 40 Go test files, Turkish and English, light and dark themes.",
-        tr: "Ortak hediye planlayıcı, canlıda: 123 commit, 40 Go test dosyası, Türkçe ve İngilizce, açık ve koyu tema.",
+        en: "Group gift planner, live in production: 127 commits, 40 Go test files, Turkish and English, light and dark themes.",
+        tr: "Ortak hediye planlayıcı, canlıda: 127 commit, 40 Go test dosyası, Türkçe ve İngilizce, açık ve koyu tema.",
       },
       {
         en: "Anti-Spoiler enforced on the server: the recipient gets 403 on every route, guarded by integration tests against a real PostgreSQL.",

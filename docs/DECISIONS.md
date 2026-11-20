@@ -26,7 +26,7 @@ Barındırma ile aynı yerde, ücretsiz katman, çerez banner'ı gerektirmiyor. 
 ## D-007 ✅ İletişim formu v1'de yok
 `mailto` + sosyal bağlantılar. Spam koruması ve backend gerektirmiyor.
 
-## D-008 ⏳ Alan adına bağlı e-posta
+## D-008 ✅ Alan adına bağlı e-posta
 `hello@msheker.dev` adresine gelen postalar mustafa652seker@gmail.com'a yönlendirilecek (ör. Cloudflare Email Routing). ✅ Kuruldu (2026-11-20). Sitede yalnızca `hello@msheker.dev` görünür; CV ve PDF'te Gmail adresi kullanılır, `hello@` CV'ye girmez (`site.cvEmail`).
 
 ## D-009 ✅ Görsel yön: "Terminal editoryal" (2026-11-20)
