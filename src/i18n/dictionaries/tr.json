@@ -65,6 +65,19 @@
       "label": "04 / İletişim",
       "title": "Birlikte bir şey mi yapalım? Yaz bana.",
       "email": "E-posta"
+    },
+    "case": {
+      "role": "Rol",
+      "period": "Süre",
+      "problem": "Problem",
+      "approach": "Yaklaşım",
+      "outcome": "Sonuç",
+      "next": "Sırada",
+      "stack": "Yığın",
+      "live": "Canlı uygulamayı aç",
+      "repo": "Kodu incele",
+      "back": "Tüm işler",
+      "wip": "devam ediyor"
     }
   },
   "notFound": {

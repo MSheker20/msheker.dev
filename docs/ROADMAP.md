@@ -41,7 +41,7 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 
 ## Faz 4 · Sayfalar
 - [x] Ana sayfa: V4 birebir (hero + ASCII portre + kayan isim; Work ekranı + canlı API logu + AlterF1 terminali), `[p]` durdurma
-- [ ] `/work` + `/work/[slug]` (MDX)
+- [x] `/work` + `/work/[slug]`: CovertGift ve AlterF1 vaka sayfaları (TS veri, D-012); EN metin onayı bekliyor
 - [ ] `/cv` + yazdırma stili + PDF
 - [ ] `/about`, `/contact`, `404`
 
@@ -69,6 +69,6 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 - [ ] Yayın 🚀
 
 ## Faz 8 · Bakım (sürekli)
-- Yeni proje: `content/projects/<slug>.mdx` ekle
+- Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
 - CV güncelleme: `content/cv.ts` düzenle; PDF otomatik yenilenir
 - Skill güncellemeleri: üç ayda bir `npx skills check` (bkz. SKILLS.md)

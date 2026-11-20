@@ -65,6 +65,19 @@
       "label": "04 / Contact",
       "title": "Have something to build? Write to me.",
       "email": "Email"
+    },
+    "case": {
+      "role": "Role",
+      "period": "Period",
+      "problem": "Problem",
+      "approach": "Approach",
+      "outcome": "Outcome",
+      "next": "What's next",
+      "stack": "Stack",
+      "live": "Open the live app",
+      "repo": "View the code",
+      "back": "All work",
+      "wip": "in progress"
     }
   },
   "notFound": {

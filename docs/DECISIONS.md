@@ -70,3 +70,9 @@ Next 16 rehberindeki kalıp: `app/[lang]` kök layout + `next/root-params` ile o
 - EN önek olmadan (`/work`), TR `/tr` altında (`/tr/work`); `/en/...` adresleri kalıcı olarak (308) öneksiz adrese yönleniyor.
 - Sözlük tipi `en.json`'dan çıkıyor; `tr.json`'da eksik anahtar TypeScript hatası verir.
 - Bilinmeyen yollar `[lang]/[...rest]` ile yakalanıp dile uygun 404 gösteriliyor.
+
+## D-012 ✅ Vaka çalışmaları MDX yerine TS veri dosyasında (2026-11-20)
+`src/content/cases.ts`: her vaka EN/TR alanlarıyla tek dosyada. Ek bağımlılık yok, sözlükler gibi tip güvenli; iki proje için MDX'in getirisi yok. Proje sayısı artar ya da uzun anlatım gerekirse MDX'e geçilir.
+- Rota: `/[lang]/work/[slug]`, `generateStaticParams` ile her iki dilde statik.
+- Görseller `public/work/<slug>/` altında; CovertGift için 3 ekran görüntüsü (repo `docs/screenshots/`).
+- EN metin COPY.md §6'daki TR taslaktan çevrildi; onay bekliyor.

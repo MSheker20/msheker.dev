@@ -77,7 +77,7 @@ export default async function Home() {
           </div>
           <div className="grid gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <ProjectCard
-              href={localePath(locale, "/work")}
+              href={localePath(locale, "/work/covertgift")}
               ariaLabel={dict.home.logLabel}
               bar="covertgift · api.log"
               name={covertgift.name}
@@ -87,7 +87,7 @@ export default async function Home() {
               <ApiLog />
             </ProjectCard>
             <ProjectCard
-              href={localePath(locale, "/work")}
+              href={localePath(locale, "/work/alterf1")}
               bar="alterf1"
               name={alterf1.name}
               badge={dict.home.wip}
