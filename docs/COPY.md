@@ -49,8 +49,8 @@ just coding.
 
 ## 5. Deneyim
 **PauSiber** · Board Member · 2024 → present 🟡
-> EN: Help run the student community's events and contributed to organizing its JavaScript workshops.
-> TR: Topluluğun etkinliklerinin yürütülmesinde ve JavaScript atölyelerinin düzenlenmesinde görev alıyorum.
+> EN: Take part in organizing and running the community's events.
+> TR: Topluluğun etkinliklerinin yürütülmesinde ve düzenlenmesinde görev alıyorum.
 
 ## 6. Vaka çalışmaları (ham metin)
 

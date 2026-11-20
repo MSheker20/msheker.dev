@@ -25,7 +25,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 ✅ Staj veya iş deneyimi henüz yok; bölüm projeler ve topluluk ağırlıklı kurulacak.
 - ✅ **PauSiber**, Yönetim Kurulu Üyesi · 2024 → devam ediyor
   - ❓ Topluluğun tam adı (Pamukkale Üniversitesi Siber Güvenlik Topluluğu mu?)
-  - ✅ Atölyelerden kısaca bahsedilecek; "eğitmen" unvanı **kullanılmayacak**. Örnek: "Topluluk içinde JavaScript atölyelerinin düzenlenmesine katkı verdim." 
+  - ✅ Not: etkinliklerin yürütülmesi ve düzenlenmesi. JavaScript atölyesi ve "eğitmen" unvanı **kullanılmayacak** (2026-11-20)
 
 ## 4. Projeler
 
