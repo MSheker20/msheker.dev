@@ -18,9 +18,13 @@ function subscribe(cb: () => void) {
 /** Runs before paint (inlined in <head>) so a stored theme never flashes. */
 export const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
-/** Cycles system → light → dark, stores the choice and tells subscribers. */
+/** Cycles system → light → dark. */
 function cycle() {
-  const m = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+  setTheme(ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length]);
+}
+
+/** Applies a theme, stores the choice and tells subscribers (also used by the command palette). */
+export function setTheme(m: Mode) {
   const root = document.documentElement;
   try {
     if (m === "system") localStorage.removeItem("theme");

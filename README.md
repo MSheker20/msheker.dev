@@ -61,6 +61,6 @@ Live GitHub numbers (the heatmap, CovertGift's commit and test counts: `src/lib/
 
 ## Notes
 
-- Keyboard: `1`–`4` jump to sections, `s` opens settings, `t` cycles the theme, `p` pauses motion.
+- Keyboard: `1`–`4` jump to sections, `/` or `⌘K` opens the command palette, `s` opens settings, `t` cycles the theme, `p` pauses motion.
 - The site uses `hello@msheker.dev`; the PDF CV uses the personal address (D-008).
 - The project sits in an iCloud-synced folder, which sometimes leaves `* 2.ts` copies in `.next/`; `tsconfig.json` ignores them.

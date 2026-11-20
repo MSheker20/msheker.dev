@@ -106,6 +106,31 @@
     "built": "Built with Next.js, set in Geist Mono.",
     "settings": "Settings"
   },
+  "palette": {
+    "label": "Command menu",
+    "open": "Commands",
+    "placeholder": "type a command…",
+    "empty": "command not found",
+    "hint": "↑↓ move · enter run · esc close",
+    "cmds": {
+      "home": "Back to the start",
+      "work": "Projects",
+      "about": "About me",
+      "cv": "Education, experience, skills",
+      "contact": "Email and profiles",
+      "covertgift": "CovertGift case study",
+      "alterf1": "AlterF1 case study",
+      "pdf": "Download the PDF CV",
+      "light": "Light theme",
+      "dark": "Dark theme",
+      "system": "Follow the system theme",
+      "lang": "Switch to Türkçe",
+      "motion": "Pause or play motion",
+      "mail": "Write an email",
+      "github": "GitHub profile",
+      "linkedin": "LinkedIn profile"
+    }
+  },
   "motion": {
     "pause": "Pause motion",
     "play": "Play motion",

@@ -106,6 +106,31 @@
     "built": "Next.js ile yapıldı, Geist Mono ile dizildi.",
     "settings": "Ayarlar"
   },
+  "palette": {
+    "label": "Komut menüsü",
+    "open": "Komutlar",
+    "placeholder": "bir komut yaz…",
+    "empty": "komut bulunamadı",
+    "hint": "↑↓ gez · enter çalıştır · esc kapat",
+    "cmds": {
+      "home": "Başa dön",
+      "work": "Projeler",
+      "about": "Hakkımda",
+      "cv": "Eğitim, deneyim, yetkinlikler",
+      "contact": "E-posta ve profiller",
+      "covertgift": "CovertGift vaka çalışması",
+      "alterf1": "AlterF1 vaka çalışması",
+      "pdf": "PDF CV'yi indir",
+      "light": "Açık tema",
+      "dark": "Koyu tema",
+      "system": "Sistem temasını kullan",
+      "lang": "Switch to English",
+      "motion": "Hareketi durdur ya da başlat",
+      "mail": "E-posta yaz",
+      "github": "GitHub profili",
+      "linkedin": "LinkedIn profili"
+    }
+  },
   "motion": {
     "pause": "Hareketi durdur",
     "play": "Hareketi başlat",

@@ -101,3 +101,6 @@ Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı
 - `script-src` ve `style-src` `'unsafe-inline'` içerir: statik (SSG) sayfalar Next'in satır içi script'lerini taşır ve istek başına nonce alamaz. Nonce için sayfaların dinamik olması gerekir; bu site için değmez.
 - Siteye yeni bir dış kaynak (font, görsel, analitik, gömme) eklenirse CSP'ye o origin eklenmeli, yoksa tarayıcı engeller.
 - `.github/dependabot.yml`: npm ve GitHub Actions haftalık (pazartesi); minor/patch tek PR'da gruplu, major'lar tek tek. Her PR'da CI çalışır.
+
+## D-018 ✅ Komut paleti (2026-11-20)
+`/` ya da `⌘K` / `Ctrl+K` ile açılan terminal tarzı palet (`src/components/command-palette.tsx`). Yerel `<dialog>` (odak içeride kalır, Escape kapatır, arka plan erişilemez, odak geri döner) + combobox/listbox rolleri. Komutlar İngilizce (`cd work`, `open covertgift`, `get cv.pdf`, `theme dark`, `lang tr`, `motion`, `mail`, `open github`); açıklamalar dile göre. Açılış animasyonu yok (klavyeyle açılan, anında gelmesi gereken bir şey). Görünür girişler: yüzen navbarda `[/] Commands`, mobil menüde ve ayarlar kartında.

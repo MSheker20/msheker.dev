@@ -8,6 +8,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { PauseButton } from "./motion";
 import { basePath, NavLinks } from "./nav-links";
 import { PixelWordmark } from "./pixel-wordmark";
+import { PaletteButton } from "./command-palette";
 
 type Props = {
   locale: Locale;
@@ -16,6 +17,8 @@ type Props = {
   motion: Dictionary["motion"];
   /** section labels, e.g. "01 / Work" */
   labels: { work: string; about: string; cv: string; contact: string };
+  /** label of the [/] command palette button */
+  palette: string;
 };
 
 const SECTIONS = ["work", "about", "cv", "contact"] as const;
@@ -29,7 +32,7 @@ const HOVER = "(hover: hover) and (pointer: fine)";
  * small bar (wordmark · current section) that opens into the full nav on hover or focus.
  * Phones: always shown (the grid header is not drawn there) and opens as a menu on tap.
  */
-export function FloatingNav({ locale, nav, status, motion, labels }: Props) {
+export function FloatingNav({ locale, nav, status, motion, labels, palette }: Props) {
   const pathname = usePathname();
   const route = basePath(pathname);
   const [phone, setPhone] = useState(false);
@@ -155,9 +158,7 @@ export function FloatingNav({ locale, nav, status, motion, labels }: Props) {
               <span>{open ? nav.close : nav.menu}</span>
             </button>
           ) : (
-            <span aria-hidden="true" className="pr-2 text-muted">
-              [1]–[4]
-            </span>
+            <PaletteButton label={palette} className="pr-2" />
           )}
         </div>
         <div id={id} className="fnav-panel" inert={!open}>
@@ -178,6 +179,7 @@ export function FloatingNav({ locale, nav, status, motion, labels }: Props) {
                   {status}
                 </p>
                 <PauseButton labels={motion} />
+                {phone && <PaletteButton label={palette} />}
               </div>
             </div>
           </div>

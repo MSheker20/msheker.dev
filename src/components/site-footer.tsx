@@ -1,6 +1,7 @@
 import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { PaletteButton } from "./command-palette";
 import { PauseButton } from "./motion";
 import { LangSwitch } from "./nav-links";
 import { SettingsMenu, SettingsRow } from "./settings-menu";
@@ -25,6 +26,9 @@ export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale 
         </SettingsRow>
         <SettingsRow label={dict.motion.label}>
           <PauseButton labels={dict.motion} />
+        </SettingsRow>
+        <SettingsRow label={dict.palette.open}>
+          <PaletteButton label={dict.palette.label} />
         </SettingsRow>
       </SettingsMenu>
     </>

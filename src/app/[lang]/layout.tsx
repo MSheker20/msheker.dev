@@ -4,11 +4,13 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { MotionProvider } from "@/components/motion";
+import { CommandPalette } from "@/components/command-palette";
 import { FloatingNav } from "@/components/floating-nav";
 import { NavShortcuts } from "@/components/nav-links";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { themeScript } from "@/components/theme-toggle";
+import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -65,8 +67,17 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
             status={dict.status.now}
             motion={dict.motion}
             labels={{ work: dict.pages.work.label, about: dict.pages.about.label, cv: dict.pages.cv.label, contact: dict.pages.contact.label }}
+            palette={dict.palette.open}
           />
           <NavShortcuts locale={locale} />
+          <CommandPalette
+            locale={locale}
+            labels={dict.palette}
+            email={site.email}
+            github={site.links.github}
+            linkedin={site.links.linkedin}
+            projects={projects.map((p) => ({ slug: p.slug, name: p.name }))}
+          />
           <main id="main" className="flex flex-1 flex-col">
             {children}
           </main>

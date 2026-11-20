@@ -107,3 +107,14 @@ Mimari diyagramındaki kutu metinleri (CovertGift reposundan çıkarıldı, `cas
 | PostgreSQL | Azure managed server; Schema migrated at start-up | Azure yönetilen sunucu; Şema açılışta güncellenir |
 | Gemini API | Gift suggestions; Falls back to a lighter model on 503 | Hediye önerileri; 503'te daha hafif modele geçer |
 | Store pages | Link previews; Trendyol, Amazon TR, Hepsiburada | Link önizlemeleri; Trendyol, Amazon TR, Hepsiburada |
+
+## 9. Komut paleti metinleri 🟡 onay bekliyor (2026-11-20)
+Kaynak: `src/i18n/dictionaries/{en,tr}.json` → `palette`. Komutların kendisi (`cd work`, `theme dark`…) terminal gibi İngilizce kalır.
+
+| Yer | EN | TR |
+|---|---|---|
+| Başlık / buton | Command menu · Commands | Komut menüsü · Komutlar |
+| Giriş alanı | type a command… | bir komut yaz… |
+| Bulunamadı | command not found | komut bulunamadı |
+| İpucu (yalnız masaüstü) | ↑↓ move · enter run · esc close | ↑↓ gez · enter çalıştır · esc kapat |
+| Açıklamalar | Back to the start · Projects · About me · Education, experience, skills · Email and profiles · CovertGift case study · AlterF1 case study · Download the PDF CV · Light theme · Dark theme · Follow the system theme · Switch to Türkçe · Pause or play motion · Write an email · GitHub profile · LinkedIn profile | Başa dön · Projeler · Hakkımda · Eğitim, deneyim, yetkinlikler · E-posta ve profiller · CovertGift vaka çalışması · AlterF1 vaka çalışması · PDF CV'yi indir · Açık tema · Koyu tema · Sistem temasını kullan · Switch to English · Hareketi durdur ya da başlat · E-posta yaz · GitHub profili · LinkedIn profili |

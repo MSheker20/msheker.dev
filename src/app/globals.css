@@ -344,6 +344,46 @@
   }
 }
 
+/* ---- command palette (command-palette.tsx): a native modal dialog, terminal-styled, no open animation */
+.palette {
+  width: min(560px, calc(100% - 2 * var(--spacing-pad)));
+  max-width: none;
+  margin: max(12vh, 64px) auto auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: var(--text-card);
+}
+.palette::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+.palette .term {
+  box-shadow: 0 18px 50px rgb(0 0 0 / 0.35);
+}
+.palette-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.palette-option[aria-selected="true"] {
+  background: var(--color-term-line);
+}
+.palette-option[aria-selected="true"] > span:first-child::before {
+  content: "› ";
+  color: var(--color-term-accent);
+}
+@media (max-width: 767.98px) {
+  .palette-option {
+    min-height: 44px;
+  }
+}
+
 /* ---- organisation logos (sections.tsx → Entries): a one-colour mask that takes the text colour */
 .org-logo {
   flex-shrink: 0;
