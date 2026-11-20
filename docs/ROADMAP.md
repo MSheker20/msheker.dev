@@ -12,13 +12,13 @@ Her faz bir **çıktı** ve **çıkış kriteri** ile biter. Bir faz bitmeden so
 Çıktı: doldurulmuş [CONTENT.md](CONTENT.md) ve [COPY.md](COPY.md) (konumlandırma, hero, biyografi, vaka çalışmaları)
 - [x] CONTENT.md: GitHub, CovertGift reposu ve kullanıcıyla soru-cevap ile dolduruldu
 - [x] Öne çıkan projeler: CovertGift (ekran görüntüleri hazır) + AlterF1 (devam ediyor)
-- [~] Profil fotoğrafı: geçici Instagram görseli var; gerçek fotoğraf Faz 7'den önce şart
+- [x] Profil fotoğrafı: kullanıcının gönderdiği fotoğraf, hero'da yarı foto yarı kod portre olarak (2026-11-20)
 - [x] Konumlandırma ve ses tonu: "backend-leaning full-stack · just coding" (COPY.md §1–4)
 - [x] Kararlar: dil TR+EN, Next.js, Vercel, Vercel Analytics, görsel yön (D-003…D-009)
 
 Çıkış kriteri: hero cümlesi + vaka çalışmalarının ham metni hazır. ✅ (2 öne çıkan proje; üçüncüsü gerekmedi)
 
-Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 ekran görüntüsü~~ terminal kartı · gerçek profil fotoğrafı (Faz 7) · ~~`hello@msheker.dev` yönlendirmesi~~ ✅ kuruldu (D-008)
+Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 ekran görüntüsü~~ terminal kartı · ~~gerçek profil fotoğrafı~~ ✅ · ~~`hello@msheker.dev` yönlendirmesi~~ ✅ kuruldu (D-008)
 
 ## Faz 2 · Sanat yönetimi ✅ (2026-11-20)
 Çıktı: seçilmiş görsel yön + token'lar (renk, tip ölçeği, boşluk, hareket)
