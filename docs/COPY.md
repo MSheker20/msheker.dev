@@ -84,7 +84,7 @@ just coding.
 > EN: `$ mail hello@msheker.dev` — Have something to build? Write to me.
 > TR: Birlikte bir şey mi yapalım? Yaz bana.
 
-## 8. Faz 9 arayüz metinleri 🟡 onay bekliyor (2026-11-20)
+## 8. Faz 9 arayüz metinleri ✅ onaylandı (2026-11-20)
 Kaynak: `src/i18n/dictionaries/{en,tr}.json` ve `src/content/cases.ts`. Değişiklik istenirse oradan düzeltilir.
 
 | Yer | EN | TR |
