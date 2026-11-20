@@ -1,6 +1,7 @@
 import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { PauseButton } from "./motion";
 import { LangSwitch } from "./nav-links";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -17,10 +18,11 @@ export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale 
         <a className="navlink text-muted hover:text-ink" href={site.links.linkedin}>
           <span>LinkedIn ↗</span>
         </a>
-        {/* language and theme live in the Status cell on desktop; the footer carries them on phones */}
+        <LangSwitch locale={locale} label={dict.language.switchTo} />
+        <ThemeToggle labels={dict.theme} />
+        {/* the Status cell (and its pause control) is hidden on phones */}
         <span className="contents md:hidden">
-          <LangSwitch locale={locale} label={dict.language.switchTo} />
-          <ThemeToggle labels={dict.theme} />
+          <PauseButton labels={dict.motion} />
         </span>
       </div>
     </footer>

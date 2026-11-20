@@ -2,14 +2,14 @@ import Link from "next/link";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { PixelWordmark } from "./pixel-wordmark";
-import { LangSwitch, NavLinks } from "./nav-links";
-import { ThemeToggle } from "./theme-toggle";
+import { PauseButton } from "./motion";
+import { NavLinks } from "./nav-links";
 
 /** Crop-mark nav grid (design/hero v4): wordmark · Index · Docs · Status. */
 export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const { nav } = dict;
   return (
-    <header className="wrap grid grid-cols-[auto_1fr_1fr] pt-1.5 text-label md:grid-cols-4">
+    <header className="wrap grid h-[var(--header-h)] grid-cols-[auto_1fr_1fr] pt-1.5 text-label md:grid-cols-4">
       <div className="crop px-2.5 py-2.5 md:px-4">
         <Link href={localePath(locale)} aria-label={nav.home} className="inline-flex min-h-11 items-center text-ink transition-colors hover:text-accent-ink">
           <PixelWordmark className="h-auto w-[82px] md:w-auto" />
@@ -31,10 +31,7 @@ export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale 
           <span aria-hidden="true" className="mr-2 inline-block size-[7px] rounded-full bg-ok" />
           {dict.status.now}
         </p>
-        <div className="flex flex-wrap gap-x-4">
-          <LangSwitch locale={locale} label={dict.language.switchTo} />
-          <ThemeToggle labels={dict.theme} />
-        </div>
+        <PauseButton labels={dict.motion} />
       </div>
     </header>
   );

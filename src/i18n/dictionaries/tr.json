@@ -33,7 +33,10 @@
     "statementStrong": "Backend ağırlıklı full-stack geliştirici.",
     "statementDim": "Go ile API yazıyor, üstüne arayüzü kuruyor ve ikisini de canlıya alıyorum. Sadece kod.",
     "seeWork": "İşlere bak",
-    "getCv": "CV'yi al"
+    "getCv": "CV'yi al",
+    "allRepos": "Tüm repolar GitHub'da ↗",
+    "wip": "devam ediyor",
+    "logLabel": "CovertGift: Anti-Spoiler kuralının nasıl çalıştığına bak"
   },
   "pages": {
     "work": {
@@ -70,5 +73,13 @@
   },
   "footer": {
     "built": "Next.js ile yapıldı, Geist Mono ile dizildi."
+  },
+  "motion": {
+    "pause": "Hareketi durdur",
+    "play": "Hareketi başlat"
+  },
+  "portrait": {
+    "label": "Mustafa Şeker'in ASCII karakterlerle çizilmiş portresi",
+    "title": "~/portrait.txt — cat · denizli, tr · uzaktan"
   }
 }

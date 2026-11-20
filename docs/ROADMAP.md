@@ -40,7 +40,7 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 Çıkış kriteri: boş ama temalı sayfalar önizlemede açılıyor.
 
 ## Faz 4 · Sayfalar
-- [ ] Ana sayfa
+- [x] Ana sayfa: V4 birebir (hero + ASCII portre + kayan isim; Work ekranı + canlı API logu + AlterF1 terminali), `[p]` durdurma
 - [ ] `/work` + `/work/[slug]` (MDX)
 - [ ] `/cv` + yazdırma stili + PDF
 - [ ] `/about`, `/contact`, `404`

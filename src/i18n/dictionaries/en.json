@@ -33,7 +33,10 @@
     "statementStrong": "Backend-leaning full-stack developer.",
     "statementDim": "I write APIs in Go, put an interface on top, and ship both. Just coding.",
     "seeWork": "See the work",
-    "getCv": "Get the CV"
+    "getCv": "Get the CV",
+    "allRepos": "All repositories on GitHub ↗",
+    "wip": "in progress",
+    "logLabel": "CovertGift: see how the Anti-Spoiler rule works"
   },
   "pages": {
     "work": {
@@ -70,5 +73,13 @@
   },
   "footer": {
     "built": "Built with Next.js, set in Geist Mono."
+  },
+  "motion": {
+    "pause": "Pause motion",
+    "play": "Play motion"
+  },
+  "portrait": {
+    "label": "Portrait of Mustafa Şeker drawn in ASCII characters",
+    "title": "~/portrait.txt — cat · denizli, tr · remote"
   }
 }

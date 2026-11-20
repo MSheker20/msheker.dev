@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
+import { MotionProvider } from "@/components/motion";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { themeScript } from "@/components/theme-toggle";
@@ -48,11 +49,13 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         <a href="#main" className="absolute -top-16 left-3 z-50 bg-ink px-3.5 py-2.5 text-bg focus:top-3">
           {dict.skip}
         </a>
-        <SiteHeader dict={dict} locale={locale} />
-        <main id="main" className="flex flex-1 flex-col">
-          {children}
-        </main>
-        <SiteFooter dict={dict} locale={locale} />
+        <MotionProvider>
+          <SiteHeader dict={dict} locale={locale} />
+          <main id="main" className="flex flex-1 flex-col">
+            {children}
+          </main>
+          <SiteFooter dict={dict} locale={locale} />
+        </MotionProvider>
       </body>
     </html>
   );
