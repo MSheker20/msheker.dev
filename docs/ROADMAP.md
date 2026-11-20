@@ -64,7 +64,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 ## Faz 7 · Yayın
 - [x] Vercel'e bağlama ve ilk dağıtım: proje `msheker-dev` (Hobby), https://msheker-dev.vercel.app, `main`'e her push otomatik dağıtılır (2026-11-20)
-- [ ] msheker.dev alan adı → Vercel, HTTPS
+- [x] msheker.dev alan adı → Vercel, HTTPS (Let's Encrypt); `www` → 308 → kök; Cloudflare'de iki CNAME, proxy kapalı (2026-11-20)
 - [ ] Analitik
 - [ ] Son mobil ve tarayıcı testi (`ecc:browser-qa`)
 - [ ] Yayın 🚀
