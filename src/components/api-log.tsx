@@ -46,26 +46,48 @@ export function ApiLog() {
   const total = reduced ? EVENTS.length : count;
   const lines = Array.from({ length: Math.min(total, MAX) }, (_, k) => total - Math.min(total, MAX) + k);
 
+  // Like a real terminal, lines are anchored to the bottom from the first one: every new line pushes
+  // the rest up by exactly one line, so filling up and scrolling look the same (no jump when full).
+  // The push is a 0.3s transform on the stack (compositor only); the new line still wipes in.
+  const stack = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = stack.current;
+    const last = el?.lastElementChild as HTMLElement | null;
+    if (!el || !last || reduced || count <= 2) return;
+    el.animate([{ transform: `translateY(${last.offsetHeight}px)` }, { transform: "translateY(0)" }], {
+      duration: 300,
+      easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", // --ease-out-soft
+    });
+  }, [count, reduced]);
+
   return (
     <pre
       ref={box}
-      className="m-0 h-[calc(100%-37px)] overflow-hidden px-4 pt-3.5 pb-4 font-mono text-[10px] whitespace-pre md:text-[12.5px]"
+      className="m-0 flex h-[calc(100%-37px)] flex-col justify-end overflow-hidden px-4 pt-3.5 pb-4 font-mono text-[10px] leading-[1.6] whitespace-pre md:text-[12.5px]"
       onMouseEnter={() => (hover.current = true)}
       onMouseLeave={() => (hover.current = false)}
       aria-hidden="true"
     >
-      {lines.map((n) => {
-        const [m, path, who, code] = EVENTS[n % EVENTS.length];
-        const denied = code === "403";
-        return (
-          <span key={n} className="block animate-[log-in_.35s_var(--ease-out-soft)]">
-            <span className="text-term-muted">{m}</span> {path.padEnd(17)}
-            <span className="text-term-muted">{who.padEnd(18)}</span>
-            <span className={denied ? "text-err" : "text-ok"}>{code}</span>
-            {denied && <span className="text-term-muted"> 🎁 protected</span>}
-          </span>
-        );
-      })}
+      <div ref={stack}>
+        {lines.map((n) => {
+          const [m, path, who, code] = EVENTS[n % EVENTS.length];
+          const denied = code === "403";
+          return (
+            <span key={n} className="block h-[1.6em] animate-[log-in_.35s_var(--ease-out-soft)]">
+              <span className="text-term-muted">{m}</span> {path.padEnd(17)}
+              <span className="text-term-muted">{who.padEnd(18)}</span>
+              <span className={denied ? "text-err" : "text-ok"}>{code}</span>
+              {/* the emoji's own font is taller than the mono line: it must not stretch the row */}
+              {denied && (
+                <span className="text-term-muted">
+                  {" "}
+                  <span className="inline-block h-[1em] leading-none">🎁</span> protected
+                </span>
+              )}
+            </span>
+          );
+        })}
+      </div>
     </pre>
   );
 }
