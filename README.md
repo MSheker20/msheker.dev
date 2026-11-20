@@ -53,7 +53,7 @@ docs/                   plan, roadmap, decisions, content, copy, design (Turkish
 
 ## Deploy
 
-Every push to `main` deploys to Vercel (project `msheker-dev`). DNS is on Cloudflare: `@` and `www` are DNS-only CNAMEs to Vercel; `www` redirects (308) to the apex. Mail (`hello@msheker.dev`) is Cloudflare Email Routing.
+Every push to `main` deploys to Vercel (project `msheker-dev`). DNS is on Cloudflare: `@` and `www` are DNS-only CNAMEs to Vercel; `www` redirects (308) to the apex. Mail (`hello@msheker.dev`) is Cloudflare Email Routing. Google Search Console owns the domain through a `google-site-verification` TXT record on `@` (keep it) and reads `/sitemap.xml`.
 
 CI (GitHub Actions) runs lint, typecheck and `cv:check` on every push and pull request.
 
