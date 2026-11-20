@@ -39,9 +39,9 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 Çıkış kriteri: boş ama temalı sayfalar önizlemede açılıyor.
 
-## Faz 4 · Sayfalar
+## Faz 4 · Sayfalar ✅ (2026-11-20)
 - [x] Ana sayfa: V4 birebir (hero + ASCII portre + kayan isim; Work ekranı + canlı API logu + AlterF1 terminali), `[p]` durdurma
-- [x] `/work` + `/work/[slug]`: CovertGift ve AlterF1 vaka sayfaları (TS veri, D-012); EN metin onayı bekliyor
+- [x] `/work` + `/work/[slug]`: CovertGift ve AlterF1 vaka sayfaları (TS veri, D-012); EN metin onaylandı (2026-11-20)
 - [x] `/cv` sayfası + PDF indirme: ATS tek sayfa, EN/TR (`npm run cv:pdf`, D-013)
 - [x] `/about`, `/contact`, `404`
 
@@ -53,7 +53,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 - [x] `prefers-reduced-motion` desteği (CSS + `useReducedMotion`, `[p]` ile durdurma)
 - [x] Hareket incelemesi (satır içi, DESIGN.md §5'e göre): API logu odakta da duruyor; taste-skill gate betikleri çalıştırılmadı
 
-## Faz 6 · Kalite
+## Faz 6 · Kalite ✅ (2026-11-20)
 - [x] `web-design-guidelines` denetimi: [t] kısayolu bağlandı, başlık dengesi, touch-action, translate="no" (2026-11-20)
 - [x] `accessibility`: Lighthouse a11y 100 (ana sayfa + vaka sayfası, mobil); erişilebilir ad uyuşmazlıkları düzeltildi (2026-11-20)
 - [x] `core-web-vitals` + Lighthouse: Slow 4G + 4× CPU mobilde LCP 702 ms, CLS 0; Best Practices ve SEO 100 (2026-11-20)

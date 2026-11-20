@@ -54,7 +54,7 @@ just coding.
 
 ## 6. Vaka çalışmaları (ham metin)
 
-### 01 · CovertGift 🟡
+### 01 · CovertGift ✅ (EN ve TR, 2026-11-20)
 **Tek satır:** Group gift planner that keeps the surprise safe: the recipient can't see a thing, enforced by the server.
 
 **Rol:** Solo, tasarımdan dağıtıma. **Süre:** 2026-10-03 → devam ediyor. **Canlı:** covertgift.msheker.dev
@@ -71,7 +71,7 @@ just coding.
 **Yığın:** Go 1.27 · Gin · GORM · PostgreSQL 17 · React 19 · TypeScript · TanStack Query · Tailwind 4 · SSE · Gemini · Docker · nginx · Azure Container Apps
 **Görseller:** CovertGift reposundaki `docs/screenshots/` (5 adet)
 
-### 02 · AlterF1 (devam ediyor) 🟡
+### 02 · AlterF1 (devam ediyor) ✅ (EN ve TR, 2026-11-20)
 **Tek satır:** What if 2024 had been scored like 1991? Re-runs real F1 seasons under five historical points systems.
 
 **Durum:** Geliştirmeye yeniden başlanacak; sitede "in progress" rozetiyle.
@@ -80,7 +80,7 @@ just coding.
 **Siteye fikir:** Küçük bir etkileşimli tablo. Ziyaretçi puanlama yılını seçer, sıralama yeniden dizilir. F1 ilgini ve veri tarafını aynı anda gösterir.
 
 
-## 7. İletişim CTA 🟡
+## 7. İletişim CTA ✅ (2026-11-20)
 > EN: `$ mail hello@msheker.dev` — Have something to build? Write to me.
 > TR: Birlikte bir şey mi yapalım? Yaz bana.
 
