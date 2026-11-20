@@ -43,6 +43,7 @@ export const education: Entry[] = [
   },
   {
     org: "Mustafa Kaynak Anadolu Lisesi",
+    logo: "/logos/mkal.png", // school seal from the user's own file; the sun kept at half strength
     role: { en: "High school (Project School)", tr: "Lise (Proje Okulu)" },
     start: "2019",
     end: "2023", // graduation year only (CONTENT.md)
