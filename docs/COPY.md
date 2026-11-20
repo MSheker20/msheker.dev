@@ -48,7 +48,7 @@ just coding.
 3. **Kararlarımı yazarım.** Her projede şartname, yol haritası ve geliştirme günlüğü tutarım (CovertGift'te 900 satırı aşan bir DEVLOG).
 
 ## 5. Deneyim
-**PauSiber** · Board Member · 2024 → present 🟡
+**PauSiber** · Board Member · 2024 → present ✅ (2026-11-20)
 > EN: Take part in organizing and running the community's events.
 > TR: Topluluğun etkinliklerinin yürütülmesinde ve düzenlenmesinde görev alıyorum.
 

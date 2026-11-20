@@ -69,7 +69,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 - [x] Son mobil ve tarayıcı testi (canlı msheker.dev): 320/375/1440 px, EN+TR; 320 px taşmaları (proje ızgarası, TR menü) düzeltildi (2026-11-20)
 - [x] Yayın 🚀 https://msheker.dev (2026-11-20)
 
-## Faz 9 · Görsel geliştirmeler (2026-11-20, kullanıcı isteği)
+## Faz 9 · Görsel geliştirmeler ✅ (2026-11-20, kullanıcı isteği)
 Uygulama planı: [PHASE9.md](PHASE9.md). ✅ Tamamlandı (2026-11-20); kalite turu: Lighthouse mobil a11y/SEO 100, CLS 0, canlıda başlıklar doğrulandı. Faz 9 metinleri onaylandı (COPY.md §8).
 - [x] **Yüzen navbar.** (2026-11-20: başlık = msheker + o anki bölüm; mobilde büyük wordmark satırı kalktı) En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
   - Masaüstü: kompakt navbarın üzerine gelince orijinal (tam) hâline açılır.
