@@ -51,7 +51,7 @@ export default async function Home() {
       </section>
 
       {/* screen 2: project terminals with CovertGift's live API log */}
-      <section id="work" className="min-h-svh scroll-mt-4 border-t border-line pt-[12vh] pb-[10vh]">
+      <section id="work" className="scroll-mt-4 border-t border-line py-16 md:py-24">
         <div className="wrap">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <SectionHead label={dict.pages.work.label} title={dict.pages.work.title} as="h2" />

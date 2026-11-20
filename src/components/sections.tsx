@@ -6,7 +6,7 @@ import { SectionHead } from "./section-head";
 
 // Shared by the one-page home (as h2 sections) and the standalone routes (as h1 pages).
 type Props = { dict: Dictionary; locale: Locale; id?: string; as?: "h1" | "h2" };
-const screen = "min-h-svh scroll-mt-4 border-t border-line pt-[12vh] pb-[10vh]";
+const screen = "scroll-mt-4 border-t border-line py-16 md:py-24";
 
 export function AboutSection({ dict, id, as = "h1" }: Props) {
   return (
