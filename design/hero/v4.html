@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V4 · Mix — msheker.dev</title>
+<meta name="description" content="Mustafa Şeker — backend-leaning full-stack developer. Hero exploration V4 (mix).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  :root { --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace; --accent: #2f5bff; --accent-ink: #2f5bff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #6f8bff; --accent-ink: #8aa0ff; --on-accent: #0b0b0c; } }
+  :root[data-theme="dark"] { --accent: #6f8bff; --accent-ink: #8aa0ff; --on-accent: #0b0b0c; }
+  /* terminals are always dark, so their prompt always uses the light-on-dark accent */
+  .term .p { color: #6f8bff; }
+  .term .cursor { background: #e9e9e4; }
+  .nw { white-space: nowrap; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+  /* ---------- hero ---------- */
+  .hero { min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; overflow: hidden; }
+
+  /* nav: crop-mark grid (from V3) */
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 6px; }
+  .cell { position: relative; padding: 10px 16px 10px; font-size: 12.5px; }
+  .cell .label { min-height: 22px; margin: 0; }
+  .cell::before, .cell::after { content: ""; position: absolute; width: 9px; height: 9px; border: 0 solid var(--muted); }
+  .cell::before { left: -4px; top: -4px; border-left-width: 1px; border-top-width: 1px; }
+  .cell::after { right: -4px; bottom: -4px; border-right-width: 1px; border-bottom-width: 1px; }
+  .label { color: var(--muted); display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .label i { width: 7px; height: 7px; background: var(--ink); display: inline-block; }
+  .cell .navlink { min-height: 44px; display: flex; color: var(--ink); }
+  .cell .navlink kbd { color: var(--muted); }
+  /* pixel wordmark (from V1) */
+  .logo { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); transition: color .2s; }
+  .logo:hover { color: var(--accent-ink); }
+  .status .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); margin-right: 8px; animation: ping 2.4s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(63,185,80,.6); } 70%, 100% { box-shadow: 0 0 0 7px rgba(63,185,80,0); } }
+  .pause { display: inline-flex; align-items: center; gap: .6ch; min-height: 44px; padding: 0; background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; }
+  .pause:hover { color: var(--ink); }
+  .pause kbd { font: inherit; }
+
+  .middle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); align-items: center; gap: 48px; padding: 2vh var(--pad); }
+  .statement { font-size: clamp(22px, 2.5vw, 38px); line-height: 1.25; letter-spacing: -.015em; max-width: 24ch; margin: 0; font-weight: 400; }
+  .statement .dim { color: var(--muted); }
+  .actions { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+  .btn { background: var(--accent); border-color: var(--accent); color: var(--on-accent, #fff); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+
+  /* ASCII portrait (from V2) */
+  .portrait .term-body { padding: 10px 12px 12px; font-size: clamp(5px, .7vw, 10.5px); line-height: 1.12; color: #d9d9d2; white-space: pre; overflow: hidden; text-align: center; }
+  .portrait .art { display: inline-block; text-align: left; }
+  .portrait .row { display: block; opacity: 0; }
+  .portrait .row.on { opacity: 1; transition: opacity .35s; }
+
+  /* name marquee (from V2) */
+  .name { border-top: 1px solid var(--line); font-size: clamp(56px, 11vw, 176px); line-height: 1.14; letter-spacing: -.045em; font-weight: 500; }
+  .name .sep { color: var(--accent-ink); }
+
+  /* ---------- work: project terminals (V1) + live API log (V3) ---------- */
+  .work { min-height: 100svh; padding: 12vh 0 10vh; border-top: 1px solid var(--line); }
+  .work-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; }
+  .work-head h2 { margin: 0; font-weight: 400; font-size: clamp(26px, 3vw, 44px); letter-spacing: -.02em; line-height: 1.1; }
+  .work-head .label { margin: 0 0 12px; }
+  .work-head a { color: var(--muted); min-height: 44px; display: inline-flex; align-items: center; }
+  .work-head a:hover { color: var(--ink); }
+  .projects { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; }
+  .project .term { height: 340px; transition: border-color .2s; }
+  .project .term-body { height: calc(100% - 37px); overflow: hidden; }
+  a.project:hover .term { border-color: #3a3a40; }
+  .project h3 { margin: 16px 0 4px; font-size: 15px; font-weight: 500; display: flex; justify-content: space-between; gap: 12px; }
+  .project h3 .arr { color: var(--muted); transition: transform .25s var(--ease), color .2s; }
+  a.project:hover h3 .arr { transform: translateX(3px); color: var(--accent-ink); }
+  .project p { margin: 0; color: var(--muted); font-size: 13.5px; }
+  .project .stack { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .project .stack span { border: 1px solid var(--line); padding: 2px 8px; font-size: 12px; color: var(--muted); }
+  .wip { color: var(--accent-ink); font-weight: 400; }
+  .log-body { white-space: pre; font-size: 12.5px; }
+  .log-body .line { display: inline-block; animation: in .35s var(--ease); }
+  @keyframes in { from { opacity: 0; transform: translateY(4px); } }
+
+  @media (max-width: 980px) {
+    .grid4 { grid-template-columns: 1fr 1fr; }
+    .grid4 .status { display: none; }
+    .middle { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .portrait { width: min(100%, 480px); }
+    .portrait .term-body { font-size: clamp(4.6px, 1.45vw, 9.6px); }
+    .projects { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .grid4 { grid-template-columns: auto 1fr 1fr; }
+    .grid4 .cell:first-child .logo svg { width: 82px; height: auto; }
+    .cell { padding: 14px 10px 16px; }
+    .actions .btn { flex: 1; justify-content: center; }
+    .log-body { font-size: 10px; }
+    .project .term { height: 280px; }
+    .work-head { flex-direction: column; align-items: start; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- V4 · Mix: V3 nav grid + V1 pixel wordmark · V2 ASCII portrait + name marquee · V1 project terminals + V3 live API log.
+     Geist Mono · accent cobalt. Portrait from assets-inbox/1000010335.jpeg via design/tools/person-mask.swift + ascii.py -->
+<main id="main">
+<section class="hero">
+  <div class="wrap grid4" data-enter>
+    <div class="cell"><a class="logo" href="#" aria-label="msheker.dev home"><span id="wm"></span></a></div>
+    <div class="cell">
+      <div class="label"><i></i>Index</div>
+      <a class="navlink" data-key="1" href="#work"><kbd>[1]</kbd><span>Work</span></a>
+      <a class="navlink" data-key="2" href="#about"><kbd>[2]</kbd><span>About</span></a>
+    </div>
+    <div class="cell">
+      <div class="label"><i></i>Docs</div>
+      <a class="navlink" data-key="3" href="#cv"><kbd>[3]</kbd><span>CV</span></a>
+      <a class="navlink" data-key="4" href="#contact"><kbd>[4]</kbd><span>Contact</span></a>
+    </div>
+    <div class="cell status">
+      <div class="label"><i></i>Status</div>
+      <div style="min-height:44px;display:flex;align-items:center"><span class="dot" aria-hidden="true"></span>rebuilding AlterF1</div>
+      <button class="pause" id="pause" type="button" aria-pressed="false"><kbd>[p]</kbd><span>Pause motion</span></button>
+    </div>
+  </div>
+
+  <div class="wrap middle" data-enter>
+    <div>
+      <h1 class="statement"><span class="nw">Backend-leaning</span> <span class="nw">full-stack</span> developer. <span class="dim">I write APIs in Go, put an interface on top, and ship both. Just coding.</span></h1>
+      <div class="actions">
+        <a class="btn" href="#work">See the work <span class="arr">→</span></a>
+        <a class="btn ghost" href="#cv">Get the CV</a>
+      </div>
+    </div>
+    <div class="portrait term" role="img" aria-label="Portrait of Mustafa Şeker drawn in ASCII characters">
+      <div class="term-bar"><i></i><i></i><i></i><b>~/portrait.txt — cat · denizli, tr · remote</b></div>
+      <pre class="term-body" id="ascii">
+
+                              .:;:;;-;;;:,
+                           .:-;:,,,,,,,:::;;.
+                          ,,,...............;:
+                         :..........,,.......::
+                        -...-*#**#**#%##*+-,.,:;
+                       :::-%@%%########%%%@%=.,;,
+                       ::#@@%##############%%=..,
+                       ,;#%%%#############%%%*:.,
+                       .+%#=:,.,;=++=;,,:;=#%%;.:
+                       :-#+,,...,:==;,...,:=+#-.,
+                      ,=*##+=;;---#+;-;::;-==*;::
+                      ,=#%%#**+++#%#==++**#*#%-=-
+                      .###*+=-;-+++++=;-=+*###-+,
+                       =*-==;;==::::;==;;=++*+#-
+                        ;;==::;--;;;--;:,;+-=:.
+                        ,===-++=-;:;-=++---;:
+               ,::;:;;=%@#=---+++===*+==-;;+#=:,..
+       :=##%%%@@@@@@@@@@%##=;,,;---=-:,,;-+%%%@@@@%*+-;,.
+    .=%@@@@@@@@%%%%%@%%%%##+=;,.......:-+**#*#@%%%@@@@@@@%+,
+  ,+@@@@@%%@@%##%#%%@%#%%%#+++=;::::;==+++*%+#%%##%%%%%%@@@@*.
+.+@@@@%@@%%%###%%##%%%#%%#*+===-;;;-====++##+%%%#%%##%%%%%@@@@-
+@@@@%#%%%####%#%%##%%%####*===--;;;-==-=+##+#%###%###%#%%%%@@@@*
+@@%@%##%####%%#%%##%%%#####*--;;;:;;--=*##*+%#*#%%#####%#%%%@@@@#
+@%%#%#*########%%%#%%#######*+=---==+*##**+%####%####*####%%%%@@@#
+%%###**+**####%%%%%%%#######***+***###***+#####%%####**#*##%%%%@@@*
+%%%#***++*####%%%%%%%%%#####*******##****##*+*#+*%##*+++#####%%@@@@;
+%%%%#**+=+####%%%%%%%%%%%%%%%%%%%%#*+***#%**==+-+%##++=***###%%@@@@@:
+#%%###*+-=###*#%##%%%##%%@%%@@%%%#*++**##*+%+*#*+###++-+**####%%@@@@@:
+######*=;=###***##%%%%###%%%%%#**++**###++##+***+*#*===++####%%%%%@@@@;
+###*+++;:-*###***##%%%%%#####*++++*####=+###**#****+;--=*####%%%%%@@@@@-
+*****-:::-+*##*****#%%%%%%#*+++**#####==####*###***=;;,+######%%%%%@@@@@
+*+=-: :::-+*###******####*++++**####*+=*#########*+-;:.-=+*##########%%%
++=-,  ,;:-=+*##*********++++**#####*+=***####*****=;::, .=*******####%%%</pre>
+    </div>
+  </div>
+
+  <div class="name marquee" id="mq" aria-label="Mustafa Şeker">
+    <div class="marquee-track" aria-hidden="true"><span>Mustafa Şeker <span class="sep">—</span></span></div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div>
+        <div class="label"><i></i>01 / Work</div>
+        <h2>Things I built and shipped.</h2>
+      </div>
+      <a href="https://github.com/MSheker20">All repositories on GitHub ↗</a>
+    </div>
+    <div class="projects">
+      <a class="project lift" href="#covertgift">
+        <div class="term">
+          <div class="term-bar"><i></i><i></i><i></i><b>covertgift · api.log</b></div>
+          <pre class="term-body log-body" id="log" aria-hidden="true"></pre>
+        </div>
+        <h3><span>CovertGift</span><span class="arr">→</span></h3>
+        <p>Group gift planner. The person getting the gift can’t see a thing, and the server enforces it: every route answers them 403.</p>
+        <div class="stack"><span>Go</span><span>PostgreSQL</span><span>React</span><span>SSE</span><span>Azure</span></div>
+      </a>
+      <a class="project lift" href="#alterf1">
+        <div class="term">
+          <div class="term-bar"><i></i><i></i><i></i><b>alterf1</b></div>
+          <pre class="term-body" id="t3" data-script='[{"cmd":"alterf1 --season 2024 --points 1991"},{"out":"loading points system 1991…","cls":"m"},{"out":"[wip] standings coming back soon","cls":"m"}]'></pre>
+        </div>
+        <h3><span>AlterF1 <span class="wip">· in progress</span></span><span class="arr">→</span></h3>
+        <p>What if 2024 had been scored like 1991? Real F1 seasons under five historical points systems.</p>
+        <div class="stack"><span>Java</span><span>REST</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<script type="module">
+  import { marquee, typeTerminal, pixelWord, numberKeys, themeSwitch, motion, pauseButton } from './shared.js';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  pixelWord(document.getElementById('wm'), 'msheker', { cell: 4 });
+  pauseButton(document.getElementById('pause'));
+  marquee(document.getElementById('mq'), { speed: 70 });
+
+  // ASCII portrait prints row by row, like `cat`
+  const pre = document.getElementById('ascii');
+  const rows = pre.textContent.split('\n');
+  pre.innerHTML = '<span class="art">' + rows.map(r => `<span class="row">${r.replace(/&/g, '&amp;').replace(/</g, '&lt;') || ' '}</span>`).join('') + '</span>';
+  const spans = [...pre.firstChild.children];
+  if (reduced) spans.forEach(s => s.classList.add('on'));
+  else spans.forEach((s, i) => setTimeout(() => s.classList.add('on'), 350 + i * 22));
+
+  // AlterF1 terminal starts typing when the work section comes into view
+  const t3 = document.getElementById('t3');
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { typeTerminal(t3, { loop: true }); o.disconnect(); } }, { threshold: .3 }).observe(t3);
+
+  // CovertGift live API log: members get 200, the recipient gets 403
+  const log = document.getElementById('log');
+  const events = [
+    ['GET ', '/groups/42', 'ayşe (member)', '200', 'ok'],
+    ['POST', '/groups/42/ideas', 'can (member)', '201', 'ok'],
+    ['GET ', '/groups/42', 'deniz (recipient)', '403', 'err'],
+    ['POST', '/ideas/7/vote', 'ayşe (member)', '200', 'ok'],
+    ['GET ', '/ideas/7', 'deniz (recipient)', '403', 'err'],
+  ];
+  const fmt = ([m, p, who, code, cls]) =>
+    `<span class="line"><span class="m">${m}</span> ${p.padEnd(17)}<span class="m">${who.padEnd(18)}</span><span class="${cls}">${code}</span>${code === '403' ? ' <span class="m">🎁 protected</span>' : ''}</span>\n`;
+  let i = 0; const lines = [];
+  const push = () => { lines.push(fmt(events[i++ % events.length])); if (lines.length > 13) lines.shift(); log.innerHTML = lines.join(''); };
+  if (reduced) events.forEach(push);
+  else {
+    let hover = false; const card = log.closest('.project');
+    ['mouseenter', 'focusin'].forEach(e => card.addEventListener(e, () => hover = true));
+    ['mouseleave', 'focusout'].forEach(e => card.addEventListener(e, () => hover = false));
+    push(); push(); setInterval(() => { if (!hover && !motion.paused) push(); }, 1500);
+  }
+  numberKeys(); themeSwitch();
+  // preview-only font/colour panel: add stylePanel() here (and to the import) to try options again
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V3 · Blueprint — msheker.dev</title>
+<meta name="description" content="Mustafa Şeker — backend-leaning full-stack developer. Hero exploration V3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  :root { --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; --accent: #2f5bff; --accent-ink: #2f5bff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #6f8bff; --accent-ink: #8aa0ff; } }
+  :root[data-theme="dark"] { --accent: #6f8bff; --accent-ink: #8aa0ff; }
+
+  .hero { min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; padding-top: 6px !important; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); position: relative; }
+
+  /* crop-mark grid */
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .cell { position: relative; padding: 16px 16px 18px; font-size: 12.5px; }
+  .cell::before, .cell::after { content: ""; position: absolute; width: 9px; height: 9px; border: 0 solid var(--muted); }
+  .cell::before { left: -4px; top: -4px; border-left-width: 1px; border-top-width: 1px; }
+  .cell::after { right: -4px; bottom: -4px; border-right-width: 1px; border-bottom-width: 1px; }
+  .label { color: var(--muted); display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .label i { width: 7px; height: 7px; background: var(--ink); display: inline-block; }
+  .cell .navlink { min-height: 30px; display: flex; color: var(--ink); }
+  .cell .navlink kbd { color: var(--muted); }
+  .mark { font-size: 22px; letter-spacing: -.04em; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
+  .mark b { color: var(--accent-ink); font-weight: 500; }
+  .status .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); margin-right: 8px; box-shadow: 0 0 0 0 rgba(63,185,80,.6); animation: ping 2.4s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 7px rgba(63,185,80,0); } 100% { box-shadow: 0 0 0 0 rgba(63,185,80,0); } }
+
+  .middle { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 48px; padding: 2vh 0; }
+  .statement { font-size: clamp(22px, 2.6vw, 40px); line-height: 1.25; letter-spacing: -.015em; max-width: 26ch; margin: 0; font-weight: 400; }
+  .statement .dim { color: var(--muted); }
+  .actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .btn { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+
+  .log { justify-self: end; width: min(100%, 540px); }
+  .log .term-body { height: 186px; overflow: hidden; white-space: pre; font-size: 12.5px; }
+  .log .line { display: inline-block; animation: in .35s var(--ease); }
+  @keyframes in { from { opacity: 0; transform: translateY(4px); } }
+  .log-cap { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 10px; }
+
+  .name-row { border-top: 1px solid var(--line); padding: 2vh 0 2.4vh; display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+  .name { font-size: clamp(40px, 10.4vw, 150px); line-height: 1.04; letter-spacing: -.045em; font-weight: 500; white-space: nowrap; margin: 0; }
+  .name-side { color: var(--muted); font-size: 12.5px; text-align: right; padding-bottom: 1.2vw; }
+
+  @media (max-width: 980px) {
+    .grid4 { grid-template-columns: 1fr 1fr; }
+    .grid4 .status { display: none; }
+    .middle { grid-template-columns: minmax(0, 1fr); }
+    .log { justify-self: start; }
+    .name-side { display: none; }
+  }
+  @media (max-width: 640px) {
+    .grid4 { grid-template-columns: auto 1fr 1fr; }
+    .log .term-body { font-size: 10.5px; }
+    .cell { padding: 14px 10px 16px; }
+    .actions .btn { flex: 1; justify-content: center; }
+    .name { font-size: 11.2vw; }
+  }
+  .nw { white-space: nowrap; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- V3 · Blueprint: Ravi-led. IBM Plex Mono · accent cobalt (CovertGift's blue) · crop-mark grid · decoding name · live Anti-Spoiler log -->
+<main id="main">
+<section class="hero">
+  <div class="grid4" data-enter>
+    <div class="cell"><a class="mark" href="#" aria-label="msheker.dev home">m<b>ş</b>_</a></div>
+    <div class="cell">
+      <div class="label"><i></i>Index</div>
+      <a class="navlink" data-key="1" href="#work"><kbd>[1]</kbd><span>Work</span></a>
+      <a class="navlink" data-key="2" href="#about"><kbd>[2]</kbd><span>About</span></a>
+    </div>
+    <div class="cell docs">
+      <div class="label"><i></i>Docs</div>
+      <a class="navlink" data-key="3" href="#cv"><kbd>[3]</kbd><span>CV</span></a>
+      <a class="navlink" data-key="4" href="#contact"><kbd>[4]</kbd><span>Contact</span></a>
+    </div>
+    <div class="cell status">
+      <div class="label"><i></i>Status</div>
+      <div style="min-height:30px;display:flex;align-items:center"><span class="dot" aria-hidden="true"></span>rebuilding AlterF1</div>
+      <div style="color:var(--muted)">Denizli, TR · remote</div>
+    </div>
+  </div>
+
+  <div class="middle" data-enter>
+    <div>
+      <h1 class="statement"><span class="nw">Backend-leaning</span> <span class="nw">full-stack</span> developer. <span class="dim">I write APIs in Go, put an interface on top, and ship both. Just coding.</span></h1>
+      <div class="actions">
+        <a class="btn" href="#work">See the work <span class="arr">→</span></a>
+        <a class="btn ghost" href="#cv">Get the CV</a>
+      </div>
+    </div>
+    <a class="log lift" href="#work" aria-label="CovertGift: see how the Anti-Spoiler rule works">
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i><b>covertgift · api.log</b></div>
+        <pre class="term-body" id="log" aria-hidden="true"></pre>
+      </div>
+      <div class="log-cap"><span>CovertGift · Anti-Spoiler</span><span>→</span></div>
+    </a>
+  </div>
+
+  <div class="name-row">
+    <p class="name" id="name">Mustafa Şeker</p>
+    <div class="name-side">Computer engineering<br>Pamukkale University</div>
+  </div>
+</section>
+</main>
+
+<script type="module">
+  import { decode, numberKeys, themeSwitch } from './shared.js';
+  decode(document.getElementById('name'), { duration: 1200, delay: 250 });
+
+  // live API log: a member gets 200, the recipient gets 403 (cycles every ~3s)
+  const log = document.getElementById('log');
+  const events = [
+    ['GET ', '/groups/42', 'ayşe (member)', '200', 'ok'],
+    ['POST', '/groups/42/ideas', 'can (member)', '201', 'ok'],
+    ['GET ', '/groups/42', 'deniz (recipient)', '403', 'err'],
+    ['POST', '/ideas/7/vote', 'ayşe (member)', '200', 'ok'],
+    ['GET ', '/ideas/7', 'deniz (recipient)', '403', 'err'],
+  ];
+  const fmt = ([m, p, who, code, cls]) =>
+    `<span class="line"><span class="m">${m}</span> ${p.padEnd(17)}<span class="m">${who.padEnd(18)}</span><span class="${cls}">${code}</span>${code === '403' ? ' <span class="m">🎁 protected</span>' : ''}</span>\n`;
+  let i = 0; const lines = [];
+  const push = () => { lines.push(fmt(events[i++ % events.length])); if (lines.length > 8) lines.shift(); log.innerHTML = lines.join(''); };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { events.forEach(() => push()); }
+  else {
+    let paused = false; const card = log.closest('.log');
+    ['mouseenter','focusin'].forEach(e => card.addEventListener(e, () => paused = true));
+    ['mouseleave','focusout'].forEach(e => card.addEventListener(e, () => paused = false));
+    push(); push(); setInterval(() => { if (!paused) push(); }, 1500);
+  }
+  numberKeys(); themeSwitch();
+</script>
+</body>
+</html>

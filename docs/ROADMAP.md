@@ -6,7 +6,7 @@ Her faz bir **çıktı** ve **çıkış kriteri** ile biter. Bir faz bitmeden so
 - [x] Mevcut skill'lerin envanteri; taste-skill v2 → 2.5.1, ECC yeniden kuruldu (328 skill)
 - [x] Proje skill'leri eklendi (Emil, Vercel, Addy Osmani)
 - [x] PLAN, ROADMAP, SKILLS, CONTENT, DECISIONS, CLAUDE.md yazıldı
-- [ ] `git init` + GitHub reposu
+- [x] `git init` + ilk commit (GitHub reposu henüz yok)
 
 ## Faz 1 · İçerik ve konumlandırma ✅ (2026-11-20)
 Çıktı: doldurulmuş [CONTENT.md](CONTENT.md) ve [COPY.md](COPY.md) (konumlandırma, hero, biyografi, vaka çalışmaları)
@@ -20,14 +20,15 @@ Her faz bir **çıktı** ve **çıkış kriteri** ile biter. Bir faz bitmeden so
 
 Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntüsü (Faz 4) · gerçek profil fotoğrafı (Faz 7) · `hello@msheker.dev` yönlendirmesi (D-008, Faz 7)
 
-## Faz 2 · Sanat yönetimi
+## Faz 2 · Sanat yönetimi ✅ (2026-11-20)
 Çıktı: seçilmiş görsel yön + token'lar (renk, tip ölçeği, boşluk, hareket)
-- [ ] [INSPIRATION.md](INSPIRATION.md) işaretlendi (👍/👎/⭐)
-- [ ] `design-taste-frontend` 2–3 yön önerir (ana sayfa hero'su, statik HTML)
-- [ ] Yön seçimi, font eşleşmesi ve vurgu rengi kararı
-- [ ] Token'lar `docs/DESIGN.md` dosyasına yazılır
+- [x] [INSPIRATION.md](INSPIRATION.md) işaretlendi: Ravi + Dennis + opencode.ai → D-009
+- [x] 3 hero varyasyonu: `design/hero/` (V1 Console · V2 Portrait · V3 Blueprint), önizleme: `design-hero` sunucusu
+- [x] Yön seçimi: V4 Mix (D-010)
+- [x] Font ve vurgu rengi: Geist Mono + kobalt (D-010)
+- [x] Token'lar [DESIGN.md](DESIGN.md) dosyasına yazıldı (kontrast ve dokunma hedefleri doğrulandı)
 
-Çıkış kriteri: seçilen yönün hero'su tarayıcıda onaylandı.
+Çıkış kriteri: seçilen yönün hero'su tarayıcıda onaylandı. ✅
 
 ## Faz 3 · İskelet
 - [ ] Next.js 16 + TS + Tailwind 4 + ESLint/Prettier

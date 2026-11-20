@@ -23,3 +23,8 @@ assets-inbox/*
 
 # local claude state
 .claude/settings.local.json
+
+# design tooling
+.taste-skill/
+design/**/.taste-skill/
+design/hero/shots/style/

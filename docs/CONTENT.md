@@ -78,5 +78,5 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 
 ## 9. Varlıklar
 - [x] Proje görselleri (CovertGift ekran görüntüleri repoda)
-- [~] Profil fotoğrafı: ⏳ geçici olarak Instagram (@msheker20) profil fotoğrafı `assets-inbox/profile-instagram-150.jpg` (150×150, yalnızca geliştirme için). Yayından önce en az 1200 px'lik gerçek bir fotoğrafla değiştirilecek.
+- [x] Profil fotoğrafı: `assets-inbox/1000010335.jpeg` (3000×4000, 2026-11-20). ASCII portre bundan üretildi; düz fotoğraf olarak da (About/OG) kullanılabilir
 - [x] Mevcut CV bulundu: eski ve e-postası yanlış; kullanılmayacak, yeni CV bu formdan üretilecek

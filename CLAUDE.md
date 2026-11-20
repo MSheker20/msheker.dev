@@ -10,6 +10,8 @@ Kişisel portfolyo + CV sitesi. Hedef: şık, modern, hızlı ve "şablon" gör�
 - [docs/CONTENT.md](docs/CONTENT.md): kullanıcının verdiği ham içerik (tek doğru kaynak)
 - [docs/COPY.md](docs/COPY.md): sitede görünecek onaylı metin (EN + TR), hero ve vaka çalışmaları
 - [docs/INSPIRATION.md](docs/INSPIRATION.md): seçilen referans siteler; görsel yön DECISIONS D-009
+- [docs/DESIGN.md](docs/DESIGN.md): token'lar (renk, tip, boşluk, hareket); sitede burada olmayan değer kullanılmaz
+- `design/hero/v4.html`: onaylı hero prototipi (önizleme: `.claude/launch.json` → `design-hero`)
 
 ## Çalışma kuralları
 - Görsel ve UI işinden önce `design-taste-frontend` skill'ini yükle; görsel çatışmada o kazanır.

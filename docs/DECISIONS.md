@@ -55,3 +55,12 @@ Kurallar:
 - Açık ve koyu tema sistem tercihine göre (D-004 ile birlikte). Terminal kartları her iki temada da koyu kalır (opencode gibi).
 - Preloader yok ya da 600 ms altında; Ravi ve Dennis'teki uzun açılış ekranları LCP'yi bozar.
 - Font adayları (Faz 2'de denenecek): Geist Mono, JetBrains Mono, Commit Mono, IBM Plex Mono. Hepsi açık lisanslı.
+
+## D-010 ✅ Hero: V4 "Mix" (2026-11-20)
+Kullanıcı üç varyasyondan parça seçti; sonuç `design/hero/v4.html`.
+- Navigasyon: V3'ün köşe işaretli 4'lü ızgarası (Index · Docs · Status), sol köşede V1'in piksel "msheker" logosu
+- Hero: başlık + iki buton solda, V2'nin ASCII portresi sağda (terminal penceresi, `cat` gibi satır satır), altta V2'nin kayan isim şeridi
+- İkinci ekran (Work): V1'in proje terminal kartları; CovertGift kartında V3'ün canlı API logu (üye 200, hediye alınan kişi 403)
+- ✅ Font **Geist Mono**, vurgu **kobalt** `#2f5bff` (koyu temada `#6f8bff`). Kullanıcı 6 font (Geist, JetBrains, IBM Plex, Martian, Fragment, DM) ve 5 rengi (kobalt, turuncu, asit yeşili, terminal yeşili, kehribar) karşılaştırdıktan sonra ilk hali seçti (2026-11-20)
+- 5 sn'den uzun hareketler için `[p] Pause motion` düğmesi (Status hücresinde) + `prefers-reduced-motion`
+- ASCII portre: `assets-inbox/1000010335.jpeg` → `design/tools/person-mask.swift` (Apple Vision, cihazda) → `design/tools/ascii.py --mask … --cols 72 --width 2.8 --height 2.6 --gamma 0.8`

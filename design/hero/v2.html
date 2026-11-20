@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2 · Portrait — msheker.dev</title>
+<meta name="description" content="Mustafa Şeker — backend-leaning full-stack developer. Hero exploration V2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  :root { --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; --accent: #d4ff3a; --accent-ink: #4d6400; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent-ink: #d4ff3a; } }
+  :root[data-theme="dark"] { --accent-ink: #d4ff3a; }
+  ::selection { color: #0e0e10; }
+  .term .p { color: var(--accent); }
+
+  .hero { position: relative; min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 14px var(--pad); font-size: 13px; }
+  .top .by { color: var(--muted); min-height: 44px; display: inline-flex; align-items: center; }
+  .top nav { display: flex; gap: 22px; }
+
+  .stage { display: grid; grid-template-columns: 1fr minmax(0, 560px) 1fr; align-items: center; gap: 32px; padding: 0 var(--pad); }
+  .pill { justify-self: start; display: inline-flex; align-items: center; gap: 14px; padding: 12px 14px 12px 18px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.3; }
+  .pill .globe { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--bg) 14%, transparent); }
+  .globe svg { animation: spin 9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .portrait .term-body { padding: 10px 12px 12px; font-size: clamp(6px, .78vw, 10.5px); line-height: 1.12; letter-spacing: .02em; color: #d9d9d2; white-space: pre; overflow: hidden; }
+  .portrait .row { display: block; opacity: 0; }
+  .portrait .row.on { opacity: 1; transition: opacity .35s; }
+
+  .say { justify-self: end; max-width: 26ch; }
+  .say .arrow { font-size: 22px; color: var(--muted); display: block; margin-bottom: 18px; }
+  h1 { margin: 0; font-size: clamp(18px, 1.6vw, 24px); font-weight: 400; line-height: 1.35; }
+  h1 .dim { color: var(--muted); display: block; margin-top: 6px; }
+  .actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+
+  .name { font-size: clamp(64px, 12vw, 190px); line-height: 1.12; letter-spacing: -.04em; padding: 0 0 1vh; font-weight: 500; }
+  .name .sep { color: var(--accent-ink); }
+
+  @media (max-width: 980px) {
+    .stage { grid-template-columns: 1fr; justify-items: start; gap: 22px; padding-top: 8px; }
+    .portrait { width: min(100%, 520px); justify-self: center; }
+    .portrait .term-body { font-size: clamp(5.5px, 1.6vw, 9px); }
+    .say { justify-self: start; max-width: 40ch; }
+    .say .arrow { display: none; }
+    .pill { order: 3; }
+  }
+  @media (max-width: 640px) {
+    .top nav { gap: 14px; }
+    .top nav .navlink kbd { display: none; }
+    .top .by { display: none; }
+    .actions .btn { flex: 1; justify-content: center; }
+  }
+  .nw { white-space: nowrap; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- V2 · Portrait: Dennis-led. JetBrains Mono · accent acid lime · ASCII portrait in a terminal · giant name marquee answering scroll -->
+<main id="main">
+<section class="hero">
+  <div class="top">
+    <span class="by">© code by mustafa</span>
+    <nav aria-label="Main">
+      <a class="navlink" data-key="1" href="#work"><kbd>[1]</kbd><span>Work</span></a>
+      <a class="navlink" data-key="2" href="#about"><kbd>[2]</kbd><span>About</span></a>
+      <a class="navlink" data-key="3" href="#cv"><kbd>[3]</kbd><span>CV</span></a>
+      <a class="navlink" data-key="4" href="#contact"><kbd>[4]</kbd><span>Contact</span></a>
+    </nav>
+  </div>
+
+  <div class="stage" data-enter>
+    <div class="pill">Located in<br>Denizli, TR · remote
+      <span class="globe" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 7h14M5 17h14"/></svg></span>
+    </div>
+    <div class="portrait term" role="img" aria-label="Portrait of Mustafa Şeker drawn in ASCII characters">
+      <div class="term-bar"><i></i><i></i><i></i><b>~/portrait.txt — cat</b></div>
+      <pre class="term-body" id="ascii">                   .,,:;;::;::;;;:.,,,...
+                 .,,::;;:;-=----;;;:,,,,,,.
+                ..,;----;;-----;;;;;;:,,,,..
+               .,,:-++=---;;---;;;;;;;;:,,,...
+               ..,;=*=--;;:;;;;;;;;;;;;;:::,,..
+              ..,:-*+-;;::::;;;;;;:;;::;;;;;:,,.
+             .,::;-==;:;;:;;;;;;;;:;;;;:;-;;:,,.
+           ..,,;-;--;;::,,,,,,,,,,,,:;;;:;;::::,.
+           .,,:;;--::,.      ....  ..:;;::;:;;:,..
+           .,:;-=-:.....,,,,:;;;;:,,.,:;;;----;:,.
+          ..,:;--;. .;-=++++*******+-:,:;-=---;:,.
+          ..,:::;:,:=#%#%%%%%%%%%%%%#+;,,;---;:,...
+          ..,:::::-*%@%%%%%%%%%%%%%%%%*:.,;---:,...
+          ..,:;;::+%@%#****###**++++*##=,,;;--;:,..
+          ..,:;;:;*##+-;::;=++=;:,:;-+**:,:;;;;;:,.
+         ..,::;;:;+*=;,...,;==-:,.,:;=+=;:;;;;:::,.
+         .,::::;:;=*=-;:::;-+*---;;--+++=;-;:::::,..
+         .,,,,,:;-**#*+====+##*====++**#+--;::::,,.
+         ..,,,,:-=*##*++=====++=--==+****=-:::,...
+         ...,,,:-+**++=----;;;;;----=+++++-::,.,,.
+         ..,,,,:;++=-=-;;-;;::;;--;;;===--;::,:;;,
+            ..  .,;--=-;;;;;::;;-------;:,.,,::::,.
+         .        .:-----=--;;;-====---:....,,,,...
+         .         ,-=-;;-==---==-;;;--:...........
+         ..     ...,=+-;:::;;;;;::,:-=+;,,,.......
+         ...,,:;--;=**=;:,,,,,,,,:;-=++++===;:,,..
+          .:;=*#%##%#*+=-;::,,,:;-==++**#%%%#*+-:,.
+          ,:=*%@@%%%#*+==--;;::;-===++***%@@@@#+-:.
+          .:-+#@@%%##*+==--;;;;--===+++*#%@@@@#=-:.
+           ,;=*#@@%#*+==---;;;;--====++*#%@@@#+-:,
+            ,;=*#%%%#*+=----;;;--====+*#%%%%#*=;,
+            .:;=+#%%%#*+===-----==++*##%%%%#*=;:.
+  :::::::::::::;=+#%%%##*+++==+++**##%%%%%*+=;:::::::::::::
+  ================+*#%###**+++****##%%%%#*===========-=====
+  ***#############***#####*****####%%%###*########*##******
+  ####%%%%%%%%%%%%####%%%%%####%%%%%%%%%%%%%%%%%%%%#%%#####
+  **###%%%%%%%%%%%##**##%%%%%%%%%%%%%#####%%%%##*##**####**
+  ****####%%%%%######****###%%############%%%%#+=+=-=*##*++
+  +***################**++**********######%%%##+==+==*##*==
+  +*****###############***+******#####%####%###*=+*+=+*#*==
+  =******################*****#################*=+*+=+***+=
+  =*********##############****################**+**++++**=-
+  +##++*******########*####***#####%###*#***+**++=++++++*-:</pre>
+    </div>
+    <div class="say">
+      <span class="arrow" aria-hidden="true">↘</span>
+      <h1><span class="nw">Backend-leaning</span> <span class="nw">full-stack</span> developer. <span class="dim">Just coding.</span></h1>
+      <div class="actions">
+        <a class="btn" href="#work">See the work <span class="arr">→</span></a>
+        <a class="btn ghost" href="#cv">Get the CV</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="name marquee" id="mq" aria-label="Mustafa Şeker">
+    <div class="marquee-track" aria-hidden="true"><span>Mustafa Şeker <span class="sep">—</span></span></div>
+  </div>
+</section>
+</main>
+
+<script type="module">
+  import { marquee, numberKeys, themeSwitch } from './shared.js';
+  marquee(document.getElementById('mq'), { speed: 70 });
+  // reveal the portrait row by row, like `cat` printing
+  const pre = document.getElementById('ascii');
+  const rows = pre.textContent.split('\n');
+  pre.innerHTML = rows.map(r => `<span class="row">${r.replace(/&/g,'&amp;').replace(/</g,'&lt;') || ' '}</span>`).join('');
+  const spans = [...pre.children];
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) spans.forEach(s => s.classList.add('on'));
+  else spans.forEach((s, i) => setTimeout(() => s.classList.add('on'), 350 + i * 22));
+  numberKeys(); themeSwitch();
+</script>
+</body>
+</html>

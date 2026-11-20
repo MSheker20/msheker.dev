@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Varyasyonları — msheker.dev</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  :root { --mono: "Geist Mono", ui-monospace, Menlo, monospace; }
+  body { padding: 40px var(--pad) 80px; max-width: 1280px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: 28px; margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 40px; }
+  .v { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid var(--line); }
+  .v img { width: 100%; display: block; border: 1px solid var(--line); }
+  .v h2 { font-weight: 500; font-size: 18px; margin: 0 0 4px; }
+  .v .ref { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .v ul { margin: 0 0 18px; padding-left: 18px; color: var(--muted); font-size: 14px; }
+  .v li { margin-bottom: 4px; }
+  .v li b { color: var(--ink); font-weight: 400; }
+  .shots { display: grid; grid-template-columns: 1fr 160px; gap: 12px; align-items: start; }
+  @media (max-width: 860px) { .v { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Faz 2 · Hero varyasyonları</h1>
+<p class="sub">Yön: "Terminal editoryal" (D-009). Üçü de aynı metni kullanıyor; fark kurgu, font ve vurgu renginde. Her sayfada sağ alttaki <code>theme</code> düğmesiyle açık/koyu temayı değiştirebilirsin, 1–4 tuşları menüde gezinir.</p>
+
+<section class="v">
+  <div class="shots"><img src="shots/v4-1440-dark.png" alt="V4 masaüstü koyu, iki ekran"><img src="shots/v4-390.png" alt="V4 telefon"></div>
+  <div>
+    <h2>V4 · Mix ✦ seçilen</h2>
+    <p class="ref">Geist Mono · kobalt · iki ekran: hero + work</p>
+    <ul>
+      <li><b>V3 navigasyon ızgarası</b>, sol köşede <b>V1'in piksel logosu</b>, Status'ta <code>[p]</code> hareketi durdurma</li>
+      <li><b>V2'nin ASCII portresi</b> (yeni fotoğraftan, arka plan Vision ile ayrıldı) ve <b>kayan isim şeridi</b></li>
+      <li>İkinci ekran: <b>V1'in proje terminalleri</b>, CovertGift kartında <b>V3'ün canlı API logu</b></li>
+    </ul>
+    <a class="btn" href="v4.html">V4'ü aç <span class="arr">→</span></a>
+  </div>
+</section>
+
+<section class="v">
+  <div class="shots"><img src="shots/v1-1440.png" alt="V1 masaüstü"><img src="shots/v1-390.png" alt="V1 telefon"></div>
+  <div>
+    <h2>V1 · Console</h2>
+    <p class="ref">opencode.ai ağırlıklı · Geist Mono · sinyal turuncusu</p>
+    <ul>
+      <li><b>Piksel "msheker" logo</b>, solda numaralı menü</li>
+      <li>Büyük başlık, altında <b>yan yana üç canlı terminal</b>: whoami, CovertGift 403, AlterF1</li>
+      <li>En "ürün sitesi" hissi; en düzenli ve en hızlı taranan</li>
+    </ul>
+    <a class="btn" href="v1.html">V1'i aç <span class="arr">→</span></a>
+  </div>
+</section>
+
+<section class="v">
+  <div class="shots"><img src="shots/v2-1440-dark.png" alt="V2 masaüstü koyu"><img src="shots/v2-390.png" alt="V2 telefon"></div>
+  <div>
+    <h2>V2 · Portrait</h2>
+    <p class="ref">Dennis Snellenberg ağırlıklı · JetBrains Mono · asit yeşili</p>
+    <ul>
+      <li>Ortada <b>ASCII portren</b>, `cat` komutu gibi satır satır basılıyor</li>
+      <li>Altta <b>dev kayan isim şeridi</b>; kaydırma yönüne göre hızlanıp yön değiştiriyor</li>
+      <li>"Denizli, TR · remote" etiketi; en kişisel ve akılda kalan</li>
+    </ul>
+    <a class="btn" href="v2.html">V2'yi aç <span class="arr">→</span></a>
+  </div>
+</section>
+
+<section class="v">
+  <div class="shots"><img src="shots/v3-1440-dark.png" alt="V3 masaüstü koyu"><img src="shots/v3-390.png" alt="V3 telefon"></div>
+  <div>
+    <h2>V3 · Blueprint</h2>
+    <p class="ref">Ravi Klaassens ağırlıklı · IBM Plex Mono · kobalt (CovertGift'in mavisi)</p>
+    <ul>
+      <li>Üstte <b>köşe işaretli ızgara</b>, gruplanmış küçük etiketler, "Status" kutusu</li>
+      <li>Sağda <b>canlı API logu</b>: üyeler 200 alıyor, hediye alınan kişi 403. Backend'i gösteren imza anı</li>
+      <li>Altta adın, rastgele karakterlerden <b>"çözülerek"</b> beliriyor</li>
+    </ul>
+    <a class="btn" href="v3.html">V3'ü aç <span class="arr">→</span></a>
+  </div>
+</section>
+
+<script type="module">import { themeSwitch } from './shared.js'; themeSwitch();</script>
+</body>
+</html>
