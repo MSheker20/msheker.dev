@@ -123,7 +123,8 @@
     text-wrap: balance;
   }
   body {
-    background: var(--bg);
+    /* a faint dot grid under everything (terminals and cards keep their own ground) */
+    background: radial-gradient(circle, color-mix(in srgb, var(--line) 75%, transparent) 1px, transparent 1.4px) 0 0 / 22px 22px, var(--bg);
     color: var(--ink);
     font-family: var(--font-mono);
     font-size: 15px;
@@ -416,6 +417,29 @@
 .term ::selection {
   background: var(--color-term-accent);
   color: var(--color-term-bg);
+}
+
+/* ---- section numerals (section-head.tsx): a large outlined number behind each heading */
+.section-num {
+  position: absolute;
+  left: -0.06em;
+  top: -0.42em;
+  font-size: clamp(110px, 15vw, 230px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---- footer wordmark (site-footer.tsx): quiet at rest, ink on hover */
+.footer-mark {
+  color: var(--line);
+  transition: color 0.4s var(--ease-out-soft);
+}
+footer:hover .footer-mark {
+  color: var(--muted);
 }
 
 /* ---- organisation logos (sections.tsx → Entries): a one-colour mask that takes the text colour */

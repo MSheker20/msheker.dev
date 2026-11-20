@@ -104,6 +104,7 @@
   },
   "footer": {
     "built": "Next.js ile yapıldı, Geist Mono ile dizildi.",
+    "time": "yerel saat",
     "settings": "Ayarlar"
   },
   "palette": {

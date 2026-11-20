@@ -117,4 +117,5 @@ Kaynak: `src/i18n/dictionaries/{en,tr}.json` → `palette`. Komutların kendisi 
 | Giriş alanı | type a command… | bir komut yaz… |
 | Bulunamadı | command not found | komut bulunamadı |
 | İpucu (yalnız masaüstü) | ↑↓ move · enter run · esc close | ↑↓ gez · enter çalıştır · esc kapat |
+| Footer saati | local time | yerel saat |
 | Açıklamalar | Back to the start · Projects · About me · Education, experience, skills · Email and profiles · CovertGift case study · AlterF1 case study · Download the PDF CV · Light theme · Dark theme · Follow the system theme · Switch to Türkçe · Pause or play motion · Write an email · GitHub profile · LinkedIn profile | Başa dön · Projeler · Hakkımda · Eğitim, deneyim, yetkinlikler · E-posta ve profiller · CovertGift vaka çalışması · AlterF1 vaka çalışması · PDF CV'yi indir · Açık tema · Koyu tema · Sistem temasını kullan · Switch to English · Hareketi durdur ya da başlat · E-posta yaz · GitHub profili · LinkedIn profili |

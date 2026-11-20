@@ -110,3 +110,8 @@ Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı
 - **Proje paylaşım görselleri:** `work/[slug]/opengraph-image.tsx`; terminal çerçevesi, proje adı, özet, yığın logoları (marka renginde).
 - **Etkileşimli 404:** `ls`, `cd <sayfa>`, `open <proje>`, `help`, `clear`; çıktı İngilizce (gerçek kabuk gibi).
 - **Detaylar:** dış bağlantılarda `↗` hover'da 2 px sağ-üste kayar (yalnızca fareli cihazlar); terminal içi seçim terminal renklerinde; palet ve 404 imleci accent.
+
+## D-020 ✅ Görsel zenginleştirme (2026-11-20)
+- **Noktalı zemin:** `body` arka planında 22 px aralıklı, `--line` renginde silik nokta ızgarası; terminaller ve kartlar kendi zeminini korur.
+- **Bölüm numaraları:** `SectionHead` etiketteki sayıyı ("01 / Work" → "01") başlığın arkasına, sol üste, yalnızca 1 px `--line` çizgisiyle (110–230 px) çizer. Dekoratif (`aria-hidden`); sağ köşe ana sayfada ısı haritasına ait olduğu için sol.
+- **Footer:** tam genişlikte piksel `msheker` (`--line`, footer üzerine gelince `--muted`) ve Denizli yerel saati (`Europe/Istanbul`, tarayıcıda hesaplanır, 15 sn'de bir). Alt satır sola hizalı: sağ alt köşe yüzen ayarlar butonunun.

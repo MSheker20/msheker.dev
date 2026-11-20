@@ -104,6 +104,7 @@
   },
   "footer": {
     "built": "Built with Next.js, set in Geist Mono.",
+    "time": "local time",
     "settings": "Settings"
   },
   "palette": {
