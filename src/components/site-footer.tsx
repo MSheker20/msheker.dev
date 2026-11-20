@@ -7,7 +7,7 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
-    <footer className="wrap mt-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line py-4 text-label text-muted">
+    <footer data-site-chrome className="wrap mt-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line py-4 text-label text-muted">
       <p className="m-0">
         © {site.name} · {dict.status.location}
       </p>

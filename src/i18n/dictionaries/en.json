@@ -58,7 +58,13 @@
       "education": "Education",
       "skills": "Skills",
       "languages": "Languages",
-      "present": "present"
+      "present": "present",
+      "summary": "Summary",
+      "projects": "Projects",
+      "download": "Download PDF",
+      "strong": "Strong",
+      "familiar": "Familiar",
+      "docTitle": "Full-stack Developer"
     },
     "contact": {
       "label": "04 / Contact",

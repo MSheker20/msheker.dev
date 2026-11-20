@@ -1,4 +1,4 @@
-import { education, experience, languages, skills, type Entry } from "@/content/cv";
+import { education, experience, orgName, languages, skills, type Entry } from "@/content/cv";
 import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -32,6 +32,9 @@ export function CvSection({ dict, locale, id, as = "h1" }: Props) {
     <section id={id} className={screen}>
       <div className="wrap">
         <SectionHead label={t.label} title={t.title} as={as} />
+        <a className="btn mb-10" href={`/cv/mustafa-seker-cv-${locale}.pdf`} download>
+          {t.download} <span aria-hidden="true">↓</span>
+        </a>
         <div className="grid gap-10 md:grid-cols-2">
           <Block as={sub} title={t.experience}>
             <Entries items={experience} locale={locale} present={t.present} />
@@ -67,8 +70,8 @@ function Block({ as: Tag, title, children }: { as: "h2" | "h3"; title: string; c
 
 function Entries({ items, locale, present }: { items: Entry[]; locale: Locale; present: string }) {
   return items.map((e) => (
-    <div key={e.org}>
-      <p className="m-0 font-medium">{e.org}</p>
+    <div key={orgName(e.org, "en")}>
+      <p className="m-0 font-medium">{orgName(e.org, locale)}</p>
       <p className="m-0">{e.role[locale]}</p>
       <p className="m-0 text-label text-muted">
         {e.start ? `${e.start} → ${e.end ?? present}` : e.end}

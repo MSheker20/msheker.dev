@@ -42,7 +42,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 ## Faz 4 · Sayfalar
 - [x] Ana sayfa: V4 birebir (hero + ASCII portre + kayan isim; Work ekranı + canlı API logu + AlterF1 terminali), `[p]` durdurma
 - [x] `/work` + `/work/[slug]`: CovertGift ve AlterF1 vaka sayfaları (TS veri, D-012); EN metin onayı bekliyor
-- [x] `/cv` sayfası · [ ] yazdırma stili + PDF (kullanıcı kararı: en sona, Faz 7 öncesi)
+- [x] `/cv` sayfası + PDF indirme: ATS tek sayfa, EN/TR (`npm run cv:pdf`, D-013)
 - [x] `/about`, `/contact`, `404`
 
 Çıkış kriteri: tüm içerik yerinde, mobil ve masaüstünde düzgün.
@@ -71,5 +71,5 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 ## Faz 8 · Bakım (sürekli)
 - Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
-- CV güncelleme: `content/cv.ts` düzenle; PDF otomatik yenilenir
+- CV güncelleme: `src/content/cv.ts` düzenle, `npm run cv:pdf` çalıştır, PDF'leri commit'le
 - Skill güncellemeleri: üç ayda bir `npx skills check` (bkz. SKILLS.md)

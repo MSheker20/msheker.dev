@@ -123,3 +123,16 @@ Kurallar:
 | `NameMarquee` | `shared.js` `marquee()` |
 | `ProjectCard` | v4 `.project` |
 | `Button` (solid / ghost) | `shared.css` `.btn` |
+
+## 7. PDF CV belgesi (D-013)
+
+Site token'larının dışında kalan tek yüzey; ATS standardı için bilinçli olarak sade.
+
+| Öğe | Değer |
+|---|---|
+| Sayfa | A4, kenar boşluğu 12 mm × 15 mm |
+| Yazı tipi | Arial, Helvetica, sans-serif |
+| Gövde | 10 pt, satır aralığı 1.38, `#111111` zemin `#ffffff` |
+| İsim | 20 pt kalın |
+| Bölüm başlığı | 10.5 pt kalın, büyük harf, altında 1 px çizgi |
+| İletişim satırı | 9 pt, `#333333`, ayraç ` | ` |

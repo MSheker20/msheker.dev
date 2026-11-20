@@ -58,7 +58,13 @@
       "education": "Eğitim",
       "skills": "Yetkinlikler",
       "languages": "Diller",
-      "present": "devam ediyor"
+      "present": "devam ediyor",
+      "summary": "Özet",
+      "projects": "Projeler",
+      "download": "PDF olarak indir",
+      "strong": "İyi",
+      "familiar": "Tanıdık",
+      "docTitle": "Full-stack Geliştirici"
     },
     "contact": {
       "label": "04 / İletişim",
