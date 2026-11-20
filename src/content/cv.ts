@@ -20,8 +20,8 @@ export const experience: Entry[] = [
     start: "2024",
     end: null,
     note: {
-      en: "Help run the student community's events and contributed to organizing its JavaScript workshops.",
-      tr: "Topluluğun etkinliklerinin yürütülmesinde ve JavaScript atölyelerinin düzenlenmesinde görev alıyorum.",
+      en: "Take part in organizing and running the community's events.",
+      tr: "Topluluğun etkinliklerinin yürütülmesinde ve düzenlenmesinde görev alıyorum.",
     },
   },
 ];
@@ -30,15 +30,16 @@ export const education: Entry[] = [
   {
     org: "Pamukkale University",
     role: { en: "B.Sc. Computer Engineering · 3rd year", tr: "Bilgisayar Mühendisliği (Lisans) · 3. sınıf" },
-    start: "2023",
+    start: "2024",
     end: null,
     place: "Denizli",
-    note: { en: "Expected graduation 2027", tr: "Beklenen mezuniyet 2027" },
+    note: { en: "Expected graduation 2028", tr: "Beklenen mezuniyet 2028" },
   },
   {
     org: "Mustafa Kaynak Anadolu Lisesi",
     role: { en: "High school (Project School)", tr: "Lise (Proje Okulu)" },
-    end: "2022", // graduation year only (CONTENT.md)
+    start: "2019",
+    end: "2023", // graduation year only (CONTENT.md)
     place: "Denizli",
   },
 ];

@@ -51,8 +51,8 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - Küçük Java alıştırmaları (BMI, maaş, palindrom, Number-Crypto): ❓ bunları sitede göstermemeyi öneriyorum
 
 ## 5. Eğitim, başarılar, diller 🔎 (CV'den)
-- ✅ **Pamukkale Üniversitesi**, Bilgisayar Mühendisliği (Lisans), 2023 → devam ediyor · 3. sınıf · beklenen mezuniyet 2027 (eski CV'de 2024 yazıyordu, yanlıştı)
-- **Mustafa Kaynak Anadolu Lisesi** (Proje Okulu), Denizli, 2022 · ✅ sitede gösterilecek
+- ✅ **Pamukkale Üniversitesi**, Bilgisayar Mühendisliği (Lisans), 2024 → devam ediyor · 3. sınıf · beklenen mezuniyet 2028 (kullanıcı onayı, 2026-11-20)
+- **Mustafa Kaynak Anadolu Lisesi** (Proje Okulu), Denizli, 2019–2023 · ✅ sitede gösterilecek
 - ✅ Başarılar bölümü sitede yer almayacak (2026-11-20)
 - Diller: ✅ Türkçe (ana dil) · İngilizce B2 (Almanca gösterilmeyecek)
 
