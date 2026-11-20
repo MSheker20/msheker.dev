@@ -30,12 +30,12 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 
 Çıkış kriteri: seçilen yönün hero'su tarayıcıda onaylandı. ✅
 
-## Faz 3 · İskelet ✅ (2026-11-20, Vercel hariç)
+## Faz 3 · İskelet ✅ (2026-11-20)
 - [x] Next.js 16.4 + React 19.3 + TS strict + Tailwind 4.3 + ESLint (Prettier eklenmedi; gerekirse Faz 4)
 - [x] `@theme` token'ları (DESIGN.md), Geist Mono (`next/font`, latin-ext), açık/koyu/sistem tema, saklanan seçim
 - [x] Layout: köşe işaretli nav ızgarası, piksel logo, 1–4 kısayolları, footer, skip-link, 404
 - [x] EN/TR yerleşik i18n (`[lang]` + `next/root-params` + `proxy.ts`, D-011), içerik katmanı (`src/content/`)
-- [ ] Vercel'e ilk önizleme dağıtımı (GitHub reposu hazır; Vercel hesabı gerekli)
+- [→] Vercel dağıtımı Faz 7'ye taşındı (kullanıcı kararı, 2026-11-20)
 
 Çıkış kriteri: boş ama temalı sayfalar önizlemede açılıyor.
 
@@ -63,6 +63,7 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 Çıkış kriteri: PLAN.md'deki başarı ölçütleri karşılandı.
 
 ## Faz 7 · Yayın
+- [ ] Vercel'e bağlama (GitHub: MSheker20/msheker.dev) ve ilk dağıtım
 - [ ] msheker.dev alan adı → Vercel, HTTPS
 - [ ] Analitik
 - [ ] Son mobil ve tarayıcı testi (`ecc:browser-qa`)
