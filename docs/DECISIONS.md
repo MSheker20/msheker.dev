@@ -104,3 +104,9 @@ Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı
 
 ## D-018 ✅ Komut paleti (2026-11-20)
 `/` ya da `⌘K` / `Ctrl+K` ile açılan terminal tarzı palet (`src/components/command-palette.tsx`). Yerel `<dialog>` (odak içeride kalır, Escape kapatır, arka plan erişilemez, odak geri döner) + combobox/listbox rolleri. Komutlar İngilizce (`cd work`, `open covertgift`, `get cv.pdf`, `theme dark`, `lang tr`, `motion`, `mail`, `open github`); açıklamalar dile göre. Açılış animasyonu yok (klavyeyle açılan, anında gelmesi gereken bir şey). Görünür girişler: yüzen navbarda `[/] Commands`, mobil menüde ve ayarlar kartında.
+
+## D-019 ✅ Süsleme turu (2026-11-20)
+- **Canlı durum:** Header ve yüzen navbardaki durum satırı, en son push'lanan açık (public, fork olmayan) repodaki son commit'i gösterir: "18m ago · repo: mesaj", commit'e bağlantı. Göreli süre tarayıcıda hesaplanır (sayfa saatlerce önbellekte kalır). Son 6 saatteki commit yeşil noktayı iki kez nabız attırır. Private repolar hiçbir zaman gösterilmez. Veri gelmezse sözlükteki `status.now` metni görünür. **Not:** commit mesajları artık sitede herkese açık; mesajlar buna göre yazılmalı.
+- **Proje paylaşım görselleri:** `work/[slug]/opengraph-image.tsx`; terminal çerçevesi, proje adı, özet, yığın logoları (marka renginde).
+- **Etkileşimli 404:** `ls`, `cd <sayfa>`, `open <proje>`, `help`, `clear`; çıktı İngilizce (gerçek kabuk gibi).
+- **Detaylar:** dış bağlantılarda `↗` hover'da 2 px sağ-üste kayar (yalnızca fareli cihazlar); terminal içi seçim terminal renklerinde; palet ve 404 imleci accent.

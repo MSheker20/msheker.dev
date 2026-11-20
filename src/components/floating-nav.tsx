@@ -9,11 +9,15 @@ import { PauseButton } from "./motion";
 import { basePath, NavLinks } from "./nav-links";
 import { PixelWordmark } from "./pixel-wordmark";
 import { PaletteButton } from "./command-palette";
+import { LiveStatus } from "./live-status";
+import type { LatestCommit } from "@/lib/github";
 
 type Props = {
   locale: Locale;
   nav: Dictionary["nav"];
   status: string;
+  /** latest public commit for the status line, or null for the written status */
+  commit: LatestCommit | null;
   motion: Dictionary["motion"];
   /** section labels, e.g. "01 / Work" */
   labels: { work: string; about: string; cv: string; contact: string };
@@ -32,7 +36,7 @@ const HOVER = "(hover: hover) and (pointer: fine)";
  * small bar (wordmark · current section) that opens into the full nav on hover or focus.
  * Phones: always shown (the grid header is not drawn there) and opens as a menu on tap.
  */
-export function FloatingNav({ locale, nav, status, motion, labels, palette }: Props) {
+export function FloatingNav({ locale, nav, status, commit, motion, labels, palette }: Props) {
   const pathname = usePathname();
   const route = basePath(pathname);
   const [phone, setPhone] = useState(false);
@@ -174,10 +178,7 @@ export function FloatingNav({ locale, nav, status, motion, labels, palette }: Pr
               </div>
               <div>
                 <Label>{nav.status}</Label>
-                <p className="m-0 flex min-h-11 items-center">
-                  <span aria-hidden="true" className="mr-2 inline-block size-[7px] shrink-0 rounded-full bg-ok" />
-                  {status}
-                </p>
+                <LiveStatus commit={commit} fallback={status} locale={locale} />
                 <PauseButton labels={motion} />
                 {phone && <PaletteButton label={palette} />}
               </div>

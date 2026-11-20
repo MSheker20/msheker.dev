@@ -384,6 +384,40 @@
   }
 }
 
+/* ---- live status (live-status.tsx): a commit from the last six hours rings the dot twice, then rests */
+.status-pulse {
+  animation: status-pulse 1.2s var(--ease-out-soft) 0.6s 2;
+}
+@keyframes status-pulse {
+  from {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-ok) 60%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 7px transparent;
+  }
+}
+
+/* ---- 404 shell (not-found-shell.tsx): the input has no outline of its own, the terminal shows focus */
+.term-shell:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---- small details: external ↗ steps up-right on hover; selection inside terminals uses terminal colours */
+.ext-arrow {
+  display: inline-block;
+  transition: transform 0.2s var(--ease-out-soft);
+}
+@media (hover: hover) and (pointer: fine) {
+  a:hover .ext-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+.term ::selection {
+  background: var(--color-term-accent);
+  color: var(--color-term-bg);
+}
+
 /* ---- organisation logos (sections.tsx → Entries): a one-colour mask that takes the text colour */
 .org-logo {
   flex-shrink: 0;

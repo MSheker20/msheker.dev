@@ -82,7 +82,7 @@ export default async function Home() {
             <div className="mb-9 grid w-full min-w-0 gap-3 md:w-auto md:justify-items-end">
               {activity && <ActivityHeatmap activity={activity} label={dict.home.activity.replace("{n}", String(activity.total))} />}
               <a href={site.links.github} className="inline-flex min-h-11 items-center text-muted transition-colors hover:text-ink">
-                {dict.home.allRepos}
+                {dict.home.allRepos.replace(/\s*↗$/, "")}&nbsp;<span aria-hidden="true" className="ext-arrow">↗</span>
               </a>
             </div>
           </div>

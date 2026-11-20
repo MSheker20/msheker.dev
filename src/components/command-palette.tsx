@@ -167,7 +167,7 @@ export function CommandPalette({ locale, labels, email, github, linkedin, projec
               setActive(0);
             }}
             onKeyDown={onInputKey}
-            className="min-h-12 w-full bg-transparent text-term-ink outline-none placeholder:text-term-muted"
+            className="min-h-12 w-full bg-transparent text-term-ink caret-term-accent outline-none placeholder:text-term-muted"
           />
         </div>
         <ul id={listId} role="listbox" aria-label={labels.label} className="m-0 max-h-[min(52vh,420px)] list-none overflow-y-auto p-1.5">

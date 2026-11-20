@@ -30,7 +30,7 @@ export function CodeExcerpt({ code, linkLabel }: { code: CodeExcerptData; linkLa
         <i />
         <b className="ml-1.5 min-w-0 truncate font-normal">{code.file}</b>
         <a href={code.url} className="ml-auto inline-flex min-h-11 shrink-0 items-center text-term-muted transition-colors hover:text-term-ink">
-          {linkLabel} ↗
+          {linkLabel}&nbsp;<span aria-hidden="true" className="ext-arrow">↗</span>
         </a>
       </div>
       <pre className="m-0 overflow-x-auto py-3.5 font-mono text-[12.5px] leading-[1.7] [tab-size:2]">

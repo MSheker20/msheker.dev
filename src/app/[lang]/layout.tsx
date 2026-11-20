@@ -15,6 +15,7 @@ import { site } from "@/content/site";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { alternates } from "@/i18n/seo";
+import { getLatestCommit } from "@/lib/github";
 
 const mono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -49,6 +50,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await getLocale();
   const dict = await getDictionary();
+  const commit = await getLatestCommit();
   return (
     <html lang={locale} className={mono.variable} suppressHydrationWarning>
       <body className="flex min-h-svh flex-col">
@@ -60,11 +62,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           {dict.skip}
         </a>
         <MotionProvider>
-          <SiteHeader dict={dict} locale={locale} />
+          <SiteHeader dict={dict} locale={locale} commit={commit} />
           <FloatingNav
             locale={locale}
             nav={dict.nav}
             status={dict.status.now}
+            commit={commit}
             motion={dict.motion}
             labels={{ work: dict.pages.work.label, about: dict.pages.about.label, cv: dict.pages.cv.label, contact: dict.pages.contact.label }}
             palette={dict.palette.open}

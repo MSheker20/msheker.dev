@@ -60,8 +60,9 @@ export async function getActivity(): Promise<Activity | null> {
 
     const reposRes = await gh(`/users/${user}/repos?per_page=100&type=owner`);
     if (!reposRes.ok) return null;
-    const repos = ((await reposRes.json()) as { name: string; fork: boolean; pushed_at: string }[]).filter(
-      (r) => !r.fork && Date.parse(r.pushed_at) >= start,
+    // private repos never count, even when a token would list them
+    const repos = ((await reposRes.json()) as { name: string; fork: boolean; private: boolean; pushed_at: string }[]).filter(
+      (r) => !r.fork && !r.private && Date.parse(r.pushed_at) >= start,
     );
 
     const weeks: number[][] = Array.from({ length: WEEKS }, () => [0, 0, 0, 0, 0, 0, 0]);
@@ -81,6 +82,33 @@ export async function getActivity(): Promise<Activity | null> {
     }
     const total = weeks.flat().reduce((a, b) => a + b, 0);
     return total > 0 ? { weeks, total } : null;
+  } catch {
+    return null;
+  }
+}
+
+/** The latest commit by this user in their most recently pushed public repo (header status line). */
+export type LatestCommit = { repo: string; message: string; date: string; url: string };
+
+export async function getLatestCommit(): Promise<LatestCommit | null> {
+  "use cache";
+  cacheLife("hours");
+  try {
+    const reposRes = await gh(`/users/${user}/repos?per_page=5&type=owner&sort=pushed`);
+    if (!reposRes.ok) return null;
+    const repos = (await reposRes.json()) as { name: string; fork: boolean; private: boolean }[];
+    const repo = repos.find((r) => !r.fork && !r.private); // a private repo's name and messages never show
+    if (!repo) return null;
+    const res = await gh(`/repos/${user}/${repo.name}/commits?author=${user}&per_page=1`);
+    if (!res.ok) return null;
+    const [c] = (await res.json()) as { html_url: string; commit: { message: string; author: { date: string } } }[];
+    if (!c) return null;
+    return {
+      repo: repo.name,
+      message: c.commit.message.split("\n")[0], // subject line only; trailers never show
+      date: c.commit.author.date,
+      url: c.html_url,
+    };
   } catch {
     return null;
   }

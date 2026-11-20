@@ -4,9 +4,11 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { PixelWordmark } from "./pixel-wordmark";
 import { PauseButton } from "./motion";
 import { NavLinks } from "./nav-links";
+import { LiveStatus } from "./live-status";
+import type { LatestCommit } from "@/lib/github";
 
 /** Crop-mark nav grid (design/hero v4): wordmark · Index · Docs · Status. */
-export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+export function SiteHeader({ dict, locale, commit }: { dict: Dictionary; locale: Locale; commit: LatestCommit | null }) {
   const { nav } = dict;
   return (
     // #site-header is the floating nav's signal (floating-nav.tsx). On phones only the space is kept:
@@ -30,10 +32,7 @@ export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale 
       </nav>
       <div className="crop px-4 py-2.5">
         <Label>{nav.status}</Label>
-        <p className="m-0 flex min-h-11 items-center">
-          <span aria-hidden="true" className="mr-2 inline-block size-[7px] rounded-full bg-ok" />
-          {dict.status.now}
-        </p>
+        <LiveStatus commit={commit} fallback={dict.status.now} locale={locale} />
         <PauseButton labels={dict.motion} />
       </div>
     </header>

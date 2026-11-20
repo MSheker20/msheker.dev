@@ -107,11 +107,11 @@ export function ContactSection({ dict, id, as = "h1" }: Props) {
           </a>
           <a className="btn btn-ghost" href={site.links.github}>
             <BrandIcon icon={brandIcons.github} />
-            GitHub ↗
+            GitHub <span aria-hidden="true" className="ext-arrow">↗</span>
           </a>
           <a className="btn btn-ghost" href={site.links.linkedin}>
             <BrandIcon icon={brandIcons.linkedin} />
-            LinkedIn ↗
+            LinkedIn <span aria-hidden="true" className="ext-arrow">↗</span>
           </a>
         </div>
       </div>
