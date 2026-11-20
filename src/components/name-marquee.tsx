@@ -29,17 +29,19 @@ export function NameMarquee({ name }: { name: string }) {
       }
     };
     const frame = (now: number) => {
-      const dt = (now - last) / 1000;
+      // after a hidden tab or a locked screen the first frame can be seconds late: cap it
+      const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       const unit = el.scrollWidth / 4;
       if (!pausedRef.current) x += dir * 70 * (1 + boost) * dt;
       boost *= 0.92;
-      if (x <= -unit) x += unit;
-      if (x > 0) x -= unit;
+      // keep x in (-unit, 0] however far it moved, so the strip never slides out of view
+      if (unit > 0) x = -((((-x) % unit) + unit) % unit);
       el.style.transform = `translate3d(${x}px,0,0)`;
       raf = requestAnimationFrame(frame);
     };
-    // run the frame loop only while the strip is on screen
+    // run the frame loop only while the strip is on screen; watch the still outer box,
+    // not the moving track, whose own box slides sideways
     const io = new IntersectionObserver(([e]) => {
       cancelAnimationFrame(raf);
       if (e.isIntersecting) {
@@ -47,7 +49,7 @@ export function NameMarquee({ name }: { name: string }) {
         raf = requestAnimationFrame(frame);
       }
     });
-    io.observe(el);
+    io.observe(el.parentElement ?? el);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       io.disconnect();
