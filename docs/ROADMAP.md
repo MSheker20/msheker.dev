@@ -50,13 +50,13 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 ## Faz 5 · Hareket ve cila
 - [ ] Hero girişi, 1–2 imza an (`animate`, `emil-design-eng`)
 - [ ] Hover, focus ve geçiş mikro etkileşimleri
-- [ ] `prefers-reduced-motion` desteği
+- [x] `prefers-reduced-motion` desteği (CSS + `useReducedMotion`, `[p]` ile durdurma)
 - [ ] `review-animations` + taste-skill finish gate
 
 ## Faz 6 · Kalite
 - [ ] `web-design-guidelines` denetimi, bulguların kapatılması
-- [ ] `accessibility`: klavye, kontrast, ekran okuyucu
-- [ ] `core-web-vitals` + Lighthouse (chrome-devtools MCP) hedefleri
+- [x] `accessibility`: Lighthouse a11y 100 (ana sayfa + vaka sayfası, mobil); erişilebilir ad uyuşmazlıkları düzeltildi (2026-11-20)
+- [x] `core-web-vitals` + Lighthouse: Slow 4G + 4× CPU mobilde LCP 702 ms, CLS 0; Best Practices ve SEO 100 (2026-11-20)
 - [x] `seo`: canonical + hreflang, Person JSON-LD, sitemap, robots, dil başına OG görseli
 - [ ] Kod incelemesi (`ecc:react-reviewer`)
 
