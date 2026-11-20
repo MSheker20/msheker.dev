@@ -18,9 +18,13 @@ export type CaseStudy = {
   terminal?: { bar: string; script: Line[] };
   /** An interactive demo drawn on the case page, after the approach. */
   demo?: "anti-spoiler";
+  /** A verbatim excerpt of the case's own code (code-excerpt.tsx); segments skip the lines between them. */
+  code?: CodeExcerptData;
   /** Request path drawn on the case page (architecture.tsx). */
   architecture?: Architecture;
 };
+
+export type CodeExcerptData = { file: string; lang: string; url: string; segments: { start: number; lines: string[] }[] };
 
 export type ArchNode = { name: string; icon?: string; role: L; notes: L[] };
 export type Architecture = {
@@ -77,6 +81,16 @@ export const cases: CaseStudy[] = [
       tr: "Canlıda · 123 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
     },
     demo: "anti-spoiler",
+    // Verbatim from the CovertGift repo at the commit in the url; refresh both together.
+    code: {
+      file: "backend/internal/middleware/group_access.go",
+      lang: "go",
+      url: "https://github.com/MSheker20/CovertGift/blob/7a8d4f18e241fc48cb7bd7c83a6d365c8589ce0a/backend/internal/middleware/group_access.go#L13-L52",
+      segments: [
+        { start: 13, lines: ["// GroupAccess gruba erişim yetkisini ve Anti-Spoiler kuralını denetleyen middleware'dir", "func GroupAccess(groupRepo repository.GroupRepository) gin.HandlerFunc {", "\treturn func(c *gin.Context) {"] },
+        { start: 46, lines: ["\t\t// 4. KRİTİK: Anti-Spoiler Kuralı!", "\t\t// Giriş yapmış kullanıcı bu grubun hedef kişisi ise ANINDA 403 Forbidden ile engelle!", "\t\tif group.TargetUserID != nil && *group.TargetUserID == userID {", "\t\t\tcontrollers.RespondErr(c, http.StatusForbidden, \"Erişim engellendi: Bu hediye grubu senin için oluşturulmuş bir sürprizdir.\")", "\t\t\tc.Abort()", "\t\t\treturn", "\t\t}"] },
+      ],
+    },
     // Source: the CovertGift repo (frontend/nginx.conf.template, backend/, docs/AZURE.md), 2026-11-20.
     architecture: {
       client: {

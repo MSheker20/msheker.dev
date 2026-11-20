@@ -80,6 +80,7 @@
         "as": "Request as",
         "member": "Group member",
         "recipient": "The recipient",
+        "source": "View on GitHub",
         "translation": "Access blocked: this gift group is a surprise made for you."
       },
       "architecture": "Architecture",
