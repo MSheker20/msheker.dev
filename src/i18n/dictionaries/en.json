@@ -75,6 +75,7 @@
       "email": "Email"
     },
     "case": {
+      "architecture": "Architecture",
       "role": "Role",
       "period": "Period",
       "problem": "Problem",

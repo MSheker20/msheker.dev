@@ -16,6 +16,19 @@ export type CaseStudy = {
   shots?: { src: string; alt: L; width: number; height: number }[];
   /** Shown in place of screenshots: a terminal with the same honest wip script as the home card. */
   terminal?: { bar: string; script: Line[] };
+  /** Request path drawn on the case page (architecture.tsx). */
+  architecture?: Architecture;
+};
+
+export type ArchNode = { name: string; icon?: string; role: L; notes: L[] };
+export type Architecture = {
+  client: ArchNode;
+  /** browser → hosting environment */
+  edgeIn: L;
+  env: { label: L; icon?: string; front: ArchNode; link: L; back: ArchNode };
+  /** API → outside services */
+  edgeOut: L;
+  external: ArchNode[];
 };
 
 export const cases: CaseStudy[] = [
@@ -60,6 +73,61 @@ export const cases: CaseStudy[] = [
     outcome: {
       en: "Live · 123 commits · 40 Go test files · TR/EN · light and dark themes · mobile.",
       tr: "Canlıda · 123 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
+    },
+    // Source: the CovertGift repo (frontend/nginx.conf.template, backend/, docs/AZURE.md), 2026-11-20.
+    architecture: {
+      client: {
+        name: "Browser",
+        icon: "react",
+        role: { en: "React 19 single-page app", tr: "React 19 tek sayfa uygulama" },
+        notes: [{ en: "covertgift.msheker.dev", tr: "covertgift.msheker.dev" }],
+      },
+      edgeIn: { en: "HTTPS · SSE", tr: "HTTPS · SSE" },
+      env: {
+        label: { en: "Azure Container Apps · Poland Central", tr: "Azure Container Apps · Poland Central" },
+        icon: "azure",
+        front: {
+          name: "covertgift-web",
+          icon: "nginx",
+          role: { en: "nginx · the only public door", tr: "nginx · dışa açık tek kapı" },
+          notes: [
+            { en: "Serves the built app, proxies /api", tr: "Derlenmiş uygulamayı sunar, /api'yi iletir" },
+            { en: "Dev routes answer 403 here", tr: "Geliştirme uçları burada 403 döner" },
+            { en: "Invite tokens kept out of the logs", tr: "Davet token'ları loga yazılmaz" },
+          ],
+        },
+        link: { en: "/api · internal", tr: "/api · iç ağ" },
+        back: {
+          name: "covertgift-server",
+          icon: "go",
+          role: { en: "Go + Gin API · internal only", tr: "Go + Gin API · yalnızca iç ağ" },
+          notes: [
+            { en: "Anti-Spoiler: 403 for the recipient", tr: "Anti-Spoiler: hedef kişiye 403" },
+            { en: "Live updates over SSE, one replica", tr: "SSE ile canlı güncelleme, tek kopya" },
+            { en: "Hourly reminder job", tr: "Saatlik hatırlatma görevi" },
+          ],
+        },
+      },
+      edgeOut: { en: "SQL · HTTPS", tr: "SQL · HTTPS" },
+      external: [
+        {
+          name: "PostgreSQL",
+          icon: "postgresql",
+          role: { en: "Azure managed server", tr: "Azure yönetilen sunucu" },
+          notes: [{ en: "Schema migrated at start-up", tr: "Şema açılışta güncellenir" }],
+        },
+        {
+          name: "Gemini API",
+          icon: "gemini",
+          role: { en: "Gift suggestions", tr: "Hediye önerileri" },
+          notes: [{ en: "Falls back to a lighter model on 503", tr: "503'te daha hafif modele geçer" }],
+        },
+        {
+          name: "Store pages",
+          role: { en: "Link previews", tr: "Link önizlemeleri" },
+          notes: [{ en: "Trendyol, Amazon TR, Hepsiburada", tr: "Trendyol, Amazon TR, Hepsiburada" }],
+        },
+      ],
     },
     stack: ["Go 1.27", "Gin", "GORM", "PostgreSQL 17", "React 19", "TypeScript", "TanStack Query", "Tailwind 4", "SSE", "Gemini", "Docker", "nginx", "Azure Container Apps"],
     shots: [

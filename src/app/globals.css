@@ -303,11 +303,110 @@
 .brand-icon[data-tone="dark"] {
   --brand-shown: var(--tone-dark, var(--brand));
 }
-.brand:hover > .brand-icon,
+.brand:hover .brand-icon,
 .group:hover .brand-icon,
 .btn:hover .brand-icon,
 :focus-visible .brand-icon {
   color: var(--brand-shown);
+}
+
+/* ---- architecture diagram (architecture.tsx): top to bottom, left to right from lg */
+.arch,
+.arch-env-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.arch-node {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.arch-env {
+  padding: 12px;
+  border: 1px dashed var(--muted);
+}
+.arch-env-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: var(--text-label);
+  color: var(--muted);
+}
+.arch-ext {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.arch-edge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0 6px 20px;
+  white-space: nowrap;
+}
+/* the shaft and its head, pointing down */
+.arch-arrow {
+  position: relative;
+  width: 1px;
+  height: 22px;
+  background: var(--muted);
+}
+.arch-arrow::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  border: 3.5px solid transparent;
+  border-top: 5px solid var(--muted);
+  border-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .arch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 3fr);
+    align-items: center;
+  }
+  .arch-env-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .arch-env-row > .arch-edge {
+    align-self: center;
+  }
+  .arch-edge-down,
+  .arch-ext {
+    grid-column: 3;
+  }
+  .arch-edge-down {
+    justify-self: center;
+    padding-left: 0;
+  }
+  .arch-ext {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .arch-edge:not(.arch-edge-down) {
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 10px;
+  }
+  .arch-edge:not(.arch-edge-down) .arch-arrow {
+    width: 36px;
+    height: 1px;
+  }
+  .arch-edge:not(.arch-edge-down) .arch-arrow::after {
+    left: auto;
+    right: 0;
+    bottom: -3px;
+    border: 3.5px solid transparent;
+    border-left: 5px solid var(--muted);
+    border-right: 0;
+  }
 }
 
 /* ---- floating nav (floating-nav.tsx): compact bar pinned top-centre, opens downward */

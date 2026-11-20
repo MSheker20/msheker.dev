@@ -77,7 +77,7 @@ Uygulama planı: [PHASE9.md](PHASE9.md). Öncelikli (sırayla ilk ikisi):
 - [x] **Teknoloji ve marka logoları.** (2026-11-20: Azure, Java ve LinkedIn eski Simple Icons sürümlerinden, D-015) Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ✅ Renk: tek renk, üzerine gelince marka rengi (2026-11-20).
 
 Sonra:
-- [ ] CovertGift mimari diyagramı (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında
+- [x] CovertGift mimari diyagramı (2026-11-20, CovertGift reposundan çıkarıldı: nginx.conf.template, docs/AZURE.md) (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında
 - [ ] Anti-Spoiler canlı demosu: üye ↔ hediye alınan kişi anahtarı, 200 / 403
 - [ ] CovertGift'ten gerçek kod parçası (403 middleware), vaka sayfasında
 - [ ] GitHub aktivite ısı haritası + canlı repo verisi (elle yazılı commit/test sayılarının yerine)

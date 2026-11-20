@@ -9,6 +9,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { alternates } from "@/i18n/seo";
 import { BrandList } from "@/components/brand-icon";
+import { ArchitectureDiagram } from "@/components/architecture";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -115,6 +116,13 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
           ))}
         </ol>
       </section>
+
+      {study.architecture && (
+        <section className="grid gap-x-6 gap-y-6 border-t border-line py-12 md:grid-cols-[200px_1fr]">
+          <h2 className="m-0 text-label font-normal text-muted">{t.architecture}</h2>
+          <ArchitectureDiagram arch={study.architecture} locale={locale} />
+        </section>
+      )}
 
       {rest.length > 0 && (
         <div className="grid gap-5 md:grid-cols-2">

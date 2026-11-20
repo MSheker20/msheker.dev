@@ -75,6 +75,7 @@
       "email": "E-posta"
     },
     "case": {
+      "architecture": "Mimari",
       "role": "Rol",
       "period": "Süre",
       "problem": "Problem",
