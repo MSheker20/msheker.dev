@@ -47,11 +47,11 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 Çıkış kriteri: tüm içerik yerinde, mobil ve masaüstünde düzgün.
 
-## Faz 5 · Hareket ve cila
-- [ ] Hero girişi, 1–2 imza an (`animate`, `emil-design-eng`)
+## Faz 5 · Hareket ve cila ✅ (2026-11-20)
+- [x] Hero girişi (ana sayfa + vaka sayfaları), imza anlar: API logu, yazılan terminal, kaydırmaya tepki veren isim şeridi
 - [x] Hover, focus ve geçiş mikro etkileşimleri (kart kalkışı, ok kayması, görsel zoom, `:focus-visible` halkası)
 - [x] `prefers-reduced-motion` desteği (CSS + `useReducedMotion`, `[p]` ile durdurma)
-- [ ] `review-animations` + taste-skill finish gate
+- [x] Hareket incelemesi (satır içi, DESIGN.md §5'e göre): API logu odakta da duruyor; taste-skill gate betikleri çalıştırılmadı
 
 ## Faz 6 · Kalite
 - [x] `web-design-guidelines` denetimi: [t] kısayolu bağlandı, başlık dengesi, touch-action, translate="no" (2026-11-20)
