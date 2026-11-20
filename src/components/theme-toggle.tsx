@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useLayoutEffect, useSyncExternalStore } from "react";
 
 type Mode = "system" | "light" | "dark";
 const ORDER: Mode[] = ["system", "light", "dark"];
@@ -21,6 +21,18 @@ export const themeScript = `try{var t=localStorage.getItem("theme");if(t==="ligh
 export function ThemeToggle({ labels }: { labels: { label: string } & Record<Mode, string> }) {
   const mode = useSyncExternalStore(subscribe, read, () => "system" as Mode);
 
+  // Switching language swaps the [lang] root layout client-side: React renders a fresh <html>
+  // without data-theme and the head script does not run again, so reapply the stored theme.
+  useLayoutEffect(() => {
+    try {
+      const t = localStorage.getItem("theme");
+      if ((t === "light" || t === "dark") && document.documentElement.dataset.theme !== t) {
+        document.documentElement.dataset.theme = t;
+        window.dispatchEvent(new Event(EVENT));
+      }
+    } catch {}
+  }, []);
+
   const next = () => {
     const m = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length];
     const root = document.documentElement;
@@ -34,7 +46,7 @@ export function ThemeToggle({ labels }: { labels: { label: string } & Record<Mod
   };
 
   return (
-    <button type="button" onClick={next} className="navlink cursor-pointer text-muted hover:text-ink" >
+    <button type="button" onClick={next} className="navlink cursor-pointer text-muted hover:text-ink">
       <kbd aria-hidden="true">[t]</kbd>
       <span>
         <span className="sr-only">{labels.label}: </span>
