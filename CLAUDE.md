@@ -19,6 +19,7 @@ Kişisel portfolyo + CV sitesi. Hedef: şık, modern, hızlı ve "şablon" gör�
 - Her faz sonunda ROADMAP.md'deki kutuları güncelle; yeni kararı DECISIONS.md'ye yaz.
 - İçerik (metin, tarih, rakam) uydurma: CONTENT.md'de yoksa kullanıcıya sor, yer tutucuyu açıkça `TODO:` ile işaretle.
 - `prefers-reduced-motion`, klavye erişimi ve kontrast pazarlık konusu değil.
+- PDF CV her zaman ATS kurallarına uyar (D-013, kalıcı): tek sütun, seçilebilir metin; logo, ikon, görsel, tablo yok. Görsel süsler yalnızca web CV'ye (`/cv`) girer.
 - Kullanıcıyla Türkçe konuş; kod, commit mesajları ve tanımlayıcılar İngilizce.
 
 ## Yığın (Faz 3'ten itibaren)

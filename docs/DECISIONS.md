@@ -78,6 +78,7 @@ Next 16 rehberindeki kalıp: `app/[lang]` kök layout + `next/root-params` ile o
 - EN metin COPY.md §6'daki TR taslaktan çevrildi; onay bekliyor.
 
 ## D-013 ✅ PDF CV: ATS uyumlu tek sayfa (2026-11-20)
+**Kalıcı kural** (kullanıcı, 2026-11-20): CV her zaman ATS uyumlu kalır; bu karar yeniden açılmaz. Logo ve ikonlar yalnızca web CV'de.
 Kullanıcı seçimi. Tek sütun, A4, seçilebilir metin; tablo, ikon, görsel ve fotoğraf yok. Standart başlıklar (EN: Summary, Education, Experience, Projects, Skills, Languages · TR: Özet, Eğitim, Deneyim, Projeler, Yetkinlikler, Diller). Yazı tipi Arial/Helvetica (ATS ve okunabilirlik için site fontu kullanılmıyor).
 - Kaynak: `src/content/cv.ts` (`cvSummary`, `cvProjects` + ortak deneyim/eğitim/yetkinlik). Sayfa: `/[lang]/cv/document` (`noindex`, sitemap'te yok).
 - Üretim: `npm run cv:pdf` → build + Chrome headless → `public/cv/mustafa-seker-cv-{en,tr}.pdf`. Vercel build'inde Chrome olmadığı için PDF'ler repoya commit'lenir; CV değişince komut yeniden çalıştırılır.
