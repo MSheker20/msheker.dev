@@ -30,12 +30,12 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 
 Çıkış kriteri: seçilen yönün hero'su tarayıcıda onaylandı. ✅
 
-## Faz 3 · İskelet
-- [ ] Next.js 16 + TS + Tailwind 4 + ESLint/Prettier
-- [ ] `@theme` token'ları, fontlar, açık/koyu tema
-- [ ] Layout: header, footer, navigasyon, skip-link
-- [ ] next-intl (TR/EN), içerik katmanı (`content/`)
-- [ ] Vercel'e ilk önizleme dağıtımı
+## Faz 3 · İskelet ✅ (2026-11-20, Vercel hariç)
+- [x] Next.js 16.4 + React 19.3 + TS strict + Tailwind 4.3 + ESLint (Prettier eklenmedi; gerekirse Faz 4)
+- [x] `@theme` token'ları (DESIGN.md), Geist Mono (`next/font`, latin-ext), açık/koyu/sistem tema, saklanan seçim
+- [x] Layout: köşe işaretli nav ızgarası, piksel logo, 1–4 kısayolları, footer, skip-link, 404
+- [x] EN/TR yerleşik i18n (`[lang]` + `next/root-params` + `proxy.ts`, D-011), içerik katmanı (`src/content/`)
+- [ ] Vercel'e ilk önizleme dağıtımı (kullanıcının Vercel hesabı ve GitHub reposu gerekli)
 
 Çıkış kriteri: boş ama temalı sayfalar önizlemede açılıyor.
 

@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+/* Tokens: docs/DESIGN.md is the source of truth. Nothing outside this file defines colour, type or motion. */
+
+/* dark theme: system preference unless the visitor picked one (html[data-theme]) */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f7f7f4;
+  --surface: #efefea;
+  --ink: #18181a;
+  --muted: #66666a;
+  --line: #dcdcd5;
+  --accent: #2f5bff;
+  --accent-ink: #2f5bff;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b0b0c;
+    --surface: #141416;
+    --ink: #ecece8;
+    --muted: #8e8e89;
+    --line: #242427;
+    --accent: #6f8bff;
+    --accent-ink: #8aa0ff;
+    --on-accent: #0b0b0c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --ink: #ecece8;
+  --muted: #8e8e89;
+  --line: #242427;
+  --accent: #6f8bff;
+  --accent-ink: #8aa0ff;
+  --on-accent: #0b0b0c;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@theme {
+  /* terminal: always dark, in both themes */
+  --color-term-bg: #0e0e10;
+  --color-term-ink: #e9e9e4;
+  --color-term-muted: #8b8b86;
+  --color-term-line: #26262a;
+  --color-term-accent: #6f8bff;
+  --color-term-art: #d9d9d2;
+  --color-ok: #3fb950;
+  --color-err: #ff6b5b;
+
+  /* type roles */
+  --text-label: 12.5px;
+  --text-label--line-height: 1.55;
+  --text-card: 13.5px;
+  --text-card--line-height: 1.55;
+  --text-body: 15px;
+  --text-body--line-height: 1.55;
+  --text-statement: clamp(22px, 2.5vw, 38px);
+  --text-statement--line-height: 1.25;
+  --text-statement--letter-spacing: -0.015em;
+  --text-section: clamp(26px, 3vw, 44px);
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.02em;
+  --text-name: clamp(56px, 11vw, 176px);
+  --text-name--line-height: 1.14;
+  --text-name--letter-spacing: -0.045em;
+
+  /* layout */
+  --container-page: 1440px;
+  --spacing-pad: clamp(16px, 4vw, 56px);
+  --radius-term: 6px;
+
+  /* motion */
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 1.55;
+    font-feature-settings: "calt" 0, "liga" 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* page wrap: every block starts and ends on the same edges */
+  .wrap {
+    width: 100%;
+    max-width: var(--container-page);
+    margin-inline: auto;
+    padding-inline: var(--spacing-pad);
+  }
+
+  /* crop-mark cell (Ravi): 9px corners, 4px outside */
+  .crop {
+    position: relative;
+  }
+  .crop::before,
+  .crop::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border: 0 solid var(--muted);
+  }
+  .crop::before {
+    left: -4px;
+    top: -4px;
+    border-left-width: 1px;
+    border-top-width: 1px;
+  }
+  .crop::after {
+    right: -4px;
+    bottom: -4px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  /* numbered nav link: underline draws, [n] picks up the accent */
+  .navlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+    min-height: 44px;
+    color: var(--ink);
+  }
+  .navlink kbd {
+    font: inherit;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .navlink span {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.35s var(--ease-out-soft);
+  }
+  .navlink:hover span,
+  .navlink[aria-current="page"] span {
+    background-size: 100% 1px;
+  }
+  .navlink:hover kbd,
+  .navlink[aria-current="page"] kbd {
+    color: var(--accent-ink);
+  }
+
+  /* buttons: step on hover, press on click */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1ch;
+    min-height: 44px;
+    padding-inline: 18px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--on-accent);
+    transition: transform 0.18s var(--ease-out-soft), border-color 0.2s;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover {
+    border-color: var(--ink);
+  }
+
+  /* terminal window */
+  .term {
+    background: var(--color-term-bg);
+    color: var(--color-term-ink);
+    border: 1px solid var(--color-term-line);
+    border-radius: var(--radius-term);
+    overflow: hidden;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--color-term-line);
+    color: var(--color-term-muted);
+    font-size: 12px;
+  }
+  .term-bar i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #2c2c30;
+  }
+}
+
+/* hero entrance: once, on load */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.enter > * {
+  animation: enter 0.7s var(--ease-out-soft) both;
+}
+.enter > *:nth-child(2) { animation-delay: 0.08s; }
+.enter > *:nth-child(3) { animation-delay: 0.16s; }
+.enter > *:nth-child(4) { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

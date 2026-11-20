@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Mustafa Şeker — Backend ağırlıklı full-stack geliştirici",
+    "description": "Denizli'de Bilgisayar Mühendisliği öğrencisi. Go ile API yazıyor, arayüzü React ile kuruyor ve ikisini de canlıya alıyorum."
+  },
+  "skip": "İçeriğe geç",
+  "nav": {
+    "label": "Ana menü",
+    "index": "Dizin",
+    "docs": "Belgeler",
+    "status": "Durum",
+    "work": "İşler",
+    "about": "Hakkımda",
+    "cv": "CV",
+    "contact": "İletişim",
+    "home": "msheker.dev ana sayfa"
+  },
+  "status": {
+    "now": "AlterF1'i yeniden yazıyor",
+    "location": "Denizli, TR · uzaktan"
+  },
+  "theme": {
+    "label": "Tema",
+    "system": "sistem",
+    "light": "açık",
+    "dark": "koyu"
+  },
+  "language": {
+    "label": "Dil",
+    "switchTo": "English"
+  },
+  "home": {
+    "statementStrong": "Backend ağırlıklı full-stack geliştirici.",
+    "statementDim": "Go ile API yazıyor, üstüne arayüzü kuruyor ve ikisini de canlıya alıyorum. Sadece kod.",
+    "seeWork": "İşlere bak",
+    "getCv": "CV'yi al"
+  },
+  "pages": {
+    "work": {
+      "label": "01 / İşler",
+      "title": "Yaptığım ve canlıya aldığım şeyler."
+    },
+    "about": {
+      "label": "02 / Hakkımda",
+      "title": "Bilgisayar Mühendisliği 3. sınıf öğrencisiyim; zamanımın çoğu backend'de.",
+      "bio": [
+        "Pamukkale Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. C ve Java ile başladım; bugün Go ile API yazıyor, arayüzü React ve TypeScript ile kuruyor ve yaptığımı canlıya alıyorum.",
+        "Zamanımın çoğu backend'de geçiyor: veri modelleri, yetkilendirme ve bir ürünü dürüst tutan kurallar.",
+        "Kod dışında: Formula 1, arabalar ve o hafta çıkan yeni teknolojiler."
+      ]
+    },
+    "cv": {
+      "label": "03 / CV",
+      "title": "Eğitim, deneyim ve yetkinlikler.",
+      "experience": "Deneyim",
+      "education": "Eğitim",
+      "skills": "Yetkinlikler",
+      "languages": "Diller",
+      "awards": "Başarılar",
+      "present": "devam ediyor"
+    },
+    "contact": {
+      "label": "04 / İletişim",
+      "title": "Birlikte bir şey mi yapalım? Yaz bana.",
+      "email": "E-posta"
+    }
+  },
+  "notFound": {
+    "title": "404 — bu rota hiçbir şey döndürmüyor.",
+    "back": "Başa dön"
+  },
+  "footer": {
+    "built": "Next.js ile yapıldı, Geist Mono ile dizildi."
+  }
+}

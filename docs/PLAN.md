@@ -43,7 +43,7 @@ Tüm içerik kodla birlikte repoda durur; CMS yok.
 | Stil | Tailwind CSS (CSS-first `@theme` token'ları) | 4.3 |
 | Hareket | Motion (`motion/react`), gerekiyorsa Lenis | 14.14 / 1.3 |
 | İçerik | MDX (`@next/mdx`) + tipli TS veri | 16.4 |
-| i18n | next-intl | 4.15 |
+| i18n | Next yerleşik: `[lang]` + `next/root-params` + `proxy.ts` (D-011) | — |
 | Görseller | `next/image` (AVIF/WebP), yerel fontlar (`next/font`) | — |
 | OG görselleri | `next/og` ile sayfa başına dinamik | — |
 | Barındırma | Vercel (msheker.dev; `.dev` HSTS gerektirir, HTTPS zaten zorunlu) | — |

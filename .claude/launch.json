@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "3000"],
+      "port": 3000
+    },
+    {
       "name": "design-hero",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "5310", "--bind", "127.0.0.1", "--directory", "design/hero"],

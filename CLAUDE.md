@@ -22,7 +22,16 @@ Kişisel portfolyo + CV sitesi. Hedef: şık, modern, hızlı ve "şablon" gör�
 - Kullanıcıyla Türkçe konuş; kod, commit mesajları ve tanımlayıcılar İngilizce.
 
 ## Yığın (Faz 3'ten itibaren)
-Next.js 16 App Router (SSG) · React 19 · TypeScript strict · Tailwind 4 · Motion · MDX · next-intl · Vercel · npm · Node 26
+Next.js 16 App Router (SSG, `cacheComponents`) · React 19 · TypeScript strict · Tailwind 4 · yerleşik i18n (D-011) · Vercel · npm · Node 26
+
+**Next 16 eğitim verisinden farklı:** kod yazmadan önce `node_modules/next/dist/docs/` içindeki ilgili rehberi oku (bkz. [AGENTS.md](AGENTS.md)). Middleware'in adı artık `proxy.ts`.
+
+Yapı: `src/app/[lang]/` sayfalar · `src/i18n/` diller ve sözlükler · `src/content/` site, CV ve proje verisi · `src/components/` bileşenler · token'lar `src/app/globals.css`
 
 ## Komutlar
-Faz 3'te iskelet kurulunca eklenecek (`npm run dev`, `build`, `lint`).
+```bash
+npm run dev      # http://localhost:3000 (önizleme: .claude/launch.json → web)
+npm run build    # statik üretim + tip kontrolü
+npm run lint
+npx tsc --noEmit
+```

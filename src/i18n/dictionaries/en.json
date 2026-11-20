@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Mustafa Şeker — Backend-leaning full-stack developer",
+    "description": "Computer engineering student in Denizli, Türkiye. I write APIs in Go, build the interface on top in React, and ship both."
+  },
+  "skip": "Skip to content",
+  "nav": {
+    "label": "Main",
+    "index": "Index",
+    "docs": "Docs",
+    "status": "Status",
+    "work": "Work",
+    "about": "About",
+    "cv": "CV",
+    "contact": "Contact",
+    "home": "msheker.dev home"
+  },
+  "status": {
+    "now": "rebuilding AlterF1",
+    "location": "Denizli, TR · remote"
+  },
+  "theme": {
+    "label": "Theme",
+    "system": "system",
+    "light": "light",
+    "dark": "dark"
+  },
+  "language": {
+    "label": "Language",
+    "switchTo": "Türkçe"
+  },
+  "home": {
+    "statementStrong": "Backend-leaning full-stack developer.",
+    "statementDim": "I write APIs in Go, put an interface on top, and ship both. Just coding.",
+    "seeWork": "See the work",
+    "getCv": "Get the CV"
+  },
+  "pages": {
+    "work": {
+      "label": "01 / Work",
+      "title": "Things I built and shipped."
+    },
+    "about": {
+      "label": "02 / About",
+      "title": "Third-year computer engineering student, mostly on the backend.",
+      "bio": [
+        "I'm a third-year Computer Engineering student at Pamukkale University. I started with C and Java; today I write APIs in Go, build the frontend in React and TypeScript, and deploy what I build.",
+        "Most of my time goes to the backend: data models, authorization, and the rules that keep a product honest.",
+        "Outside of code: Formula 1, cars, and whatever shipped this week."
+      ]
+    },
+    "cv": {
+      "label": "03 / CV",
+      "title": "Education, experience and skills.",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "awards": "Awards",
+      "present": "present"
+    },
+    "contact": {
+      "label": "04 / Contact",
+      "title": "Have something to build? Write to me.",
+      "email": "Email"
+    }
+  },
+  "notFound": {
+    "title": "404 — this route returns nothing.",
+    "back": "Back to the start"
+  },
+  "footer": {
+    "built": "Built with Next.js, set in Geist Mono."
+  }
+}

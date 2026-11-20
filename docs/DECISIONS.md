@@ -64,3 +64,9 @@ Kullanıcı üç varyasyondan parça seçti; sonuç `design/hero/v4.html`.
 - ✅ Font **Geist Mono**, vurgu **kobalt** `#2f5bff` (koyu temada `#6f8bff`). Kullanıcı 6 font (Geist, JetBrains, IBM Plex, Martian, Fragment, DM) ve 5 rengi (kobalt, turuncu, asit yeşili, terminal yeşili, kehribar) karşılaştırdıktan sonra ilk hali seçti (2026-11-20)
 - 5 sn'den uzun hareketler için `[p] Pause motion` düğmesi (Status hücresinde) + `prefers-reduced-motion`
 - ASCII portre: `assets-inbox/1000010335.jpeg` → `design/tools/person-mask.swift` (Apple Vision, cihazda) → `design/tools/ascii.py --mask … --cols 72 --width 2.8 --height 2.6 --gamma 0.8`
+
+## D-011 ✅ i18n: next-intl yerine Next'in yerleşik yöntemi (2026-11-20)
+Next 16 rehberindeki kalıp: `app/[lang]` kök layout + `next/root-params` ile okunan JSON sözlükler + `proxy.ts`. Ek bağımlılık yok, `cacheComponents` ile doğrudan uyumlu, her iki dil build'de statik üretiliyor.
+- EN önek olmadan (`/work`), TR `/tr` altında (`/tr/work`); `/en/...` adresleri kalıcı olarak (308) öneksiz adrese yönleniyor.
+- Sözlük tipi `en.json`'dan çıkıyor; `tr.json`'da eksik anahtar TypeScript hatası verir.
+- Bilinmeyen yollar `[lang]/[...rest]` ile yakalanıp dile uygun 404 gösteriliyor.
