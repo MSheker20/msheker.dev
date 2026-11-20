@@ -81,8 +81,8 @@ just coding.
 
 
 ## 7. İletişim CTA ✅ (2026-11-20)
-> EN: `$ mail hello@msheker.dev` — Have something to build? Write to me.
-> TR: Birlikte bir şey mi yapalım? Yaz bana.
+> EN: `$ mail hello@msheker.dev` — Get in touch.
+> TR: Bana ulaşmak için: (önceki "Birlikte bir şey mi yapalım? Yaz bana." fazla iddialı bulundu, 2026-11-20)
 
 ## 8. Faz 9 arayüz metinleri ✅ onaylandı (2026-11-20)
 Kaynak: `src/i18n/dictionaries/{en,tr}.json` ve `src/content/cases.ts`. Değişiklik istenirse oradan düzeltilir.
