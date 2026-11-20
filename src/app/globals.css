@@ -698,8 +698,9 @@ footer:hover .footer-mark {
 .fnav[data-open="true"] {
   border-color: var(--muted);
 }
-/* reading progress (case pages): a 2px accent line filling with the page's scroll. Browsers without
-   scroll timelines, and reduced motion, simply don't show it. */
+/* reading progress (case pages): a 2px accent line filling with the page's scroll. It is a state
+   indicator, not decoration, so it stays under reduced motion too (the !important beats the global
+   reduced-motion reset). Browsers without scroll timelines don't show it. */
 .read-progress {
   position: absolute;
   left: -1px;
@@ -712,12 +713,10 @@ footer:hover .footer-mark {
   display: none;
 }
 @supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .read-progress {
-      display: block;
-      animation: read-progress linear both;
-      animation-timeline: scroll(root);
-    }
+  .read-progress {
+    display: block;
+    animation: read-progress linear both !important;
+    animation-timeline: scroll(root) !important;
   }
 }
 @keyframes read-progress {

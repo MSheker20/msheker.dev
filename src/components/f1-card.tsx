@@ -37,26 +37,28 @@ export function F1Card({ f1, locale }: { f1: F1; locale: Locale }) {
         <i />
         <b className="ml-1.5 font-normal">f1 · {f1.season}</b>
       </div>
-      <div className="px-4 py-3.5 text-[12.5px] leading-[1.7]">
+      <div className="px-5 py-5 text-[14px] leading-[1.7] md:px-6 md:py-6">
         {f1.next && (
           <>
             <p className="m-0 text-term-muted">
               <span className="text-term-accent">$</span> f1 next
             </p>
-            <p className="m-0 text-term-ink">
-              {f1.next.name} <span className="text-term-muted">· round {f1.next.round}</span>
-            </p>
+            <p className="mt-2 mb-0 text-[22px] leading-tight text-term-ink">{f1.next.name}</p>
             <p className="m-0 text-term-muted">
-              {when} Denizli{now > 0 && <span className="text-ok"> · {until(Date.parse(f1.next.start) - now)}</span>}
+              round {f1.next.round} · {when} Denizli
+            </p>
+            {/* the countdown is the card's headline; blank until the browser knows the time */}
+            <p className="mt-3 mb-0 min-h-[1.2em] text-[34px] leading-none tracking-tight text-ok tabular-nums">
+              {now > 0 ? until(Date.parse(f1.next.start) - now) : ""}
             </p>
           </>
         )}
         {f1.last && (
           <>
-            <p className={`m-0 text-term-muted ${f1.next ? "mt-3" : ""}`}>
+            <p className={`m-0 text-term-muted ${f1.next ? "mt-6 border-t border-term-line pt-5" : ""}`}>
               <span className="text-term-accent">$</span> f1 last
             </p>
-            <p className="m-0 text-term-ink">{f1.last.name}</p>
+            <p className="mt-2 mb-2 text-term-ink">{f1.last.name}</p>
             {f1.last.podium.map((p, i) => (
               <p key={p.code} className="m-0 grid grid-cols-[3ch_4ch_1fr] gap-2">
                 <span className="text-term-muted">P{i + 1}</span>

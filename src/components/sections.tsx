@@ -16,19 +16,20 @@ export async function AboutSection({ dict, locale, id, as = "h1" }: Props) {
   const f1 = await getF1();
   return (
     <section id={id} className={screen}>
-      <div className="wrap">
-        <SectionHead label={dict.pages.about.label} title={dict.pages.about.title} as={as} />
-        {/* the bio, and beside it the F1 corner its last line talks about (hidden if the data is unavailable) */}
-        <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-8 md:grid-cols-[minmax(0,64ch)_minmax(0,340px)] md:gap-12">
-          <div className="flex flex-col gap-4 text-muted">
+      {/* heading and bio on the left; the F1 corner its last line talks about fills the right column
+          from the heading down (below on phones; hidden if the data is unavailable) */}
+      <div className="wrap grid grid-cols-[minmax(0,1fr)] items-start gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)]">
+        <div>
+          <SectionHead label={dict.pages.about.label} title={dict.pages.about.title} as={as} />
+          <div className="flex max-w-[64ch] flex-col gap-4 text-muted">
             {dict.pages.about.bio.map((p, i) => (
               <p key={i} className="m-0">
                 {p}
               </p>
             ))}
           </div>
-          {f1 && <F1Card f1={f1} locale={locale} />}
         </div>
+        {f1 && <F1Card f1={f1} locale={locale} />}
       </div>
     </section>
   );
