@@ -69,6 +69,20 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 - [x] Son mobil ve tarayıcı testi (canlı msheker.dev): 320/375/1440 px, EN+TR; 320 px taşmaları (proje ızgarası, TR menü) düzeltildi (2026-11-20)
 - [x] Yayın 🚀 https://msheker.dev (2026-11-20)
 
+## Faz 9 · Görsel geliştirmeler (2026-11-20, kullanıcı isteği)
+Öncelikli (sırayla ilk ikisi):
+- [ ] **Yüzen navbar.** En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
+  - Masaüstü: kompakt navbarın üzerine gelince orijinal (tam) hâline açılır.
+  - Mobil: hep kompakt kalır; dokununca menü gibi açılır.
+- [ ] **Teknoloji ve marka logoları.** Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ❓ Renk: sürekli renkli mi, tek renk + üzerine gelince renkli mi?
+
+Sonra:
+- [ ] CovertGift mimari diyagramı (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında
+- [ ] Anti-Spoiler canlı demosu: üye ↔ hediye alınan kişi anahtarı, 200 / 403
+- [ ] CovertGift'ten gerçek kod parçası (403 middleware), vaka sayfasında
+- [ ] GitHub aktivite ısı haritası + canlı repo verisi (elle yazılı commit/test sayılarının yerine)
+- [ ] Güvenlik başlıkları (HSTS, CSP…) ve Dependabot
+
 ## Faz 8 · Bakım (sürekli)
 - Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
 - CV güncelleme: `src/content/cv.ts` düzenle, `npm run cv:pdf` çalıştır, PDF'leri commit'le (unutulursa CI `cv:check` ile kırmızı yanar)
