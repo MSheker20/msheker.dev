@@ -74,7 +74,7 @@ Uygulama planı: [PHASE9.md](PHASE9.md). Öncelikli (sırayla ilk ikisi):
 - [x] **Yüzen navbar.** (2026-11-20: başlık = msheker + o anki bölüm; mobilde büyük wordmark satırı kalktı) En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
   - Masaüstü: kompakt navbarın üzerine gelince orijinal (tam) hâline açılır.
   - Mobil: hep kompakt kalır; dokununca menü gibi açılır.
-- [x] **Teknoloji ve marka logoları.** (2026-11-20: Azure, Java ve LinkedIn Simple Icons'ta yok, metin olarak kaldı) Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ✅ Renk: tek renk, üzerine gelince marka rengi (2026-11-20).
+- [x] **Teknoloji ve marka logoları.** (2026-11-20: Azure, Java ve LinkedIn eski Simple Icons sürümlerinden, D-015) Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ✅ Renk: tek renk, üzerine gelince marka rengi (2026-11-20).
 
 Sonra:
 - [ ] CovertGift mimari diyagramı (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında

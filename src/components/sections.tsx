@@ -98,6 +98,7 @@ export function ContactSection({ dict, id, as = "h1" }: Props) {
             GitHub ↗
           </a>
           <a className="btn btn-ghost" href={site.links.linkedin}>
+            <BrandIcon icon={brandIcons.linkedin} />
             LinkedIn ↗
           </a>
         </div>
