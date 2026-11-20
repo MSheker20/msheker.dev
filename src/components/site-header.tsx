@@ -18,11 +18,11 @@ export function SiteHeader({ dict, locale }: { dict: Dictionary; locale: Locale 
       <nav aria-label={nav.label} className="contents">
         <div className="crop px-2.5 py-2.5 md:px-4">
           <Label>{nav.index}</Label>
-          <NavLinks locale={locale} items={[{ key: "1", path: "/work", label: nav.work }, { key: "2", path: "/about", label: nav.about }]} />
+          <NavLinks locale={locale} items={[{ key: "1", path: "/#work", label: nav.work }, { key: "2", path: "/#about", label: nav.about }]} />
         </div>
         <div className="crop px-2.5 py-2.5 md:px-4">
           <Label>{nav.docs}</Label>
-          <NavLinks locale={locale} items={[{ key: "3", path: "/cv", label: nav.cv }, { key: "4", path: "/contact", label: nav.contact }]} />
+          <NavLinks locale={locale} items={[{ key: "3", path: "/#cv", label: nav.cv }, { key: "4", path: "/#contact", label: nav.contact }]} />
         </div>
       </nav>
       <div className="crop hidden px-4 py-2.5 md:block">

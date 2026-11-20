@@ -7,6 +7,8 @@ export const hasLocale = (value: string): value is Locale =>
 
 /** English lives at the root (/work), Turkish under /tr (/tr/work). */
 export function localePath(locale: Locale, path = "/"): string {
-  const clean = path === "/" ? "" : path;
-  return locale === defaultLocale ? clean || "/" : `/${locale}${clean}`;
+  // "/" and "/#section" both live on the locale's home: /tr, /tr#work
+  const clean = path === "/" ? "" : path.startsWith("/#") ? path.slice(1) : path;
+  if (locale !== defaultLocale) return `/${locale}${clean}`;
+  return clean.startsWith("#") ? `/${clean}` : clean || "/";
 }

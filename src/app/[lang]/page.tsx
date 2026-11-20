@@ -4,6 +4,7 @@ import { ApiLog } from "@/components/api-log";
 import { AsciiPortrait } from "@/components/ascii-portrait";
 import { NameMarquee } from "@/components/name-marquee";
 import { SectionHead } from "@/components/section-head";
+import { AboutSection, ContactSection, CvSection } from "@/components/sections";
 import { TypedTerminal } from "@/components/typed-terminal";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -88,6 +89,11 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* screens 3–5: the page keeps going as you scroll */}
+      <AboutSection dict={dict} locale={locale} id="about" as="h2" />
+      <CvSection dict={dict} locale={locale} id="cv" as="h2" />
+      <ContactSection dict={dict} locale={locale} id="contact" as="h2" />
     </>
   );
 }

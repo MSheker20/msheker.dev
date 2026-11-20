@@ -35,7 +35,7 @@ export function NavLinks({ items, locale }: { items: NavItem[]; locale: Locale }
       key={item.key}
       href={localePath(locale, item.path)}
       className="navlink flex"
-      aria-current={current === item.path ? "page" : undefined}
+      aria-current={current === item.path.replace("/#", "/") ? "page" : undefined}
       aria-keyshortcuts={item.key}
     >
       <kbd>[{item.key}]</kbd>
