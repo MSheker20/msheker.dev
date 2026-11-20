@@ -71,5 +71,6 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 ## Faz 8 · Bakım (sürekli)
 - Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
-- CV güncelleme: `src/content/cv.ts` düzenle, `npm run cv:pdf` çalıştır, PDF'leri commit'le
+- CV güncelleme: `src/content/cv.ts` düzenle, `npm run cv:pdf` çalıştır, PDF'leri commit'le (unutulursa CI `cv:check` ile kırmızı yanar)
+- Ayrıntılı bakım rehberi: [README.md](../README.md)
 - Skill güncellemeleri: üç ayda bir `npx skills check` (bkz. SKILLS.md)
