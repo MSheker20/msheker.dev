@@ -3,6 +3,8 @@ import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SectionHead } from "./section-head";
+import { BrandIcon, BrandList } from "@/components/brand-icon";
+import { brandIcons } from "@/content/brand-icons";
 
 // Shared by the one-page home (as h2 sections) and the standalone routes (as h1 pages).
 type Props = { dict: Dictionary; locale: Locale; id?: string; as?: "h1" | "h2" };
@@ -43,8 +45,8 @@ export function CvSection({ dict, locale, id, as = "h1" }: Props) {
             <Entries items={education} locale={locale} present={t.present} />
           </Block>
           <Block as={sub} title={t.skills}>
-            <p className="m-0">{skills.strong.join(" · ")}</p>
-            <p className="m-0 text-muted">{skills.comfortable.join(" · ")}</p>
+            <p className="m-0"><BrandList labels={skills.strong} /></p>
+            <p className="m-0 mt-1 text-muted"><BrandList labels={skills.comfortable} /></p>
           </Block>
           <Block as={sub} title={t.languages}>
             {languages.map((l) => (
@@ -92,6 +94,7 @@ export function ContactSection({ dict, id, as = "h1" }: Props) {
             {dict.pages.contact.email}: {site.email}
           </a>
           <a className="btn btn-ghost" href={site.links.github}>
+            <BrandIcon icon={brandIcons.github} />
             GitHub ↗
           </a>
           <a className="btn btn-ghost" href={site.links.linkedin}>

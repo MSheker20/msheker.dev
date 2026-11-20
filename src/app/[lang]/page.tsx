@@ -12,6 +12,7 @@ import { site } from "@/content/site";
 import { localePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { personJsonLd } from "@/i18n/seo";
+import { BrandLabel } from "@/components/brand-icon";
 
 // design/hero/v4.html as the home page: screen 1 hero, screen 2 work.
 export default async function Home() {
@@ -149,9 +150,7 @@ function ProjectCard(props: {
       <p className="m-0 text-card text-muted">{props.summary}</p>
       <div className="mt-2.5 flex flex-wrap gap-1.5">
         {props.stack.map((s) => (
-          <span key={s} className="border border-line px-2 py-0.5 text-[12px] text-muted">
-            {s}
-          </span>
+          <BrandLabel key={s} label={s} className="border border-line px-2 py-0.5 text-[12px] text-muted" />
         ))}
       </div>
     </Link>

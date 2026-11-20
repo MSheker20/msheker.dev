@@ -85,3 +85,6 @@ Kullanıcı seçimi. Tek sütun, A4, seçilebilir metin; tablo, ikon, görsel ve
 
 ## D-014 ✅ Yüzen navbar (2026-11-20)
 Kullanıcı seçimi. Masaüstünde en üstte ızgara header; ekrandan çıkınca (IntersectionObserver, `#site-header`) ortada yüzen kompakt çubuk: küçük `msheker` + o anki bölümün etiketi (`01 / Work`…; alt sayfalarda sayfanın etiketi). Hover/odakta aynı çubuk tam nav'a açılır. Mobilde büyük wordmark satırı yok; çubuk ilk ekrandan itibaren hep kompakt, dokununca menü olarak açılır. `1–4` kısayolları tek yerde (`NavShortcuts`). Bileşen: `src/components/floating-nav.tsx`.
+
+## D-015 ✅ Marka logoları (2026-11-20)
+Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı (bağımlılık yok). Tek renk, hover/odakta markanın rengi; çok koyu marka koyu temada, çok açık marka açık temada `--ink`'e düşer. Azure, Java ve LinkedIn Simple Icons'tan marka sahiplerinin isteğiyle kaldırılmış: bu etiketler logosuz. PDF CV'ye ikon girmez (D-013).

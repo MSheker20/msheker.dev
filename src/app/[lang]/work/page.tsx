@@ -5,6 +5,7 @@ import { projects } from "@/content/projects";
 import { localePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { alternates } from "@/i18n/seo";
+import { BrandList } from "@/components/brand-icon";
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
@@ -27,8 +28,9 @@ export default async function WorkPage() {
               {p.status === "in-progress" && <span className="ml-2 font-normal text-accent-ink">· wip</span>}
             </h2>
             <p className="m-0 text-card text-muted">{p.summary[locale]}</p>
-            <p className="m-0 text-label text-muted">
-              {p.stack.join(" · ")} · {p.year}
+            <p className="m-0 flex flex-wrap items-center gap-x-3.5 text-label text-muted">
+              <BrandList labels={p.stack} />
+              <span>{p.year}</span>
             </p>
           </li>
         ))}

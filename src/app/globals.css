@@ -15,6 +15,9 @@
   --accent: #2f5bff;
   --accent-ink: #2f5bff;
   --on-accent: #ffffff;
+  /* brand logos: which tone falls back to ink on this theme (brand-icon.tsx) */
+  --tone-light: var(--ink);
+  --tone-dark: initial;
   color-scheme: light;
 }
 /* phones: no grid header, only the floating bar (floating-nav.tsx): 12 top + 46 bar + 12 */
@@ -34,6 +37,8 @@
     --accent: #6f8bff;
     --accent-ink: #8aa0ff;
     --on-accent: #0b0b0c;
+    --tone-light: initial;
+    --tone-dark: var(--ink);
     color-scheme: dark;
   }
 }
@@ -46,6 +51,8 @@
   --accent: #6f8bff;
   --accent-ink: #8aa0ff;
   --on-accent: #0b0b0c;
+  --tone-light: initial;
+  --tone-dark: var(--ink);
   color-scheme: dark;
 }
 
@@ -283,6 +290,24 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ---- brand logos (brand-icon.tsx): one colour at rest, the brand's own on hover or focus */
+.brand-icon {
+  --brand-shown: var(--brand);
+  transition: color 0.2s;
+}
+.brand-icon[data-tone="light"] {
+  --brand-shown: var(--tone-light, var(--brand));
+}
+.brand-icon[data-tone="dark"] {
+  --brand-shown: var(--tone-dark, var(--brand));
+}
+.brand:hover > .brand-icon,
+.group:hover .brand-icon,
+.btn:hover .brand-icon,
+:focus-visible .brand-icon {
+  color: var(--brand-shown);
 }
 
 /* ---- floating nav (floating-nav.tsx): compact bar pinned top-centre, opens downward */

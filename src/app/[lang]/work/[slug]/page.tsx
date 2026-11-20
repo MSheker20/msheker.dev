@@ -8,6 +8,7 @@ import { projects } from "@/content/projects";
 import { localePath, type Locale } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { alternates } from "@/i18n/seo";
+import { BrandList } from "@/components/brand-icon";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -62,7 +63,7 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
           </div>
           <div>
             <dt className="text-label text-muted">{t.stack}</dt>
-            <dd className="m-0">{study.stack.join(" · ")}</dd>
+            <dd className="m-0"><BrandList labels={study.stack} /></dd>
           </div>
         </dl>
 
