@@ -13,6 +13,9 @@
     "about": "About",
     "cv": "CV",
     "contact": "Contact",
+    "floating": "Quick navigation",
+    "menu": "Menu",
+    "close": "Close menu",
     "home": "msheker.dev home"
   },
   "status": {

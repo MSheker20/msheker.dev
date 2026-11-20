@@ -17,11 +17,10 @@
   --on-accent: #ffffff;
   color-scheme: light;
 }
-/* phones: the wordmark row sits above the nav (6 + wordmark cell 20 + nav cell 130 = 156,
-   plus the wordmark itself: its width, capped at 420px, over its 41:7 ratio) */
+/* phones: no grid header, only the floating bar (floating-nav.tsx): 12 top + 46 bar + 12 */
 @media (max-width: 767.98px) {
   :root {
-    --header-h: calc(156px + min(100vw - 52px, 420px) * 7 / 41);
+    --header-h: 70px;
   }
 }
 
@@ -102,6 +101,8 @@
 
 @layer base {
   html {
+    /* anchors land below the floating bar */
+    scroll-padding-top: 70px;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
   }
@@ -282,6 +283,42 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ---- floating nav (floating-nav.tsx): compact bar pinned top-centre, opens downward */
+.fnav {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  z-index: 40;
+  width: min(560px, calc(100% - 2 * var(--spacing-pad)));
+  margin-inline: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+  transition: opacity 0.18s var(--ease-out-soft), transform 0.18s var(--ease-out-soft), border-color 0.2s, visibility 0s linear 0.18s;
+}
+.fnav[data-show="false"] {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.fnav[data-show="true"] {
+  visibility: visible;
+  transition-delay: 0s;
+}
+.fnav[data-open="true"] {
+  border-color: var(--muted);
+}
+/* the panel grows from 0 to its own height (grid rows, no measuring) */
+.fnav-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s var(--ease-out-soft);
+}
+.fnav[data-open="true"] .fnav-panel {
+  grid-template-rows: 1fr;
 }
 
 /* ---- floating settings (site-footer.tsx): pinned bottom-right, card opens above */

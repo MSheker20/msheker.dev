@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { MotionProvider } from "@/components/motion";
+import { FloatingNav } from "@/components/floating-nav";
+import { NavShortcuts } from "@/components/nav-links";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { themeScript } from "@/components/theme-toggle";
@@ -57,6 +59,14 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         </a>
         <MotionProvider>
           <SiteHeader dict={dict} locale={locale} />
+          <FloatingNav
+            locale={locale}
+            nav={dict.nav}
+            status={dict.status.now}
+            motion={dict.motion}
+            labels={{ work: dict.pages.work.label, about: dict.pages.about.label, cv: dict.pages.cv.label, contact: dict.pages.contact.label }}
+          />
+          <NavShortcuts locale={locale} />
           <main id="main" className="flex flex-1 flex-col">
             {children}
           </main>

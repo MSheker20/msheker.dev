@@ -71,7 +71,7 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 ## Faz 9 · Görsel geliştirmeler (2026-11-20, kullanıcı isteği)
 Uygulama planı: [PHASE9.md](PHASE9.md). Öncelikli (sırayla ilk ikisi):
-- [ ] **Yüzen navbar.** En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
+- [x] **Yüzen navbar.** (2026-11-20: başlık = msheker + o anki bölüm; mobilde büyük wordmark satırı kalktı) En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
   - Masaüstü: kompakt navbarın üzerine gelince orijinal (tam) hâline açılır.
   - Mobil: hep kompakt kalır; dokununca menü gibi açılır.
 - [ ] **Teknoloji ve marka logoları.** Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ✅ Renk: tek renk, üzerine gelince marka rengi (2026-11-20).

@@ -82,3 +82,6 @@ Kullanıcı seçimi. Tek sütun, A4, seçilebilir metin; tablo, ikon, görsel ve
 - Kaynak: `src/content/cv.ts` (`cvSummary`, `cvProjects` + ortak deneyim/eğitim/yetkinlik). Sayfa: `/[lang]/cv/document` (`noindex`, sitemap'te yok).
 - Üretim: `npm run cv:pdf` → build + Chrome headless → `public/cv/mustafa-seker-cv-{en,tr}.pdf`. Vercel build'inde Chrome olmadığı için PDF'ler repoya commit'lenir; CV değişince komut yeniden çalıştırılır.
 - İletişim: Gmail adresi (D-008), telefon yok.
+
+## D-014 ✅ Yüzen navbar (2026-11-20)
+Kullanıcı seçimi. Masaüstünde en üstte ızgara header; ekrandan çıkınca (IntersectionObserver, `#site-header`) ortada yüzen kompakt çubuk: küçük `msheker` + o anki bölümün etiketi (`01 / Work`…; alt sayfalarda sayfanın etiketi). Hover/odakta aynı çubuk tam nav'a açılır. Mobilde büyük wordmark satırı yok; çubuk ilk ekrandan itibaren hep kompakt, dokununca menü olarak açılır. `1–4` kısayolları tek yerde (`NavShortcuts`). Bileşen: `src/components/floating-nav.tsx`.

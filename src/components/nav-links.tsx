@@ -8,27 +8,33 @@ import { defaultLocale, localePath, type Locale } from "@/i18n/config";
 export type NavItem = { key: string; path: string; label: string };
 
 /** Path without the /tr prefix, so /tr/work and /work both read as /work. */
-function basePath(pathname: string) {
+export function basePath(pathname: string) {
   return pathname.replace(/^\/tr(?=\/|$)/, "") || "/";
 }
 
-export function NavLinks({ items, locale }: { items: NavItem[]; locale: Locale }) {
-  const pathname = usePathname();
-  const router = useRouter();
-  const current = basePath(pathname);
+/** The four numbered destinations; the grid header and the floating nav both draw from this. */
+export const NAV_PATHS = ["/#work", "/#about", "/#cv", "/#contact"] as const;
 
-  // keys 1–4 jump to the numbered pages (opencode-style); ignored while typing
+/** Keys 1–4 jump to the numbered pages (opencode-style); mounted once, ignored while typing. */
+export function NavShortcuts({ locale }: { locale: Locale }) {
+  const router = useRouter();
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const el = e.target as HTMLElement;
       if (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
-      const item = items.find((i) => i.key === e.key);
-      if (item) router.push(localePath(locale, item.path));
+      const path = NAV_PATHS[Number(e.key) - 1];
+      if (path && /^[1-4]$/.test(e.key)) router.push(localePath(locale, path));
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [items, locale, router]);
+  }, [locale, router]);
+  return null;
+}
+
+export function NavLinks({ items, locale, onNavigate }: { items: NavItem[]; locale: Locale; onNavigate?: () => void }) {
+  const pathname = usePathname();
+  const current = basePath(pathname);
 
   return items.map((item) => (
     <Link
@@ -37,6 +43,7 @@ export function NavLinks({ items, locale }: { items: NavItem[]; locale: Locale }
       className="navlink flex"
       aria-current={current === item.path.replace("/#", "/") ? "page" : undefined}
       aria-keyshortcuts={item.key}
+      onClick={onNavigate}
     >
       <kbd>[{item.key}]</kbd>
       <span>{item.label}</span>
