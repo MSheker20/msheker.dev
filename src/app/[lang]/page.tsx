@@ -28,7 +28,7 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       {/* screen 1: fills the viewport together with the nav grid */}
       <section className="grid min-h-[calc(100svh_-_var(--header-h))] grid-rows-[1fr_auto] overflow-hidden">
-        <div className="wrap grid items-center gap-7 py-[2vh] md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:gap-12">
+        <div className="wrap grid grid-cols-[minmax(0,1fr)] items-center gap-7 py-[2vh] md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:gap-12">
           <div className="enter">
             <h1 className="m-0 max-w-[24ch] text-statement font-normal">
               {/* the space sits outside each span, so lines can still break between words */}
@@ -71,7 +71,7 @@ export default async function Home() {
       </section>
 
       {/* screen 2: project terminals with CovertGift's live API log */}
-      <section id="work" className="scroll-mt-4 border-t border-line py-16 md:py-24">
+      <section id="work" className="scroll-mt-4 border-t border-line py-12 md:py-24">
         <div className="wrap">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <SectionHead label={dict.pages.work.label} title={dict.pages.work.title} as="h2" />

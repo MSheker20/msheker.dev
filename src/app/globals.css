@@ -17,6 +17,14 @@
   --on-accent: #ffffff;
   color-scheme: light;
 }
+/* phones: the wordmark row sits above the nav (6 + wordmark cell 20 + nav cell 130 = 156,
+   plus the wordmark itself: its width, capped at 420px, over its 41:7 ratio) */
+@media (max-width: 767.98px) {
+  :root {
+    --header-h: calc(156px + min(100vw - 52px, 420px) * 7 / 41);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0b0b0c;

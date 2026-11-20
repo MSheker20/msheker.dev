@@ -6,14 +6,14 @@ import { SectionHead } from "./section-head";
 
 // Shared by the one-page home (as h2 sections) and the standalone routes (as h1 pages).
 type Props = { dict: Dictionary; locale: Locale; id?: string; as?: "h1" | "h2" };
-const screen = "scroll-mt-4 border-t border-line py-16 md:py-24";
+const screen = "scroll-mt-4 border-t border-line py-12 md:py-24";
 
 export function AboutSection({ dict, id, as = "h1" }: Props) {
   return (
     <section id={id} className={screen}>
       <div className="wrap">
         <SectionHead label={dict.pages.about.label} title={dict.pages.about.title} as={as} />
-        <div className="max-w-[64ch] space-y-4 text-muted">
+        <div className="flex max-w-[64ch] flex-col gap-4 text-muted">
           {dict.pages.about.bio.map((p, i) => (
             <p key={i} className="m-0">
               {p}
@@ -63,7 +63,7 @@ function Block({ as: Tag, title, children }: { as: "h2" | "h3"; title: string; c
   return (
     <div>
       <Tag className="m-0 mb-3 border-b border-line pb-2 text-label font-normal text-muted">{title}</Tag>
-      <div className="space-y-2">{children}</div>
+      <div className="flex flex-col gap-2">{children}</div>
     </div>
   );
 }
