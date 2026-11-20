@@ -270,7 +270,7 @@
   }
 }
 
-/* ---- PDF CV document (D-013, docs/DESIGN.md §7): ATS one-page, printed by scripts/cv-pdf.mjs */
+/* ---- PDF CV document (D-013, docs/DESIGN.md §8): ATS one-page, printed by scripts/cv-pdf.mjs */
 .cv-doc {
   box-sizing: border-box;
   width: 100%;

@@ -124,7 +124,7 @@ Kurallar:
 | `ProjectCard` | v4 `.project` |
 | `Button` (solid / ghost) | `shared.css` `.btn` |
 
-## 7. PDF CV belgesi (D-013)
+## 8. PDF CV belgesi (D-013)
 
 Site token'larının dışında kalan tek yüzey; ATS standardı için bilinçli olarak sade.
 
