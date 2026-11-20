@@ -24,7 +24,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 ## 3. Deneyim (yeniden eskiye)
 ✅ Staj veya iş deneyimi henüz yok; bölüm projeler ve topluluk ağırlıklı kurulacak.
 - ✅ **PauSiber**, Yönetim Kurulu Üyesi · 2024 → devam ediyor
-  - ❓ Topluluğun tam adı (Pamukkale Üniversitesi Siber Güvenlik Topluluğu mu?)
+  - ✅ Sitede kısa ad "PauSiber" kalacak, açılımı yazılmayacak (2026-11-20)
   - ✅ Not: etkinliklerin yürütülmesi ve düzenlenmesi. JavaScript atölyesi ve "eğitmen" unvanı **kullanılmayacak** (2026-11-20)
 
 ## 4. Projeler
@@ -43,7 +43,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - Durum: ✅ "devam eden proje" rozetiyle öne çıkan 2. proje; geliştirmeye yeniden başlanacak
 - Yıl: 2026 → · Java · repo şimdilik **özel** (yayın zamanı herkese açılabilir)
 - Fikir: "2024 sezonu 1991 puanlama sistemiyle oynansaydı kim şampiyon olurdu?" Gerçek F1 sonuçlarına 5 tarihi puanlama sistemini uygulayıp alternatif şampiyonaları hesaplıyor; REST API ile JSON çıktı veriyor.
-- ❓ Ekran görüntüsü veya örnek çıktı (ör. "1991 sistemiyle 2024 şampiyonası" tablosu) çıkarabilir miyiz?
+- ✅ Görsel yerine terminal kartı (komut + "[wip]" satırı, sahte veri yok); gerçek çıktı proje ilerleyince (2026-11-20)
 
 ### Diğer (arşiv listesi, öne çıkmayacak) 🔎
 - ✅ Zikirmatik, Sınav Sistemi V2 ve Okul Otomasyonu sitede gösterilmeyecek (2026-11-20)

@@ -15,7 +15,7 @@ export type Entry = {
 
 export const experience: Entry[] = [
   {
-    org: "PauSiber", // TODO: full community name (CONTENT.md §3)
+    org: "PauSiber", // short name by choice (CONTENT.md §3)
     role: { en: "Board Member", tr: "Yönetim Kurulu Üyesi" },
     start: "2024",
     end: null,

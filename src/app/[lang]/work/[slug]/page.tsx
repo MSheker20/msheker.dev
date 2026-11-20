@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { TypedTerminal } from "@/components/typed-terminal";
 import { cases, getCase, type CaseStudy } from "@/content/cases";
 import { projects } from "@/content/projects";
 import { localePath, type Locale } from "@/i18n/config";
@@ -82,6 +83,17 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
       </header>
 
       {lead && <Shot shot={lead} locale={locale} priority />}
+      {study.terminal && (
+        <div className="term h-[280px] md:h-[360px]">
+          <div className="term-bar">
+            <i />
+            <i />
+            <i />
+            <b className="ml-1.5 font-normal">{study.terminal.bar}</b>
+          </div>
+          <TypedTerminal script={study.terminal.script} />
+        </div>
+      )}
 
       <section className="mt-12 grid gap-x-6 gap-y-3 border-t border-line py-12 md:grid-cols-[200px_1fr]">
         <h2 className="m-0 text-label font-normal text-muted">{t.problem}</h2>

@@ -18,7 +18,7 @@ Her faz bir **çıktı** ve **çıkış kriteri** ile biter. Bir faz bitmeden so
 
 Çıkış kriteri: hero cümlesi + vaka çalışmalarının ham metni hazır. ✅ (2 öne çıkan proje; üçüncüsü gerekmedi)
 
-Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntüsü (Faz 4) · gerçek profil fotoğrafı (Faz 7) · ~~`hello@msheker.dev` yönlendirmesi~~ ✅ kuruldu (D-008)
+Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 ekran görüntüsü~~ terminal kartı · gerçek profil fotoğrafı (Faz 7) · ~~`hello@msheker.dev` yönlendirmesi~~ ✅ kuruldu (D-008)
 
 ## Faz 2 · Sanat yönetimi ✅ (2026-11-20)
 Çıktı: seçilmiş görsel yön + token'lar (renk, tip ölçeği, boşluk, hareket)

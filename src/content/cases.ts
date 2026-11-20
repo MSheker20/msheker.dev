@@ -1,4 +1,5 @@
 // Case studies for /work/[slug]. Source: docs/COPY.md §6 (TR is the draft, EN translated from it).
+import type { Line } from "@/components/typed-terminal";
 import type { Locale } from "@/i18n/config";
 
 type L = Record<Locale, string>;
@@ -13,6 +14,8 @@ export type CaseStudy = {
   next?: L;
   stack: string[];
   shots?: { src: string; alt: L; width: number; height: number }[];
+  /** Shown in place of screenshots: a terminal with the same honest wip script as the home card. */
+  terminal?: { bar: string; script: Line[] };
 };
 
 export const cases: CaseStudy[] = [
@@ -94,6 +97,14 @@ export const cases: CaseStudy[] = [
       tr: "Geliştirmeye yeniden başlanıyor. Sırada: puanlama yılını seçince sıralamanın yeniden dizildiği küçük, etkileşimli bir tablo.",
     },
     stack: ["Java", "REST"],
+    terminal: {
+      bar: "alterf1",
+      script: [
+        { cmd: "alterf1 --season 2024 --points 1991" },
+        { out: "loading points system 1991…", muted: true },
+        { out: "[wip] standings coming back soon", muted: true },
+      ],
+    },
   },
 ];
 
