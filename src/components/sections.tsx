@@ -71,15 +71,27 @@ function Block({ as: Tag, title, children }: { as: "h2" | "h3"; title: string; c
 }
 
 function Entries({ items, locale, present }: { items: Entry[]; locale: Locale; present: string }) {
+  // when any entry in the list has a logo, the others keep its space, so every name starts on one line
+  const logos = items.some((e) => e.logo);
   return items.map((e) => (
-    <div key={orgName(e.org, "en")}>
-      <p className="m-0 font-medium">{orgName(e.org, locale)}</p>
-      <p className="m-0">{e.role[locale]}</p>
-      <p className="m-0 text-label text-muted">
-        {e.start ? `${e.start} → ${e.end ?? present}` : e.end}
-        {e.place && ` · ${e.place}`}
-      </p>
-      {e.note && <p className="m-0 text-card text-muted">{e.note[locale]}</p>}
+    <div key={orgName(e.org, "en")} className="flex gap-3.5">
+      {/* decorative: the name sits right beside it */}
+      {logos && (
+        <span
+          aria-hidden="true"
+          className={e.logo ? "org-logo" : "org-logo org-logo-empty"}
+          style={e.logo ? ({ "--logo": `url(${e.logo})` } as React.CSSProperties) : undefined}
+        />
+      )}
+      <div className="min-w-0">
+        <p className="m-0 font-medium">{orgName(e.org, locale)}</p>
+        <p className="m-0">{e.role[locale]}</p>
+        <p className="m-0 text-label text-muted">
+          {e.start ? `${e.start} → ${e.end ?? present}` : e.end}
+          {e.place && ` · ${e.place}`}
+        </p>
+        {e.note && <p className="m-0 text-card text-muted">{e.note[locale]}</p>}
+      </div>
     </div>
   ));
 }

@@ -310,6 +310,25 @@
   color: var(--brand-shown);
 }
 
+/* ---- organisation logos (sections.tsx → Entries): a one-colour mask that takes the text colour */
+.org-logo {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+  background: var(--muted);
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+  transition: background-color 0.2s;
+}
+:hover > .org-logo {
+  background: var(--ink);
+}
+.org-logo-empty,
+:hover > .org-logo-empty {
+  background: none;
+}
+
 /* ---- GitHub activity (activity-heatmap.tsx): a week a column, five steps of the accent */
 .heatmap {
   display: grid;

@@ -11,6 +11,8 @@ export type Entry = {
   end: string | null;
   place?: string;
   note?: Text;
+  /** One-colour logo mask in public/logos (web CV only, never the PDF: D-013). */
+  logo?: string;
 };
 
 export const orgName = (org: Entry["org"], locale: Locale) => (typeof org === "string" ? org : org[locale]);
@@ -18,6 +20,7 @@ export const orgName = (org: Entry["org"], locale: Locale) => (typeof org === "s
 export const experience: Entry[] = [
   {
     org: "PauSiber", // short name by choice (CONTENT.md §3)
+    logo: "/logos/pausiber.png", // the club's owl, from the user's own file
     role: { en: "Board Member", tr: "Yönetim Kurulu Üyesi" },
     start: "2024",
     end: null,
@@ -31,6 +34,7 @@ export const experience: Entry[] = [
 export const education: Entry[] = [
   {
     org: { en: "Pamukkale University", tr: "Pamukkale Üniversitesi" },
+    logo: "/logos/pau.png", // official black-and-white seal, pau.edu.tr corporate identity kit
     role: { en: "B.Sc. Computer Engineering · 3rd year", tr: "Bilgisayar Mühendisliği (Lisans) · 3. sınıf" },
     start: "2024",
     end: null,
