@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Mustafa Şeker — Backend-leaning full-stack developer",
-    "description": "Computer engineering student in Denizli, Türkiye. I write APIs in Go, build the interface on top in React, and ship both."
+    "title": "Mustafa Şeker — Full-stack developer",
+    "description": "Computer engineering student in Denizli, Türkiye. I build web apps end to end, from the API to the interface, and ship them."
   },
   "skip": "Skip to content",
   "nav": {
@@ -30,8 +30,8 @@
     "switchTo": "Türkçe"
   },
   "home": {
-    "statementStrong": "Backend-leaning full-stack developer.",
-    "statementDim": "I write APIs in Go, put an interface on top, and ship both. Just coding.",
+    "statementStrong": "Full-stack developer.",
+    "statementDim": "I build the whole thing, from the API to the interface, and ship it. Just coding.",
     "seeWork": "See the work",
     "getCv": "Get the CV",
     "allRepos": "All repositories on GitHub ↗",
@@ -45,10 +45,10 @@
     },
     "about": {
       "label": "02 / About",
-      "title": "Third-year computer engineering student, mostly on the backend.",
+      "title": "Third-year computer engineering student who builds and ships web apps.",
       "bio": [
-        "I'm a third-year Computer Engineering student at Pamukkale University. I started with C and Java; today I write APIs in Go, build the frontend in React and TypeScript, and deploy what I build.",
-        "Most of my time goes to the backend: data models, authorization, and the rules that keep a product honest.",
+        "I'm a third-year Computer Engineering student at Pamukkale University. I started with C and Java; today I build web apps end to end, from the API to the interface, and deploy what I build.",
+        "I care about the details on both sides: clear data models, access rules that hold, and an interface that stays out of the way.",
         "Outside of code: Formula 1, cars, and whatever shipped this week."
       ]
     },

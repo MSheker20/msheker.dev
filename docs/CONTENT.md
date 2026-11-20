@@ -61,6 +61,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - Rahat: C, C++, Python, Docker, Linux, Azure, Git
 - Tanıdık / öğreniyor: ✅ gösterilmeyecek (React Native ve Kotlin kaldırıldı)
 - ✅ Odak: backend ağırlıklı full-stack (~%60 backend / %40 frontend). Konumlandırma buna göre yazılacak.
+  - ✅ Güncelleme (2026-11-20): ana metinde (hero, meta, hakkımda) "backend ağırlıklı" ve Go'ya özel vurgu **kullanılmayacak**; konumlandırma "full-stack". Go proje yığınlarında ve CV becerilerinde kalıyor.
 
 ## 7. Bağlantılar
 - E-posta: ✅ mustafa652seker@gmail.com · ileride `hello@msheker.dev` için mail yönlendirmesi kurulacak (bkz. DECISIONS D-008)

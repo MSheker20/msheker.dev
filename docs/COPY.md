@@ -14,12 +14,12 @@ Sitede görünecek metnin tek kaynağı. Ham veri [CONTENT.md](CONTENT.md)'de; b
 - "Just coding." imza cümlesi; sitede tek bir yerde, hero'da kullanılır, tekrarlanmaz.
 - Öğrenci olmak saklanmaz ama başlık da yapılmaz: önce iş, sonra unvan.
 
-## 2. Hero ✅ 🅲 Hibrit seçildi (2026-11-20)
+## 2. Hero ✅ 🅲 Hibrit seçildi (2026-11-20) · "backend ağırlıklı" ve Go vurgusu ana metinden çıkarıldı (2026-11-20)
 
 🅰 **Terminal**
 ```
 $ whoami
-mustafa şeker — backend-leaning full-stack developer
+mustafa şeker — full-stack developer
 computer engineering @ pamukkale university · denizli, tr · remote
 
 $ echo $MOTTO
@@ -28,19 +28,19 @@ just coding.
 
 🅱 **Editoryal**
 > **Just coding.**
-> I build backends in Go and the interfaces that sit on top of them, then ship both. Computer engineering student in Denizli, Türkiye.
+> I build web apps end to end, from the API to the interface, and ship them. Computer engineering student in Denizli, Türkiye.
 
 > **Sadece kod.**
-> Go ile backend, üstüne oturan arayüzü React ile yazıyor ve ikisini de canlıya alıyorum. Denizli'de Bilgisayar Mühendisliği öğrencisiyim.
+> Web uygulamalarını API'den arayüze uçtan uca yazıyor ve canlıya alıyorum. Denizli'de Bilgisayar Mühendisliği öğrencisiyim.
 
 🅲 **Hibrit ✅ SEÇİLDİ:** dev isim şeridi + kısa cümle (Dennis), altında 🅰'daki terminal bloğu (opencode). Kaydırınca terminal "yazılır".
 > Mustafa Şeker — Mustafa Şeker — …  *(kayan şerit)*
-> Backend-leaning full-stack developer. **Just coding.**
+> Full-stack developer. **Just coding.**
 
 ## 3. Kısa biyografi ✅
-**EN:** I'm a third-year Computer Engineering student at Pamukkale University. I started with C and Java; today I write APIs in Go, build the frontend in React and TypeScript, and deploy what I build. Most of my time goes to the backend: data models, authorization, and the rules that keep a product honest. Outside of code: Formula 1, cars, and whatever shipped this week.
+**EN:** I'm a third-year Computer Engineering student at Pamukkale University. I started with C and Java; today I build web apps end to end, from the API to the interface, and deploy what I build. I care about the details on both sides: clear data models, access rules that hold, and an interface that stays out of the way. Outside of code: Formula 1, cars, and whatever shipped this week.
 
-**TR:** Pamukkale Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. C ve Java ile başladım; bugün Go ile API yazıyor, arayüzü React ve TypeScript ile kuruyor ve yaptığımı canlıya alıyorum. Zamanımın çoğu backend'de geçiyor: veri modelleri, yetkilendirme ve bir ürünü dürüst tutan kurallar. Kod dışında: Formula 1, arabalar ve o hafta çıkan yeni teknolojiler.
+**TR:** Pamukkale Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. C ve Java ile başladım; bugün web uygulamalarını API'den arayüze uçtan uca yazıyor ve yaptığımı canlıya alıyorum. İki tarafta da ayrıntıya önem veriyorum: net veri modelleri, delinmeyen yetki kuralları ve yolunuza çıkmayan bir arayüz. Kod dışında: Formula 1, arabalar ve o hafta çıkan yeni teknolojiler.
 
 ## 4. Beni farklı kılan ✅
 1. **Uçtan uca bitiririm.** Şartnameden veritabanına, API'den arayüze, Docker'dan Azure'a.

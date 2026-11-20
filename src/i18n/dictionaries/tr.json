@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Mustafa Şeker — Backend ağırlıklı full-stack geliştirici",
-    "description": "Denizli'de Bilgisayar Mühendisliği öğrencisi. Go ile API yazıyor, arayüzü React ile kuruyor ve ikisini de canlıya alıyorum."
+    "title": "Mustafa Şeker — Full-stack geliştirici",
+    "description": "Denizli'de Bilgisayar Mühendisliği öğrencisi. Web uygulamalarını API'den arayüze uçtan uca yazıyor ve canlıya alıyorum."
   },
   "skip": "İçeriğe geç",
   "nav": {
@@ -30,8 +30,8 @@
     "switchTo": "English"
   },
   "home": {
-    "statementStrong": "Backend ağırlıklı full-stack geliştirici.",
-    "statementDim": "Go ile API yazıyor, üstüne arayüzü kuruyor ve ikisini de canlıya alıyorum. Sadece kod.",
+    "statementStrong": "Full-stack geliştirici.",
+    "statementDim": "API'den arayüze işin tamamını yazıyor ve canlıya alıyorum. Sadece kod.",
     "seeWork": "İşlere bak",
     "getCv": "CV'yi al",
     "allRepos": "Tüm repolar GitHub'da ↗",
@@ -45,10 +45,10 @@
     },
     "about": {
       "label": "02 / Hakkımda",
-      "title": "Bilgisayar Mühendisliği 3. sınıf öğrencisiyim; zamanımın çoğu backend'de.",
+      "title": "Web uygulamaları yazıp canlıya alan, Bilgisayar Mühendisliği 3. sınıf öğrencisiyim.",
       "bio": [
-        "Pamukkale Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. C ve Java ile başladım; bugün Go ile API yazıyor, arayüzü React ve TypeScript ile kuruyor ve yaptığımı canlıya alıyorum.",
-        "Zamanımın çoğu backend'de geçiyor: veri modelleri, yetkilendirme ve bir ürünü dürüst tutan kurallar.",
+        "Pamukkale Üniversitesi'nde Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. C ve Java ile başladım; bugün web uygulamalarını API'den arayüze uçtan uca yazıyor ve yaptığımı canlıya alıyorum.",
+        "İki tarafta da ayrıntıya önem veriyorum: net veri modelleri, delinmeyen yetki kuralları ve yolunuza çıkmayan bir arayüz.",
         "Kod dışında: Formula 1, arabalar ve o hafta çıkan yeni teknolojiler."
       ]
     },
