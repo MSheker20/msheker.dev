@@ -3,6 +3,8 @@ import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SectionHead } from "./section-head";
+import { F1Card } from "./f1-card";
+import { getF1 } from "@/lib/f1";
 import { BrandIcon, BrandList } from "@/components/brand-icon";
 import { brandIcons } from "@/content/brand-icons";
 
@@ -10,17 +12,22 @@ import { brandIcons } from "@/content/brand-icons";
 type Props = { dict: Dictionary; locale: Locale; id?: string; as?: "h1" | "h2" };
 const screen = "scroll-mt-4 border-t border-line py-12 md:py-24";
 
-export function AboutSection({ dict, id, as = "h1" }: Props) {
+export async function AboutSection({ dict, locale, id, as = "h1" }: Props) {
+  const f1 = await getF1();
   return (
     <section id={id} className={screen}>
       <div className="wrap">
         <SectionHead label={dict.pages.about.label} title={dict.pages.about.title} as={as} />
-        <div className="flex max-w-[64ch] flex-col gap-4 text-muted">
-          {dict.pages.about.bio.map((p, i) => (
-            <p key={i} className="m-0">
-              {p}
-            </p>
-          ))}
+        {/* the bio, and beside it the F1 corner its last line talks about (hidden if the data is unavailable) */}
+        <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-8 md:grid-cols-[minmax(0,64ch)_minmax(0,340px)] md:gap-12">
+          <div className="flex flex-col gap-4 text-muted">
+            {dict.pages.about.bio.map((p, i) => (
+              <p key={i} className="m-0">
+                {p}
+              </p>
+            ))}
+          </div>
+          {f1 && <F1Card f1={f1} locale={locale} />}
         </div>
       </div>
     </section>

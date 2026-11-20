@@ -698,6 +698,33 @@ footer:hover .footer-mark {
 .fnav[data-open="true"] {
   border-color: var(--muted);
 }
+/* reading progress (case pages): a 2px accent line filling with the page's scroll. Browsers without
+   scroll timelines, and reduced motion, simply don't show it. */
+.read-progress {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .read-progress {
+      display: block;
+      animation: read-progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+@keyframes read-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
 /* the panel grows from 0 to its own height (grid rows, no measuring) */
 .fnav-panel {
   display: grid;

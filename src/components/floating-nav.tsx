@@ -186,6 +186,8 @@ export function FloatingNav({ locale, nav, status, commit, motion, labels, palet
           </div>
         </div>
       </nav>
+      {/* case pages: how far down the page you are, along the bar's bottom edge (CSS scroll timeline) */}
+      {route.startsWith("/work/") && <span aria-hidden="true" className="read-progress" />}
     </div>
   );
 }

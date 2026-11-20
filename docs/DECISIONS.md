@@ -115,3 +115,7 @@ Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı
 - **Noktalı zemin:** `body` arka planında 22 px aralıklı, `--line` renginde silik nokta ızgarası; terminaller ve kartlar kendi zeminini korur.
 - **Bölüm numaraları:** `SectionHead` etiketteki sayıyı ("01 / Work" → "01") başlığın arkasına, sol üste, yalnızca 1 px `--line` çizgisiyle (110–230 px) çizer. Dekoratif (`aria-hidden`); sağ köşe ana sayfada ısı haritasına ait olduğu için sol.
 - **Footer:** tam genişlikte piksel `msheker` (`--line`, footer üzerine gelince `--muted`) ve Denizli yerel saati (`Europe/Istanbul`, tarayıcıda hesaplanır, 15 sn'de bir). Alt satır sola hizalı: sağ alt köşe yüzen ayarlar butonunun.
+
+## D-021 ✅ F1 köşesi ve okuma çubuğu (2026-11-20)
+- **F1 kartı:** Hakkımda bölümünde biyografinin yanında (mobilde altında) terminal kartı: sıradaki yarış (ad, tur, Denizli saatiyle başlangıç, "in 1d 9h") ve son yarışın podyumu. Veri: açık Jolpica API (Ergast'ın devamı, anahtarsız), `src/lib/f1.ts`, saatte bir yenilenir; gelmezse kart hiç görünmez. Saat ve geri sayım tarayıcıda hesaplanır. Çıktı İngilizce (kabuk dili, 404 ile aynı).
+- **Okuma çubuğu:** Vaka sayfalarında yüzen navbarın alt kenarında 2 px accent çizgi; saf CSS kaydırma zaman çizelgesi (`animation-timeline: scroll(root)`). Desteklemeyen tarayıcıda ve "hareketi azalt"ta görünmez.
