@@ -78,7 +78,7 @@ Uygulama planı: [PHASE9.md](PHASE9.md). Öncelikli (sırayla ilk ikisi):
 
 Sonra:
 - [x] CovertGift mimari diyagramı (2026-11-20, CovertGift reposundan çıkarıldı: nginx.conf.template, docs/AZURE.md) (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında
-- [ ] Anti-Spoiler canlı demosu: üye ↔ hediye alınan kişi anahtarı, 200 / 403
+- [x] Anti-Spoiler canlı demosu (2026-11-20: gerçek yanıtların tekrarı; kaynak group_access.go, response.go, seed): üye ↔ hediye alınan kişi anahtarı, 200 / 403
 - [ ] CovertGift'ten gerçek kod parçası (403 middleware), vaka sayfasında
 - [ ] GitHub aktivite ısı haritası + canlı repo verisi (elle yazılı commit/test sayılarının yerine)
 - [ ] Güvenlik başlıkları (HSTS, CSP…) ve Dependabot

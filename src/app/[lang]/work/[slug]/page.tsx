@@ -10,6 +10,7 @@ import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { alternates } from "@/i18n/seo";
 import { BrandList } from "@/components/brand-icon";
 import { ArchitectureDiagram } from "@/components/architecture";
+import { SpoilerDemo } from "@/components/spoiler-demo";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -116,6 +117,13 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
           ))}
         </ol>
       </section>
+
+      {study.demo === "anti-spoiler" && (
+        <section className="grid gap-x-6 gap-y-6 border-t border-line py-12 md:grid-cols-[200px_1fr]">
+          <h2 className="m-0 text-label font-normal text-muted">{t.spoiler.label}</h2>
+          <SpoilerDemo labels={t.spoiler} />
+        </section>
+      )}
 
       {study.architecture && (
         <section className="grid gap-x-6 gap-y-6 border-t border-line py-12 md:grid-cols-[200px_1fr]">

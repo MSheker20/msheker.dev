@@ -16,6 +16,8 @@ export type CaseStudy = {
   shots?: { src: string; alt: L; width: number; height: number }[];
   /** Shown in place of screenshots: a terminal with the same honest wip script as the home card. */
   terminal?: { bar: string; script: Line[] };
+  /** An interactive demo drawn on the case page, after the approach. */
+  demo?: "anti-spoiler";
   /** Request path drawn on the case page (architecture.tsx). */
   architecture?: Architecture;
 };
@@ -74,6 +76,7 @@ export const cases: CaseStudy[] = [
       en: "Live · 123 commits · 40 Go test files · TR/EN · light and dark themes · mobile.",
       tr: "Canlıda · 123 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
     },
+    demo: "anti-spoiler",
     // Source: the CovertGift repo (frontend/nginx.conf.template, backend/, docs/AZURE.md), 2026-11-20.
     architecture: {
       client: {

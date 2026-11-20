@@ -75,6 +75,13 @@
       "email": "Email"
     },
     "case": {
+      "spoiler": {
+        "label": "Anti-Spoiler",
+        "as": "Request as",
+        "member": "Group member",
+        "recipient": "The recipient",
+        "translation": "Access blocked: this gift group is a surprise made for you."
+      },
       "architecture": "Architecture",
       "role": "Role",
       "period": "Period",

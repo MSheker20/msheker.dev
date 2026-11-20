@@ -75,6 +75,13 @@
       "email": "E-posta"
     },
     "case": {
+      "spoiler": {
+        "label": "Anti-Spoiler",
+        "as": "İsteği atan",
+        "member": "Grup üyesi",
+        "recipient": "Hediye alınan kişi",
+        "translation": ""
+      },
       "architecture": "Mimari",
       "role": "Rol",
       "period": "Süre",

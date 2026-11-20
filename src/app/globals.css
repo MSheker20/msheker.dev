@@ -310,6 +310,11 @@
   color: var(--brand-shown);
 }
 
+/* ---- Anti-Spoiler demo (spoiler-demo.tsx): each response line wipes in, top to bottom */
+.spoiler-line {
+  animation: log-in 0.32s var(--ease-out-soft) both;
+}
+
 /* ---- architecture diagram (architecture.tsx): top to bottom, left to right from lg */
 .arch,
 .arch-env-row {
