@@ -62,12 +62,12 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 
 Çıkış kriteri: PLAN.md'deki başarı ölçütleri karşılandı.
 
-## Faz 7 · Yayın
+## Faz 7 · Yayın ✅ (2026-11-20)
 - [x] Vercel'e bağlama ve ilk dağıtım: proje `msheker-dev` (Hobby), https://msheker-dev.vercel.app, `main`'e her push otomatik dağıtılır (2026-11-20)
 - [x] msheker.dev alan adı → Vercel, HTTPS (Let's Encrypt); `www` → 308 → kök; Cloudflare'de iki CNAME, proxy kapalı (2026-11-20)
-- [ ] Analitik
-- [ ] Son mobil ve tarayıcı testi (`ecc:browser-qa`)
-- [ ] Yayın 🚀
+- [x] Analitik: Vercel Web Analytics (Hobby, çerezsiz, D-006), `<Analytics />` layout'ta (2026-11-20)
+- [x] Son mobil ve tarayıcı testi (canlı msheker.dev): 320/375/1440 px, EN+TR; 320 px taşmaları (proje ızgarası, TR menü) düzeltildi (2026-11-20)
+- [x] Yayın 🚀 https://msheker.dev (2026-11-20)
 
 ## Faz 8 · Bakım (sürekli)
 - Yeni proje: `src/content/projects.ts` + `src/content/cases.ts`'e kayıt, görseller `public/work/<slug>/`
