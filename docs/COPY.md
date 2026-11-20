@@ -79,10 +79,6 @@ just coding.
 **Yığın:** Java · REST
 **Siteye fikir:** Küçük bir etkileşimli tablo. Ziyaretçi puanlama yılını seçer, sıralama yeniden dizilir. F1 ilgini ve veri tarafını aynı anda gösterir.
 
-### Arşiv (tek satır)
-- React Native Zikirmatik · mobile · 2024
-- Sınav Sistemi V2 · Java · 2025
-- Okul Otomasyonu · C · 2025
 
 ## 7. İletişim CTA 🟡
 > EN: `$ mail mustafa652seker@gmail.com` — Have something to build? Write to me.

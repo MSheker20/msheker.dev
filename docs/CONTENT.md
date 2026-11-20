@@ -46,22 +46,20 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - ❓ Ekran görüntüsü veya örnek çıktı (ör. "1991 sistemiyle 2024 şampiyonası" tablosu) çıkarabilir miyiz?
 
 ### Diğer (arşiv listesi, öne çıkmayacak) 🔎
-- React Native Zikirmatik (mobil, 2024) · herkese açık
-- Sınav Sistemi V2 (Java, 2025) · herkese açık
-- Okul Otomasyonu (C, 2025) · özel
+- ✅ Zikirmatik, Sınav Sistemi V2 ve Okul Otomasyonu sitede gösterilmeyecek (2026-11-20)
 - Programlama Dilleri Lab (C++, 2026) · özel
 - Küçük Java alıştırmaları (BMI, maaş, palindrom, Number-Crypto): ❓ bunları sitede göstermemeyi öneriyorum
 
 ## 5. Eğitim, başarılar, diller 🔎 (CV'den)
 - ✅ **Pamukkale Üniversitesi**, Bilgisayar Mühendisliği (Lisans), 2023 → devam ediyor · 3. sınıf · beklenen mezuniyet 2027 (eski CV'de 2024 yazıyordu, yanlıştı)
 - **Mustafa Kaynak Anadolu Lisesi** (Proje Okulu), Denizli, 2022 · ✅ sitede gösterilecek
-- Başarı: GSB Liselerarası Bilgi Yarışması, Denizli il birinciliği (takım), 2022
-- Diller: Türkçe (ana dil) · İngilizce B2 · Almanca A2–B1
+- ✅ Başarılar bölümü sitede yer almayacak (2026-11-20)
+- Diller: ✅ Türkçe (ana dil) · İngilizce B2 (Almanca gösterilmeyecek)
 
 ## 6. Yetkinlikler 🔎 (GitHub'dan güncellendi; CV'de sadece C ve Python vardı)
 - Güçlü: Go (Gin), TypeScript, React, Java, PostgreSQL
 - Rahat: C, C++, Python, Docker, Linux, Azure, Git
-- Tanıdık / öğreniyor: React Native, Kotlin, ❓ başka?
+- Tanıdık / öğreniyor: ✅ gösterilmeyecek (React Native ve Kotlin kaldırıldı)
 - ✅ Odak: backend ağırlıklı full-stack (~%60 backend / %40 frontend). Konumlandırma buna göre yazılacak.
 
 ## 7. Bağlantılar

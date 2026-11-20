@@ -43,24 +43,12 @@ export const education: Entry[] = [
   },
 ];
 
-export const awards = [
-  {
-    year: "2022",
-    title: {
-      en: "GSB High School Quiz Competition — 1st place in Denizli (team)",
-      tr: "GSB Liselerarası Bilgi Yarışması — Denizli il birinciliği (takım)",
-    },
-  },
-];
-
 export const skills = {
   strong: ["Go (Gin)", "TypeScript", "React", "Java", "PostgreSQL"],
   comfortable: ["C", "C++", "Python", "Docker", "Linux", "Azure", "Git"],
-  learning: ["React Native", "Kotlin"],
 };
 
 export const languages = [
   { name: { en: "Turkish", tr: "Türkçe" }, level: { en: "Native", tr: "Ana dil" } },
   { name: { en: "English", tr: "İngilizce" }, level: { en: "B2", tr: "B2" } },
-  { name: { en: "German", tr: "Almanca" }, level: { en: "A2–B1", tr: "A2–B1" } },
 ];

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SectionHead } from "@/components/section-head";
-import { awards, education, experience, languages, skills, type Entry } from "@/content/cv";
+import { education, experience, languages, skills, type Entry } from "@/content/cv";
 import type { Locale } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 
@@ -26,20 +26,11 @@ export default async function CvPage() {
         <Block title={t.skills}>
           <p className="m-0">{skills.strong.join(" · ")}</p>
           <p className="m-0 text-muted">{skills.comfortable.join(" · ")}</p>
-          <p className="m-0 text-muted">{skills.learning.join(" · ")}</p>
         </Block>
         <Block title={t.languages}>
           {languages.map((l) => (
             <p key={l.name.en} className="m-0">
               {l.name[locale]} <span className="text-muted">· {l.level[locale]}</span>
-            </p>
-          ))}
-        </Block>
-        <Block title={t.awards}>
-          {awards.map((a) => (
-            <p key={a.year} className="m-0">
-              <span className="text-muted">{a.year} · </span>
-              {a.title[locale]}
             </p>
           ))}
         </Block>
