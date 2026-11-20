@@ -64,7 +64,7 @@ Sitenin tüm metni ve verisi buradan üretilecek.
   - ✅ Güncelleme (2026-11-20): ana metinde (hero, meta, hakkımda) "backend ağırlıklı" ve Go'ya özel vurgu **kullanılmayacak**; konumlandırma "full-stack". Go proje yığınlarında ve CV becerilerinde kalıyor.
 
 ## 7. Bağlantılar
-- E-posta: ✅ mustafa652seker@gmail.com · ileride `hello@msheker.dev` için mail yönlendirmesi kurulacak (bkz. DECISIONS D-008)
+- E-posta: ✅ sitede `hello@msheker.dev` (yönlendirme kuruldu, 2026-11-20) · CV ve PDF'te **yalnızca** mustafa652seker@gmail.com (bkz. DECISIONS D-008)
 - GitHub: 🔎 github.com/MSheker20
 - LinkedIn: 🔎 linkedin.com/in/mustafasheker
 - Telefon: sitede **gösterilmeyecek** (gizlilik; PDF CV'de istersen eklenir)

@@ -81,5 +81,5 @@ just coding.
 
 
 ## 7. İletişim CTA 🟡
-> EN: `$ mail mustafa652seker@gmail.com` — Have something to build? Write to me.
+> EN: `$ mail hello@msheker.dev` — Have something to build? Write to me.
 > TR: Birlikte bir şey mi yapalım? Yaz bana.

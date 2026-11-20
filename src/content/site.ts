@@ -3,7 +3,8 @@ export const site = {
   name: "Mustafa Şeker",
   domain: "msheker.dev",
   url: "https://msheker.dev",
-  email: "mustafa652seker@gmail.com", // TODO: switch to hello@msheker.dev once routing is set up (D-008)
+  email: "hello@msheker.dev", // site only; forwards to the personal inbox (D-008)
+  cvEmail: "mustafa652seker@gmail.com", // the CV and its PDF use the personal address, never hello@ (D-008)
   location: "Denizli, Türkiye",
   links: {
     github: "https://github.com/MSheker20",
