@@ -6,7 +6,7 @@ Her faz bir **çıktı** ve **çıkış kriteri** ile biter. Bir faz bitmeden so
 - [x] Mevcut skill'lerin envanteri; taste-skill v2 → 2.5.1, ECC yeniden kuruldu (328 skill)
 - [x] Proje skill'leri eklendi (Emil, Vercel, Addy Osmani)
 - [x] PLAN, ROADMAP, SKILLS, CONTENT, DECISIONS, CLAUDE.md yazıldı
-- [x] `git init` + ilk commit (GitHub reposu henüz yok)
+- [x] `git init` + ilk commit; GitHub: MSheker20/msheker.dev (özel, 2026-11-20)
 
 ## Faz 1 · İçerik ve konumlandırma ✅ (2026-11-20)
 Çıktı: doldurulmuş [CONTENT.md](CONTENT.md) ve [COPY.md](COPY.md) (konumlandırma, hero, biyografi, vaka çalışmaları)
@@ -35,7 +35,7 @@ Faz 1'den taşınanlar: PauSiber'in tam adı (Faz 4) · AlterF1 ekran görüntü
 - [x] `@theme` token'ları (DESIGN.md), Geist Mono (`next/font`, latin-ext), açık/koyu/sistem tema, saklanan seçim
 - [x] Layout: köşe işaretli nav ızgarası, piksel logo, 1–4 kısayolları, footer, skip-link, 404
 - [x] EN/TR yerleşik i18n (`[lang]` + `next/root-params` + `proxy.ts`, D-011), içerik katmanı (`src/content/`)
-- [ ] Vercel'e ilk önizleme dağıtımı (kullanıcının Vercel hesabı ve GitHub reposu gerekli)
+- [ ] Vercel'e ilk önizleme dağıtımı (GitHub reposu hazır; Vercel hesabı gerekli)
 
 Çıkış kriteri: boş ama temalı sayfalar önizlemede açılıyor.
 
