@@ -310,6 +310,23 @@
   color: var(--brand-shown);
 }
 
+/* ---- GitHub activity (activity-heatmap.tsx): a week a column, five steps of the accent */
+.heatmap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 9px);
+  grid-auto-columns: 9px;
+  gap: 2px;
+}
+.heatmap i {
+  border-radius: 1px;
+  background: var(--line);
+}
+.heatmap i[data-l="1"] { background: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+.heatmap i[data-l="2"] { background: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+.heatmap i[data-l="3"] { background: color-mix(in srgb, var(--accent) 78%, var(--line)); }
+.heatmap i[data-l="4"] { background: var(--accent); }
+
 /* ---- Anti-Spoiler demo (spoiler-demo.tsx): each response line wipes in, top to bottom */
 .spoiler-line {
   animation: log-in 0.32s var(--ease-out-soft) both;

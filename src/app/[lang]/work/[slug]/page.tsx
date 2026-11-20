@@ -12,6 +12,7 @@ import { BrandList } from "@/components/brand-icon";
 import { ArchitectureDiagram } from "@/components/architecture";
 import { SpoilerDemo } from "@/components/spoiler-demo";
 import { CodeExcerpt } from "@/components/code-excerpt";
+import { getRepoStats } from "@/lib/github";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -35,6 +36,9 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
   const locale = await getLocale();
   const t = dict.pages.case;
   const [lead, ...rest] = study.shots ?? [];
+  const stats = study.stats && ((await getRepoStats(study.stats.repo)) ?? study.stats);
+  const fill = (text: string) =>
+    stats ? text.replace("{commits}", String(stats.commits)).replace("{tests}", String(stats.goTestFiles)) : text;
   const closing = study.outcome ? { label: t.outcome, text: study.outcome } : study.next && { label: t.next, text: study.next };
 
   return (
@@ -147,7 +151,7 @@ export default async function CasePage({ params }: PageProps<"/[lang]/work/[slug
       {closing && (
         <section className="mt-12 grid gap-x-6 gap-y-3 border-t border-line pt-12 md:grid-cols-[200px_1fr]">
           <h2 className="m-0 text-label font-normal text-muted">{closing.label}</h2>
-          <p className="m-0 max-w-[60ch] text-body">{closing.text[locale]}</p>
+          <p className="m-0 max-w-[60ch] text-body">{fill(closing.text[locale])}</p>
         </section>
       )}
     </article>

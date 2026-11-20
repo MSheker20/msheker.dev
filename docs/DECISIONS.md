@@ -88,3 +88,9 @@ Kullanıcı seçimi. Masaüstünde en üstte ızgara header; ekrandan çıkınca
 
 ## D-015 ✅ Marka logoları (2026-11-20)
 Simple Icons v16.38.0 (CC0) path'leri `src/content/brand-icons.ts`'e kopyalandı (bağımlılık yok). Tek renk, hover/odakta markanın rengi; çok koyu marka koyu temada, çok açık marka açık temada `--ink`'e düşer. Azure, Java ve LinkedIn Simple Icons'tan marka sahiplerinin isteğiyle kaldırılmış; kullanıcı kararıyla (2026-11-20) eski sürümlerin path'leri (Java v6.23.0, Azure ve LinkedIn v10.4.0) alındı ve marka kurallarına aykırı olarak tek renk gösteriliyor. Şikâyet gelirse `brand-icons.ts`'ten silinmeleri yeterli. PDF CV'ye ikon girmez (D-013).
+
+## D-016 ✅ Canlı GitHub verisi (2026-11-20)
+`src/lib/github.ts`, GitHub'ın açık REST API'sinden build sırasında çeker; `"use cache"` + `cacheLife("days")` ile canlıda günde bir yenilenir. Token gerekmez; Vercel'de kapsamsız bir `GITHUB_TOKEN` yalnızca istek sınırını yükseltir.
+- Ana sayfa (Work): son 53 haftanın commit ısı haritası; açık, fork olmayan repolarda kullanıcının varsayılan dala commit'leri. Veri alınamazsa harita hiç görünmez (eksik bir yıl göstermek yerine).
+- Vaka sayfası: `outcome` içindeki `{commits}` ve `{tests}` canlı (commit sayısı, `_test.go` dosyası sayısı); alınamazsa `cases.ts` → `stats` içindeki elle yazılı sayılar.
+- PDF CV elle yazılı kalır (D-013: sabit dosya, `cv:check`).

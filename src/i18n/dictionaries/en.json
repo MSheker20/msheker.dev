@@ -37,6 +37,7 @@
     "statementDim": "I build the whole thing, from the API to the interface, and ship it. Just coding.",
     "seeWork": "See the work",
     "getCv": "Get the CV",
+    "activity": "{n} commits in the last year, public repositories",
     "allRepos": "All repositories on GitHub ↗",
     "wip": "in progress"
   },

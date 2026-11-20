@@ -37,6 +37,7 @@
     "statementDim": "API'den arayüze işin tamamını yazıyor ve canlıya alıyorum. Sadece kod.",
     "seeWork": "İşlere bak",
     "getCv": "CV'yi al",
+    "activity": "Son bir yılda {n} commit, açık repolar",
     "allRepos": "Tüm repolar GitHub'da ↗",
     "wip": "devam ediyor"
   },

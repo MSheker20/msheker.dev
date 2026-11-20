@@ -13,10 +13,13 @@ import { localePath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { personJsonLd } from "@/i18n/seo";
 import { BrandLabel } from "@/components/brand-icon";
+import { ActivityHeatmap } from "@/components/activity-heatmap";
+import { getActivity } from "@/lib/github";
 
 // design/hero/v4.html as the home page: screen 1 hero, screen 2 work.
 export default async function Home() {
   const dict = await getDictionary();
+  const activity = await getActivity();
   const locale = await getLocale();
   const strong = dict.home.statementStrong.split(" ");
   const covertgift = projects.find((p) => p.slug === "covertgift")!;
@@ -76,9 +79,12 @@ export default async function Home() {
         <div className="wrap">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <SectionHead label={dict.pages.work.label} title={dict.pages.work.title} as="h2" />
-            <a href={site.links.github} className="mb-9 inline-flex min-h-11 items-center text-muted transition-colors hover:text-ink">
-              {dict.home.allRepos}
-            </a>
+            <div className="mb-9 grid w-full min-w-0 gap-3 md:w-auto md:justify-items-end">
+              {activity && <ActivityHeatmap activity={activity} label={dict.home.activity.replace("{n}", String(activity.total))} />}
+              <a href={site.links.github} className="inline-flex min-h-11 items-center text-muted transition-colors hover:text-ink">
+                {dict.home.allRepos}
+              </a>
+            </div>
           </div>
           <div className="grid grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <ProjectCard

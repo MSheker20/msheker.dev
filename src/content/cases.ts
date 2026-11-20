@@ -16,6 +16,8 @@ export type CaseStudy = {
   shots?: { src: string; alt: L; width: number; height: number }[];
   /** Shown in place of screenshots: a terminal with the same honest wip script as the home card. */
   terminal?: { bar: string; script: Line[] };
+  /** Fills {commits} and {tests} in outcome/next: live from this repo, else these written numbers. */
+  stats?: { repo: string; commits: number; goTestFiles: number };
   /** An interactive demo drawn on the case page, after the approach. */
   demo?: "anti-spoiler";
   /** A verbatim excerpt of the case's own code (code-excerpt.tsx); segments skip the lines between them. */
@@ -77,9 +79,11 @@ export const cases: CaseStudy[] = [
       },
     ],
     outcome: {
-      en: "Live · 123 commits · 40 Go test files · TR/EN · light and dark themes · mobile.",
-      tr: "Canlıda · 123 commit · 40 Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
+      en: "Live · {commits} commits · {tests} Go test files · TR/EN · light and dark themes · mobile.",
+      tr: "Canlıda · {commits} commit · {tests} Go test dosyası · TR/EN · açık ve koyu tema · mobil.",
     },
+    // {commits} and {tests} above: live from GitHub (src/lib/github.ts), these when it can't be reached
+    stats: { repo: "CovertGift", commits: 123, goTestFiles: 40 },
     demo: "anti-spoiler",
     // Verbatim from the CovertGift repo at the commit in the url; refresh both together.
     code: {
