@@ -90,11 +90,13 @@
     "back": "Başa dön"
   },
   "footer": {
-    "built": "Next.js ile yapıldı, Geist Mono ile dizildi."
+    "built": "Next.js ile yapıldı, Geist Mono ile dizildi.",
+    "settings": "Ayarlar"
   },
   "motion": {
     "pause": "Hareketi durdur",
-    "play": "Hareketi başlat"
+    "play": "Hareketi başlat",
+    "label": "Hareket"
   },
   "portrait": {
     "label": "Mustafa Şeker'in portresi: bir yarısı fotoğraf, diğer yarısı kodla çizilmiş",

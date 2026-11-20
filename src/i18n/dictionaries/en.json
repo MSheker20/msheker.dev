@@ -90,11 +90,13 @@
     "back": "Back to the start"
   },
   "footer": {
-    "built": "Built with Next.js, set in Geist Mono."
+    "built": "Built with Next.js, set in Geist Mono.",
+    "settings": "Settings"
   },
   "motion": {
     "pause": "Pause motion",
-    "play": "Play motion"
+    "play": "Play motion",
+    "label": "Motion"
   },
   "portrait": {
     "label": "Portrait of Mustafa Şeker: one half photograph, the other half drawn in code",
