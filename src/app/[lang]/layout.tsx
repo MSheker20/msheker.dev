@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         <Script id="theme" strategy="beforeInteractive">
           {themeScript}
         </Script>
-        <a data-site-chrome href="#main" className="absolute -top-16 left-3 z-50 bg-ink px-3.5 py-2.5 text-bg focus:top-3">
+        <a data-site-chrome href="#main" className="absolute -top-16 left-3 z-50 inline-flex min-h-11 items-center bg-ink px-3.5 text-bg focus:top-3">
           {dict.skip}
         </a>
         <MotionProvider>

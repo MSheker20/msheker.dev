@@ -79,7 +79,7 @@ export default async function Home() {
               {dict.home.allRepos}
             </a>
           </div>
-          <div className="grid gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <ProjectCard
               href={localePath(locale, "/work/covertgift")}
               bar="covertgift · api.log"
