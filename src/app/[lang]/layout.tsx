@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { MotionProvider } from "@/components/motion";
 import { SiteFooter } from "@/components/site-footer";
@@ -61,6 +62,8 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           </main>
           <SiteFooter dict={dict} locale={locale} />
         </MotionProvider>
+        {/* cookieless page views (D-006); a no-op outside Vercel */}
+        <Analytics />
       </body>
     </html>
   );
