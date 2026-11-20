@@ -70,11 +70,11 @@ Faz 1'den taşınanlar: ~~PauSiber'in tam adı~~ kısa ad kalıyor · ~~AlterF1 
 - [x] Yayın 🚀 https://msheker.dev (2026-11-20)
 
 ## Faz 9 · Görsel geliştirmeler (2026-11-20, kullanıcı isteği)
-Öncelikli (sırayla ilk ikisi):
+Uygulama planı: [PHASE9.md](PHASE9.md). Öncelikli (sırayla ilk ikisi):
 - [ ] **Yüzen navbar.** En üstte mevcut ızgara navbar. Kaydırınca daralıp yüzen kompakt bir navbara dönüşür; kompakt hâlde başlık görünür.
   - Masaüstü: kompakt navbarın üzerine gelince orijinal (tam) hâline açılır.
   - Mobil: hep kompakt kalır; dokununca menü gibi açılır.
-- [ ] **Teknoloji ve marka logoları.** Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ❓ Renk: sürekli renkli mi, tek renk + üzerine gelince renkli mi?
+- [ ] **Teknoloji ve marka logoları.** Gerçek logolar (Simple Icons): CovertGift yığın etiketleri (Go, PostgreSQL, React, Docker, Azure…), CV yetkinlikleri, İletişim'de GitHub/LinkedIn. ✅ Renk: tek renk, üzerine gelince marka rengi (2026-11-20).
 
 Sonra:
 - [ ] CovertGift mimari diyagramı (tarayıcı → nginx → Go/Gin → PostgreSQL, SSE, Gemini, Azure), vaka sayfasında
