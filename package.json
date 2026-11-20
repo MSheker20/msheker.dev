@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "cv:pdf": "next build && node scripts/cv-pdf.mjs"
+    "cv:pdf": "next build && node scripts/cv-pdf.mjs",
+    "cv:check": "node scripts/cv-pdf.mjs --check",
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
