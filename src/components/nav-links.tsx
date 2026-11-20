@@ -7,9 +7,12 @@ import { defaultLocale, localePath, type Locale } from "@/i18n/config";
 
 export type NavItem = { key: string; path: string; label: string };
 
-/** Path without the /tr prefix, so /tr/work and /work both read as /work. */
+/**
+ * Path without its locale prefix: /tr/work, /work and /en/work all read as /work. The server sees the
+ * proxy's rewrite (/en/work) while the browser sees /work; both must agree, or hydration fails.
+ */
 export function basePath(pathname: string) {
-  return pathname.replace(/^\/tr(?=\/|$)/, "") || "/";
+  return pathname.replace(/^\/(?:tr|en)(?=\/|$)/, "") || "/";
 }
 
 /** The four numbered destinations; the grid header and the floating nav both draw from this. */
