@@ -86,7 +86,7 @@ export default async function Home() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
             <ProjectCard
               href={localePath(locale, "/work/covertgift")}
               bar="covertgift · api.log"
