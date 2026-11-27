@@ -162,36 +162,50 @@ export const cases: CaseStudy[] = [
     role: { en: "Solo", tr: "Tek geliştirici" },
     period: { en: "2026 → in progress", tr: "2026 → devam ediyor" },
     problem: {
-      en: "Points systems changed many times since 1950. Would the same driver still be champion if a season were scored under another era's rules?",
-      tr: "Puanlama sistemi 1950'den bu yana defalarca değişti. Bir sezon başka bir dönemin kurallarıyla puanlansa şampiyon yine aynı pilot mu olurdu?",
+      en: "Points systems changed many times since 1950. Would the same driver still be champion if a season were scored under another era's rules? In 1988, under 1991 rules, Prost beats Senna.",
+      tr: "Puanlama sistemi 1950'den bu yana defalarca değişti. Bir sezon başka bir dönemin kurallarıyla puanlansa şampiyon yine aynı pilot mu olurdu? 1988'i 1991 kurallarıyla puanlayınca Senna değil Prost şampiyon.",
     },
     decisions: [
       {
-        title: { en: "Five historical points systems", tr: "Beş tarihi puanlama sistemi" },
+        title: { en: "Each era's exact rules", tr: "Her dönemin kendi kuralları" },
         body: {
-          en: "Applies five systems from 1950 to today to real race results and returns the alternative championships as JSON over a REST API.",
-          tr: "Gerçek yarış sonuçlarına 1950'den bugüne beş farklı puanlama sistemini uyguluyor ve alternatif şampiyonaları REST API ile JSON olarak veriyor.",
+          en: "Five points systems: 1950, 1961, 1991, 2003 and 2010. Inside its own era a system applies that season's exact rules: best-N results, split seasons, shared drives, fastest lap, sprints. Outside it, best-N scales to the season length.",
+          tr: "Beş puanlama sistemi: 1950, 1961, 1991, 2003 ve 2010. Bir sistem kendi döneminde o sezonun birebir kurallarını uyguluyor: en iyi N sonuç, bölünmüş sezonlar, paylaşılan arabalar, en hızlı tur, sprintler. Dönemi dışında en iyi N, sezon uzunluğuna göre ölçekleniyor.",
         },
       },
       {
-        title: { en: "One query per season", tr: "Sezon başına tek sorgu" },
+        title: { en: "Tested against history", tr: "Tarihe karşı test" },
         body: {
-          en: "All of a season's results are fetched in a single query.",
-          tr: "Bir sezonun tüm sonuçları tek sorguda çekiliyor.",
+          en: "Under its own era's system every season has to reproduce the real drivers' standings (1950 to today) and the real constructors' champion (1958 to today). Integration tests run on the real F1DB dump with Testcontainers.",
+          tr: "Kendi döneminin sistemiyle her sezon gerçek pilot sıralamasını (1950'den bugüne) ve gerçek takım şampiyonunu (1958'den bugüne) birebir vermek zorunda. Entegrasyon testleri Testcontainers ile gerçek F1DB verisi üzerinde koşuyor.",
+        },
+      },
+      {
+        title: { en: "Constructors as chassis + engine", tr: "Takım = şasi + motor" },
+        body: {
+          en: "Like the real championship, Cooper-Climax and Cooper-Maserati are separate teams. Only the best-placed car scores from 1958 to 1978, all cars from 1979.",
+          tr: "Gerçek şampiyonadaki gibi Cooper-Climax ile Cooper-Maserati ayrı takım. 1958–1978 arasında yalnız en iyi araç puan alıyor, 1979'dan itibaren tüm araçlar.",
+        },
+      },
+      {
+        title: { en: "Every scenario is a URL", tr: "Her senaryo bir URL" },
+        body: {
+          en: "Remove drivers or races, toggle sprint and fastest-lap points, or build your own points system. The whole scenario lives in the query string, and every shared season link gets its own preview image.",
+          tr: "Pilot ya da yarış çıkar, sprint ve en hızlı tur puanlarını aç kapat ya da kendi puanlama sistemini kur. Senaryonun tamamı URL'de duruyor; paylaşılan her sezon linkinin kendi önizleme görseli var.",
         },
       },
     ],
     next: {
-      en: "Development is restarting. Next up: a small interactive table where you pick the points year and the standings reorder.",
-      tr: "Geliştirmeye yeniden başlanıyor. Sırada: puanlama yılını seçince sıralamanın yeniden dizildiği küçük, etkileşimli bir tablo.",
+      en: "The repository is public with CI. It runs locally with Docker Compose; it isn't deployed yet.",
+      tr: "Repo herkese açık ve CI'ı kurulu. Docker Compose ile yerelde çalışıyor; henüz yayında değil.",
     },
-    stack: ["Java", "REST"],
+    stack: ["Java", "Spring Boot", "PostgreSQL", "React", "TypeScript"],
     terminal: {
       bar: "alterf1",
       script: [
-        { cmd: "alterf1 --season 2024 --points 1991" },
-        { out: "loading points system 1991…", muted: true },
-        { out: "[wip] standings coming back soon", muted: true },
+        { cmd: "curl /api/v1/seasons/1988/standings?system=1991" },
+        { out: "real champion: Ayrton Senna (90)", muted: true },
+        { out: "under 1991 rules: Alain Prost (112)" },
       ],
     },
   },

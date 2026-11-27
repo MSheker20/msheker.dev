@@ -106,9 +106,9 @@ export default async function Home() {
             >
               <TypedTerminal
                 script={[
-                  { cmd: "alterf1 --season 2024 --points 1991" },
-                  { out: "loading points system 1991…", muted: true },
-                  { out: "[wip] standings coming back soon", muted: true },
+                  { cmd: "curl /api/v1/seasons/1988/standings?system=1991" },
+                  { out: "real champion: Ayrton Senna (90)", muted: true },
+                  { out: "under 1991 rules: Alain Prost (112)" },
                 ]}
               />
             </ProjectCard>

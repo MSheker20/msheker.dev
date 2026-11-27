@@ -40,10 +40,11 @@ Sitenin tüm metni ve verisi buradan üretilecek.
 - Görseller: repoda hazır (home-dark, home-light, group-dark, mobile-dark, login-dark)
 
 ### AlterF1 (devam ediyor) ✅
-- Durum: ✅ "devam eden proje" rozetiyle öne çıkan 2. proje; geliştirmeye yeniden başlanacak
-- Yıl: 2026 → · Java · repo şimdilik **özel** (yayın zamanı herkese açılabilir)
+- Durum: ✅ "devam eden proje" rozetiyle öne çıkan 2. proje; yerelde çalışıyor, henüz yayında değil (2026-11-27)
+- Yıl: 2026 → · Java 26 + Spring Boot 4.2 · React 19 + Vite · PostgreSQL 18 (F1DB) · repo **herkese açık**, MIT: https://github.com/MSheker20/AlterF1
+- Kaynak: AlterF1 README (2026-11-27). 5 sistem (1950, 1961, 1991, 2003, 2010), pilotlar + takımlar şampiyonası, senaryolar URL'de, karşılaştırma matrisi + puan grafiği, EN/TR, her dönem kendi sistemiyle gerçek sıralamayı birebir veriyor (testli). Örnek: 1988 gerçek Senna (90), 1991 kurallarıyla Prost (112).
 - Fikir: "2024 sezonu 1991 puanlama sistemiyle oynansaydı kim şampiyon olurdu?" Gerçek F1 sonuçlarına 5 tarihi puanlama sistemini uygulayıp alternatif şampiyonaları hesaplıyor; REST API ile JSON çıktı veriyor.
-- ✅ Görsel yerine terminal kartı (komut + "[wip]" satırı, sahte veri yok); gerçek çıktı proje ilerleyince (2026-11-20)
+- ✅ Görsel yerine terminal kartı; artık README'deki gerçek 1988 sonucunu gösteriyor (2026-11-27)
 
 ### Diğer (arşiv listesi, öne çıkmayacak) 🔎
 - ✅ Zikirmatik, Sınav Sistemi V2 ve Okul Otomasyonu sitede gösterilmeyecek (2026-11-20)

@@ -33,9 +33,10 @@ export const projects: Project[] = [
     status: "in-progress",
     featured: true,
     summary: {
-      en: "What if 2024 had been scored like 1991? Real F1 seasons under five historical points systems.",
-      tr: "2024 sezonu 1991 puanlamasıyla oynansaydı? Gerçek F1 sezonları, beş tarihi puanlama sistemiyle.",
+      en: "What if 1988 had been scored under 1991 rules? Every F1 season since 1950, replayed under five historical points systems.",
+      tr: "1988 şampiyonası 1991 kurallarıyla puanlansaydı? 1950'den bu yana her F1 sezonu, beş tarihi puanlama sistemiyle yeniden.",
     },
-    stack: ["Java", "REST"],
+    stack: ["Java", "Spring Boot", "PostgreSQL", "React"],
+    links: { repo: "https://github.com/MSheker20/AlterF1" },
   },
 ];

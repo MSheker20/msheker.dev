@@ -72,11 +72,11 @@ just coding.
 **Görseller:** CovertGift reposundaki `docs/screenshots/` (5 adet)
 
 ### 02 · AlterF1 (devam ediyor) ✅ (EN ve TR, 2026-11-20)
-**Tek satır:** What if 2024 had been scored like 1991? Re-runs real F1 seasons under five historical points systems.
+**Tek satır:** What if 1988 had been scored under 1991 rules? Every F1 season since 1950, replayed under five historical points systems.
 
-**Durum:** Geliştirmeye yeniden başlanacak; sitede "in progress" rozetiyle.
-**Ne yapıyor:** Gerçek yarış sonuçlarına 1950'den bugüne 5 farklı puanlama sistemini uyguluyor ve alternatif şampiyonaları REST API ile JSON olarak veriyor. Tüm sezon sonuçları tek sorguda çekiliyor.
-**Yığın:** Java · REST
+**Durum (2026-11-27, README'den güncellendi):** Yerelde çalışıyor, henüz yayında değil; sitede "in progress" rozetiyle. Repo herkese açık.
+**Ne yapıyor:** Her sezonu 5 sistemle (1950, 1961, 1991, 2003, 2010) yeniden puanlıyor; her sistem kendi döneminde o sezonun birebir kurallarını uyguluyor. Pilotlar ve takımlar (şasi + motor) şampiyonası, URL'de paylaşılabilen senaryolar, karşılaştırma matrisi ve puan grafiği. Kendi döneminin sistemiyle her sezon gerçek sıralamayı veriyor (testli). Metnin tamamı `src/content/cases.ts`.
+**Yığın:** Java · Spring Boot · PostgreSQL · React · TypeScript
 **Siteye fikir:** Küçük bir etkileşimli tablo. Ziyaretçi puanlama yılını seçer, sıralama yeniden dizilir. F1 ilgini ve veri tarafını aynı anda gösterir.
 
 

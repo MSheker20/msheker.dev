@@ -101,11 +101,15 @@ export const cvProjects: CvProject[] = [
     name: "AlterF1",
     role: { en: "Solo developer", tr: "Tek geliştirici" },
     period: { en: "2026 – in progress", tr: "2026 – devam ediyor" },
-    stack: ["Java", "REST"],
+    stack: ["Java", "Spring Boot", "PostgreSQL", "React"],
     bullets: [
       {
-        en: "Re-scores real Formula 1 seasons under five historical points systems and serves the alternative championships as JSON over a REST API.",
-        tr: "Gerçek Formula 1 sezonlarını beş tarihi puanlama sistemiyle yeniden puanlıyor; alternatif şampiyonaları REST API ile JSON olarak veriyor.",
+        en: "Replays every Formula 1 season since 1950 under five historical points systems, drivers' and constructors' championships, served by a Spring Boot REST API.",
+        tr: "1950'den bu yana her Formula 1 sezonunu beş tarihi puanlama sistemiyle yeniden puanlıyor; pilotlar ve takımlar şampiyonası, Spring Boot REST API ile.",
+      },
+      {
+        en: "Tested against history: under its own era's system, every season reproduces the real standings (integration tests on real F1 data with Testcontainers).",
+        tr: "Tarihe karşı test: kendi döneminin sistemiyle her sezon gerçek sıralamayı birebir veriyor (Testcontainers ile gerçek F1 verisi üzerinde entegrasyon testleri).",
       },
     ],
   },
